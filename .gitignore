@@ -1,6 +1,6 @@
 .metals
 .vscode
-projet
+target
 .dist
 .bsp
 .bloop
