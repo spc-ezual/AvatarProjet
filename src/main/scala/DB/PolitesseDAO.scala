@@ -1,12 +1,19 @@
 package DB
 
 import java.sql._
+import java.io.File
 /**
  * Cette classe permet d'accéder à la table "Politesse" de la base de données "Politesse.db"
  */
 object  PolitesseDAO {
     // Établir une connexion à la base de données
-    val connection = DriverManager.getConnection("jdbc:sqlite:BaseDeDonnees/Politesse.db")
+    val dbFilePath = "BaseDeDonnees/Politesse.db"
+
+    if (!new File(dbFilePath).exists() || !new File(dbFilePath).isFile()) {
+        throw new RuntimeException("Le fichier de base de données n'existe pas ou n'est pas un fichier valide.")
+    }
+
+    val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 
     /**
      * Ajouter une donnée à la table "Politesse"

@@ -1,11 +1,18 @@
 package DB
 
 import java.sql._
+import java.io.File
 /**
   * Classe permettant d'interagir avec la table ListLieux de la base de données ListLieux.db
   */
 object  ListLieuxDAO {
-    val connection = DriverManager.getConnection("jdbc:sqlite:BaseDeDonnees/ListLieux.db")
+    val dbFilePath = "BaseDeDonnees/ListLieux.db"
+
+    if (!new File(dbFilePath).exists() || !new File(dbFilePath).isFile()) {
+        throw new RuntimeException("Le fichier de base de données n'existe pas ou n'est pas un fichier valide.")
+    }
+
+    val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
     
     /**
     * Ajouter une donnée à la table ListLieux
