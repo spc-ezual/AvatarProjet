@@ -1,0 +1,67 @@
+import java.sql.{Connection, DriverManager, Statement}
+
+object Database {
+  def main(args: Array[String]): Unit = {
+    // register SQLite JDBC driver
+    Class.forName("org.sqlite.JDBC")
+
+    // create a connection to the database
+    val url = "jdbc:sqlite:BaseDeDonnees/ListLieux.db"
+    val connection: Connection = DriverManager.getConnection(url)
+
+    // create a statement
+    val statement: Statement = connection.createStatement()
+
+    // create a table
+    statement.executeUpdate(
+      """
+        |CREATE TABLE IF NOT EXISTS lieux (
+        | nom TEXT NOT NULL,
+        | adresse TEXT NOT NULL
+        |);
+        |""".stripMargin)
+
+    // insert data into the table
+    statement.executeUpdate(
+      """
+        |INSERT INTO lieux (nom, adresse)
+        |VALUES ('Mairie de Rennes', 'Place de la Mairie'),
+        |       ('Théâtre La Paillette', '2, Rue du Pré de Bris'),
+        |       ('Théâtre National de Bretagne', '1, Rue Saint-Hélier'),
+        |       ('Gare SNCF', '19, Place de la Gare');
+        |""".stripMargin)
+
+    // print the contents of the table
+    val resultSet = statement.executeQuery("SELECT * FROM lieux")
+    while (resultSet.next()) {
+      val nom = resultSet.getString("nom")
+      val adresse = resultSet.getString("adresse")
+      println(s"$nom : $adresse")
+    }
+
+    // close the connection
+    resultSet.close()
+    statement.close()
+    connection.close()
+  }
+}
+
+
+val url = "jdbc:sqlite:BaseDeDonnees/Politesse.db"
+|CREATE TABLE IF NOT EXISTS Politesse (
+            | Adresse TEXT NOT NULL,
+            | Reponse TEXT NOT NULL
+            |);
+INSERT INTO Politesse (Adresse, Reponse)
+VALUES 
+    ('Bonjour', 'Bonjour, '),
+    ('Bonsoir', 'Bonsoir, '),
+    ('Au revoir', 'Au revoir, à bientôt !'),
+    ('Merci beaucoup', 'De rien, c''est un plaisir !'),
+    ('Excusez-moi', 'Je vous en prie, pas de souci !'),
+    ('Pardon', 'Pas de problème, cela peut arriver !'),
+    ('Bonne soirée', 'Merci, à vous aussi !'),
+    ('Bonne nuit', 'Bonne nuit, faites de beaux rêves !'),
+    ('Hello', 'Hello, '),
+    ('Hey', 'Hey, '),
+    ('Salut', 'Salut, ');
