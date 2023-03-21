@@ -4,42 +4,43 @@ interface Avatar{
     ask(s: String): List[String]
     reinit(): Unit
 }
+
 interface CreationListMotClef{
     ListCorrection(Mots : List[String]): List[String]
     MatchMotClef(Mots : List[String], BDD1, BDD2): List[String]
 }
+
 interface AnalysePhrase{
     SepMots(s:String): List[String]
     CreationMotClef(Mots : List[String]): List[String]
 }
 interface CreationDeRep{
-    Politesse(Mots : List[String], BDD3 ) :Boolean
-    Reponse(Mots: List[String], BDD3 ): String
+    Politesse(Mots : List[String]) :Boolean
+    Reponse(Mots: List[String]): String
 }
 interface Correction{
     Correct(Mots : List[String], BDD1): List[String]
 }
+
 interface Interface{
     
 }
 
 Interface <-> Avatar
-Avatar -> AnalysePhrase
-AnalysePhrase -> CreationDeRep
-CreationDeRep -> Avatar
-Correction -|> CreationListMotClef
+Avatar --> AnalysePhrase
+AnalysePhrase --> CreationDeRep
+CreationDeRep --> Avatar
+Correction --|> CreationListMotClef
 
 
 
 
-class BDD1 <<(B,Orange)>>
-class BDD2 <<(B,Orange)>>
-class BDD3 <<(B,Orange)>>
-CreationListMotClef -> AnalysePhrase
-BDD1 -|> AnalysePhrase
-BDD2 -|> AnalysePhrase
-BDD3 -|> AnalysePhrase
+class BDListLieux <<(B,Orange)>>
+class BDDPolitesse <<(B,Orange)>>
+CreationListMotClef --> AnalysePhrase
+BDD1 --|> CreationListMotClef
+BDD2 --|> CreationDeRep
 
-EntréUtilisateur -|> AnalysePhrase
+EntréUtilisateur --|> Interface
 
 @enduml
