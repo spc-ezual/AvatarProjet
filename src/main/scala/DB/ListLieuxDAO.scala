@@ -7,7 +7,7 @@ import java.io.File
   */
 object  ListLieuxDAO {
     val dbFilePath = "BaseDeDonnees/ListLieux.db"
-
+    // Vérification que le fichier existe
     if (!new File(dbFilePath).exists() || !new File(dbFilePath).isFile()) {
         throw new RuntimeException("Le fichier de base de données n'existe pas ou n'est pas un fichier valide.")
     }

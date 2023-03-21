@@ -8,6 +8,7 @@ import java.io.File
 object  PolitesseDAO {
     // Établir une connexion à la base de données
     val dbFilePath = "BaseDeDonnees/Politesse.db"
+    // Vérification que le fichier existe
 
     if (!new File(dbFilePath).exists() || !new File(dbFilePath).isFile()) {
         throw new RuntimeException("Le fichier de base de données n'existe pas ou n'est pas un fichier valide.")
