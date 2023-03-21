@@ -1,11 +1,9 @@
 package Outils
 
-class AnalysePhrase{
-    /**
-      * 
-      *
-      * @return
-      */
-    def SepMot(phrase:String):List[String] = ???
+object AnalysePhrase {
+
+  /** @return
+    */
+  def SepMots(phrase: String): List[String] = ???
 
 }

@@ -16,5 +16,4 @@ class TestIntegration {
       m.test(List("Où est donc la Mairie de Rennes?"))
     )
   }
-
 }
