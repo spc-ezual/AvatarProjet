@@ -15,8 +15,7 @@ interface AnalysePhrase{
     CreationMotClef(Mots : List[String]): List[String]
 }
 interface CreationDeRep{
-    Politesse(Mots : List[String]) :Boolean
-    Reponse(Mots: List[String]): String
+    Reponse(Message: String): String
 }
 interface Correction{
     Correct(Mots : List[String], BDD1): List[String]

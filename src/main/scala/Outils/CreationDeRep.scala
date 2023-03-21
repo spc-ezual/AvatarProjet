@@ -1,5 +1,5 @@
 package Outils
 
-class CreationDeRep{
-    def Reponse(mots:List[String]):String = ???
+object  CreationDeRep{
+    def Reponse(message: String):String = "????"
 }
