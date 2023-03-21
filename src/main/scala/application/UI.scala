@@ -47,7 +47,7 @@ class UI extends MainFrame {
                     icon = avatarIcon
                 }
                 contents += new Label {
-                    text = "\nAvatar: " + Reponse(message)
+                    text = "Avatar: " + Reponse(message)
                 }
                 }
                 // Add messages to chat area
