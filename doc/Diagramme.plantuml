@@ -1,44 +1,37 @@
 
 @startuml Avatar
-interface Avatar{
-    ask(s: String): List[String]
-    reinit(): Unit
-}
 
 interface CreationListMotClef{
-    ListCorrection(Mots : List[String]): List[String]
-    MatchMotClef(Mots : List[String], BDD1, BDD2): List[String]
+    MatchMotClef(Mots : List[String], BDListLieux, BDPolitesse): (String,List[(String, String)])
 }
 
 interface AnalysePhrase{
     SepMots(s:String): List[String]
-    CreationMotClef(Mots : List[String]): List[String]
 }
 interface CreationDeRep{
-    Reponse(Message: String): String
+    Reponse(message: String): String
 }
 interface Correction{
-    Correct(Mots : List[String], BDD1): List[String]
+    Correct(Mots : List[String], BDListLieux, BDPolitesse): List[String]
 }
 
 interface Interface{
+    ask(s: String): List[String]
     
 }
 
-Interface <-> Avatar
-Avatar --> AnalysePhrase
+Interface <-> CreationDeRep
 AnalysePhrase --> CreationDeRep
-CreationDeRep --> Avatar
 Correction --|> CreationListMotClef
 
 
 
 
 class BDListLieux <<(B,Orange)>>
-class BDDPolitesse <<(B,Orange)>>
-CreationListMotClef --> AnalysePhrase
-BDD1 --|> CreationListMotClef
-BDD2 --|> CreationDeRep
+class BDPolitesse <<(B,Orange)>>
+CreationListMotClef --> CreationDeRep
+BDListLieux --|> CreationListMotClef
+BDPolitesse --|> CreationListMotClef
 
 EntréUtilisateur --|> Interface
 
