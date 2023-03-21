@@ -1,9 +1,13 @@
 package Outils
 
 class AnalysePhrase{
-    
-    def SepMot():String = ???
+    /**
+      * 
+      *
+      * @return
+      */
+    def SepMot(phrase:String):List[String] = ???
     
     def CreationMotClef(mots : List[String]) : List[String]= ???
-    
+
 }
