@@ -15,9 +15,7 @@ object CreationListMotClef {
     */
   def MatchMotClef(mots: List[String]): (String, List[(String, String)]) = {
     val corriger = Correction.correct(Correction.correct(mots,dsbLieux.getNom()),dsbPolitesse.getAdresses())
-    
-    
-    ???
+    (RecupPoli(mots),RecupLieux(mots))
   }
   /**
     * 
