@@ -12,6 +12,15 @@ object Correction {
     def correct(mots: List[String], motsCorrect: List[String]): List[String] = {
         mots.map(x => correctMot(x,motsCorrect))
     }
+    //TODO A refaire / finir
+    // L'on souhaite que correct concat en cas de nececiter 
+    /*
+    exemple : 
+        phrase =("bonjour","ou","est","la","mairie") => phrase =("bonjour","ou","est","la","Mairie")
+        phrase =("bonjour","ou","est","la","airie") => phrase =("bonjour","ou","est","la","Mairie")
+        phrase =("bonjour","ou","est","la","mairie","de","rennes") => phrase =("bonjour","ou","est","la","Mairie de Rennes")
+        phrase =("bonjour","ou","est","la","mairie","Rennes") => phrase =("bonjour","ou","est","la","Mairie de Rennes"")
+    */
 
     def correctMot(mot: String, motsCorrect: List[String]): String = {
         motsCorrect match {
@@ -31,7 +40,7 @@ object Correction {
             if(hammingDistance(s1,s2) <= 1){
                 return Some(s2)
             }else{
-               return None
+                return None
             }
         }else if(ll- sl == 1){
             var diff = 0
