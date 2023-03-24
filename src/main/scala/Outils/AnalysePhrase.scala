@@ -4,6 +4,8 @@ object AnalysePhrase {
 
   /** @return
     */
-  def SepMots(phrase: String): List[String] = ???
+  def SepMots(phrase: String): List[String] = {
+    phrase.split(" ").toList
+  }
 
 }
