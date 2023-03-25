@@ -1,13 +1,12 @@
 package machine
 
-package machine
 import org.junit.Test
 import org.junit.Assert._
 import Outils.CreationListMotClef._
 import DB.ListLieuxDAO
 import DB.PolitesseDAO
 
-class TestCorrection {
+class TestCreationListMotClef {
     //Objet qui donne acces a la base de donné des lieux
     val dsbLieux = ListLieuxDAO
     //Objet qui donne acces a la base de donné des politesses

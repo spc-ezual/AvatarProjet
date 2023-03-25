@@ -12,4 +12,5 @@ class TestCorrection {
       Correction.hammingDistance("a","a")
     )
   }
+  
 }
