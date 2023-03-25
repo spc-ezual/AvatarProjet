@@ -1,7 +1,7 @@
 package Outils
 
 import scala.collection.immutable
-
+class LongDiffException(message: String) extends Exception(message)
 object Correction {
     /**
       * prend en entre une list de mots a corriger et une list de mots de référance et renvoie une liste de mot corriger si cela est possible
@@ -60,7 +60,7 @@ object Correction {
     }
     def hammingDistance(s1: String, s2: String): Int = {
         if (s1.length != s2.length){
-            throw new Exception("les deux mots ont une taille differante")
+            throw new LongDiffException("Les chaînes doivent être de même longueur.")
         }
         else{
             s1.zip(s2).count{case (c1, c2) => c1.toUpper != c2.toUpper}
