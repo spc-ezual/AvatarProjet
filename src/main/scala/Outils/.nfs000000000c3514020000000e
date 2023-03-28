@@ -1,8 +1,7 @@
 package Outils
 
 import scala.collection.immutable
-import java.text.Normalizer
-class LongDiffException(message: String) extends Exception(message)
+
 object Correction {
     /**
       * prend en entre une list de mots a corriger et une list de mots de référance et renvoie une liste de mot corriger si cela est possible
@@ -13,15 +12,6 @@ object Correction {
     def correct(mots: List[String], motsCorrect: List[String]): List[String] = {
         mots.map(x => correctMot(x,motsCorrect))
     }
-    //TODO A refaire / finir
-    // L'on souhaite que correct concat en cas de nececiter 
-    /*
-    exemple : 
-        phrase =("bonjour","ou","est","la","mairie") => phrase =("bonjour","ou","est","la","Mairie")
-        phrase =("bonjour","ou","est","la","airie") => phrase =("bonjour","ou","est","la","Mairie")
-        phrase =("bonjour","ou","est","la","mairie","de","rennes") => phrase =("bonjour","ou","est","la","Mairie de Rennes")
-        phrase =("bonjour","ou","est","la","mairie","Rennes") => phrase =("bonjour","ou","est","la","Mairie de Rennes"")
-    */
 
     def correctMot(mot: String, motsCorrect: List[String]): String = {
         motsCorrect match {
@@ -41,7 +31,7 @@ object Correction {
             if(hammingDistance(s1,s2) <= 1){
                 return Some(s2)
             }else{
-                return None
+               return None
             }
         }else if(ll- sl == 1){
             var diff = 0
@@ -63,15 +53,11 @@ object Correction {
     object ExceptionMotsDifferant
 
     def hammingDistance(s1: String, s2: String): Int = {
-        val s1SAcc = Normalizer.normalize(s2, Normalizer.Form.NFD)
-        s1.replaceAll("[^\\p{ASCII}]", "")
-        val s2SAcc = Normalizer.normalize(s2, Normalizer.Form.NFD)
-        s2.replaceAll("[^\\p{ASCII}]", "")
         if (s1.length != s2.length){
-            throw new LongDiffException("Les chaînes doivent être de même longueur.")
+            throw ExceptionMotsDifferant
         }
         else{
-            s1SAcc.zip(s2SAcc).count{case (c1, c2) => c1.toUpper != c2.toUpper}
+            s1.zip(s2).count{case (c1, c2) => c1.toUpper != c2.toUpper}
         }
     }
     
