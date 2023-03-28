@@ -5,7 +5,6 @@ import Outils.Correction._
 import Outils.LongDiffException
 
 class TestCorrection {
-
   @Test
   def testHammingDistance1 {
     assertEquals(
@@ -35,15 +34,77 @@ class TestCorrection {
     )
   }
   @Test
-def testHammingDistance5 {
-  try {
-    hammingDistance("Mairie","marriee")
-    fail()
-  } catch {
-    case e: LongDiffException => assert(e.getMessage == "Les chaînes doivent être de même longueur.")
-    case _: Throwable => fail()
+  def testHammingDistance5 {
+    try {
+      hammingDistance("Mairie","marriee")
+      fail()
+    } catch {
+      case e: LongDiffException => assert(e.getMessage == "Les chaînes doivent être de même longueur.")
+      case _: Throwable => fail()
+    }
   }
-}
 
+  @Test
+  def testCompartMot1 {
+    assertEquals(
+      Some("mairie"),
+      compartMot("Màirie","mairie")
+    )
+  }
   
+  @Test
+  def testCompartMot2 {
+    assertEquals(
+      None,
+      compartMot("Màirie","mairiee")
+    )
+  }
+
+  @Test
+  def testCompartMot3 {
+    assertEquals(
+      None,
+      compartMot("","mairie")
+    )
+  }
+
+  @Test
+  def testCompartMot4 {
+    assertEquals(
+      Some("Mairie"),
+      compartMot("mAIRIE","Mairie")
+    )
+  }
+
+  @Test
+  def testCorrcteMot1 {
+    assertEquals(
+      "mairie",
+      correctMot("MAIRIE", List("mairie", "leo ma petite soeur", "a"))
+    )
+  }
+
+  @Test
+  def testCorrcteMot2 {
+    assertEquals(
+      "MAIRIE",
+      correctMot("MAIRIE", List("mairieee", "leo ma petite soeur", "a"))
+    )
+  }
+
+  @Test
+  def testCorrcteMot3 {
+    assertEquals(
+      "MAIRIE",
+      correctMot("MAIRIE", List())
+    )
+  }
+
+  @Test
+  def testCorrct1{
+    assertEquals(
+      List("bonjour","ou","est","la","Mairie"),
+      correct(List("bonjour","ou","est","la","mairie"), List("Mairie"))
+    )
+  }
 }
