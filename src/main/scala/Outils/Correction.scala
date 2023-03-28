@@ -59,9 +59,6 @@ object Correction {
         }
 
     }
-
-    object ExceptionMotsDifferant
-
     def hammingDistance(s1: String, s2: String): Int = {
         val s1SAcc = Normalizer.normalize(s2, Normalizer.Form.NFD)
         s1.replaceAll("[^\\p{ASCII}]", "")
