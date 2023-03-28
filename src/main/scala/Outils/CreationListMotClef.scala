@@ -13,8 +13,20 @@ object CreationListMotClef {
     * @return 1ere string: les politesses, List (nom,adresse)
     */
   def MatchMotClef(mots: List[String]): (String, List[(String, String)]) = {
-    val corriger = Correction.correct(Correction.correct(mots,dsbLieux.getNom()),dsbPolitesse)
-    (RecupPoli(mots),RecupLieux(mots))
+    var RepPoli=""
+    var RepNA : List[(String, String)] = List()
+    var Corri = Correction.correct(mots,dsbPolitesse)
+    RepPoli = RecupPoli(Corri)
+    for(Nele <- dsbLieux.getNom()){
+      val NMots = AnalysePhrase.SepMots(Nele)
+      Corri=Correction.correct(Corri,NMots)
+      if(AnalysePhrase.compartList(NMots,Corri)){
+        System.out.println(Nele,RecupLieux(Nele))
+        RepNA=(Nele,RecupLieux(Nele))::RepNA
+      }
+    }
+    System.out.print(RepNA.length)
+    (RepPoli,RepNA)
   }
 
 /**
@@ -36,11 +48,14 @@ object CreationListMotClef {
   /**
     * 
     *
-    * @param mots une liste de mots contenant les noms des lieux recherchés.
-    * @return Une liste de couples (String, String), où chaque couple contient le nom et l'adresse d'un lieu correspondant à un nom présent dans mots.
+    * @param mots nom du lieux recherché.
+    * @return l'adresse d'un lieu correspondant à un nom 
     */
-  def RecupLieux(mots: List[String]): List[(String, String)] = {
-    mots.flatMap(nom => ListLieuxDAO.getAdresse(nom).map(adresse => (nom, adresse)))
-  }
+  def RecupLieux(mot: String): String = {
+    dsbLieux.getAdresse(mot) match{
+      case None => ""
+      case Some(value) => value
+    } 
+    }
 
 }
