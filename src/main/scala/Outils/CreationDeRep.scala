@@ -9,13 +9,13 @@ object CreationDeRep {
       case ("", reste) =>
         var rep:List[String] = List()
         for (ele <- reste) {
-          rep = ("L'adresse de " + ele._1 + " est : " + ele._2 + ".") :: rep
+          rep = rep :+ ("L'adresse de " + ele._1 + " est : " + ele._2 + ".")
         }
         rep
       case (politesse, reste) =>
         var rep:List[String] = List(politesse)
         for (ele <- reste) {
-          rep = ("L'adresse de " + ele._1 + " est : " + ele._2 + ".") :: rep
+          rep = rep :+ ("L'adresse de " + ele._1 + " est : " + ele._2 + ".") 
         }
         rep
     }
