@@ -1,7 +1,8 @@
 package machine
 import org.junit.Test
 import org.junit.Assert._
-import Outils.Correction
+import Outils.Correction._
+import Outils.LongDiffException
 
 class TestCorrection {
 
@@ -9,16 +10,40 @@ class TestCorrection {
   def testHammingDistance1 {
     assertEquals(
       0,
-      Correction.hammingDistance("a","a")
+      hammingDistance("a","a")
     )
   }
   @Test
   def testHammingDistance2 {
-    try{
-        Correction.hammingDistance("aaaa","a");
-        fail();
-    }catch{
-      
-    }
+    assertEquals(
+      0,
+      hammingDistance("Màirie","mairie")
+    )
   }
+  @Test
+  def testHammingDistance3 {
+    assertEquals(
+      1,
+      hammingDistance("Mairie","maire")
+    )
+  }
+  @Test
+  def testHammingDistance4 {
+    assertEquals(
+      1,
+      hammingDistance("Mairie","marrie")
+    )
+  }
+  @Test
+def testHammingDistance5 {
+  try {
+    hammingDistance("Mairie","marriee")
+    fail()
+  } catch {
+    case e: LongDiffException => assert(e.getMessage == "Les chaînes doivent être de même longueur.")
+    case _: Throwable => fail()
+  }
+}
+
+  
 }

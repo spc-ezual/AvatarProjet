@@ -21,7 +21,7 @@ object  ListLieuxDAO {
     * @param adresse l'adresse correspondante au nom
     */
     def ajouterDonnee(nom: String, adresse: String): Unit = {
-        val statement = connection.prepareStatement("INSERT INTO ListLieux (nom, adresse) VALUES (?, ?)")
+        val statement = connection.prepareStatement("INSERT INTO Lieux (nom, adresse) VALUES (?, ?)")
         statement.setString(1, nom)
         statement.setString(2, adresse)
         statement.executeUpdate()
@@ -33,7 +33,7 @@ object  ListLieuxDAO {
      */
     def deleteByNom(nom: String): Unit = {
             val stmt: Statement = connection.createStatement()
-            val query: String = s"DELETE FROM ListLieux WHERE nom = '$nom'"
+            val query: String = s"DELETE FROM Lieux WHERE nom = '$nom'"
             stmt.executeUpdate(query)
             stmt.close()
     }
@@ -44,7 +44,7 @@ object  ListLieuxDAO {
      */
     def getNom(): List[String] = {
         val statement = connection.createStatement()
-        val resultSet = statement.executeQuery("SELECT nom FROM ListLieux")
+        val resultSet = statement.executeQuery("SELECT nom FROM Lieux")
         var noms: List[String] = List()
         while (resultSet.next()) {
         noms = resultSet.getString("nom") :: noms
@@ -59,7 +59,7 @@ object  ListLieuxDAO {
      * @return une Option[String] contenant la réponse si elle existe, None sinon
      */
     def getAdresse(nom: String): Option[String] = {
-        val statement = connection.prepareStatement("SELECT adresse FROM ListLieux WHERE nom = ?")
+        val statement = connection.prepareStatement("SELECT adresse FROM Lieux WHERE nom = ?")
         statement.setString(1, nom)
         val resultSet = statement.executeQuery()
         val adresseOpt = if (resultSet.next()) Some(resultSet.getString("adresse")) else None

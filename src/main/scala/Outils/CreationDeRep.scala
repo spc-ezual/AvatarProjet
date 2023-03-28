@@ -13,9 +13,9 @@ object CreationDeRep {
         }
         rep
       case (politesse, reste) =>
-        var rep = politesse + ", "
+        var rep = politesse+" "
         for (ele <- reste) {
-          rep += (",'adresse de " + ele._1 + " est : " + ele._2 + "./n")
+          rep += ("L'adresse de " + ele._1 + " est : " + ele._2 + ". ")
         }
         rep
     }
