@@ -14,17 +14,18 @@ object CreationListMotClef {
     */
   def MatchMotClef(mots: List[String]): (String, List[(String, String)]) = {
     var RepPoli=""
-    var RepNA =Nil
+    var RepNA : List[(String, String)] = List()
     var Corri = Correction.correct(mots,dsbPolitesse)
     RepPoli = RecupPoli(Corri)
     for(Nele <- dsbLieux.getNom()){
       val NMots = AnalysePhrase.SepMots(Nele)
       Corri=Correction.correct(Corri,NMots)
       if(AnalysePhrase.compartList(NMots,Corri)){
-        RepNA.appended((Nele,RecupLieux(Nele)))
+        System.out.println(Nele,RecupLieux(Nele))
+        RepNA=(Nele,RecupLieux(Nele))::RepNA
       }
     }
-    
+    System.out.print(RepNA.length)
     (RepPoli,RepNA)
   }
 
