@@ -67,4 +67,14 @@ object  ListLieuxDAO {
         statement.close()
         adresseOpt
     }
+
+    def getNomReel(nom: String): Option[String] = {
+        val statement = connection.prepareStatement("SELECT nomReel FROM Lieux WHERE nom = ?")
+        statement.setString(1, nom)
+        val resultSet = statement.executeQuery()
+        val adresseOpt = if (resultSet.next()) Some(resultSet.getString("nomReel")) else None
+        resultSet.close()
+        statement.close()
+        adresseOpt
+    }
 }

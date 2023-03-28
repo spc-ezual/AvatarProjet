@@ -12,16 +12,16 @@ object CreationListMotClef {
     * @param mots Phrase couper a chaque mots
     * @return 1ere string: les politesses, List (nom,adresse)
     */
-  def MatchMotClef(mots: List[String]): (String, List[(String, String)]) = {
-    var RepPoli=""
+  def MatchMotClef(mots: List[String]): (Int, List[(String, String)]) = {
     var RepNA : List[(String, String)] = List()
     var Corri = Correction.correct(mots,dsbPolitesse)
-    RepPoli = RecupPoli(Corri)
+    val RepPoli = RecupPoli(Corri)
     for(Nele <- dsbLieux.getNom()){
       val NMots = AnalysePhrase.SepMots(Nele)
       Corri=Correction.correct(Corri,NMots)
       if(AnalysePhrase.compartList(NMots,Corri)){
-        RepNA=(Nele,RecupLieux(Nele))::RepNA
+        Corri= AnalysePhrase.removeWords(Corri,NMots)
+        RepNA=(RecupNomReel(Nele),RecupLieux(Nele))::RepNA
       }
     }
     (RepPoli,RepNA)
@@ -33,11 +33,11 @@ object CreationListMotClef {
   * @param mots une liste de mots clés permettant d'identifier la politesse à rechercher.
   * @return une chaîne de caractères contenant toutes les salutations trouvées dans la liste dsbPolitesse, séparées par un espace.
   */
-  def RecupPoli(mots: List[String]): String = {
-    var rep = ""
+  def RecupPoli(mots: List[String]): Int = {
+    var rep = 0
     for (mot <- mots) {
       if (dsbPolitesse.contains(mot)) {
-        rep += "Bonjour"
+        rep+=1
       }
     }
     rep
@@ -56,4 +56,10 @@ object CreationListMotClef {
     } 
     }
 
+    def RecupNomReel(mot: String): String = {
+    dsbLieux.getNomReel(mot) match{
+      case None => ""
+      case Some(value) => value
+    } 
+    }
 }

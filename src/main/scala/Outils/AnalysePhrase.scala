@@ -7,17 +7,7 @@ object AnalysePhrase {
   /** @return
     */
   def SepMots(phrase: String): List[String] = {
-  val mots = phrase.split("[ ,./:!?<>();_+-={}&#|]+")
-  mots.flatMap { mot =>
-    mot match {
-      case motAvecApostrophe if motAvecApostrophe.endsWith("'") =>
-        List(motAvecApostrophe.dropRight(1), "'")
-      case motAvecApostrophe if motAvecApostrophe.contains("'") =>
-        val (avantApostrophe, apresApostrophe) = motAvecApostrophe.splitAt(motAvecApostrophe.indexOf("'")+1)
-        List(avantApostrophe, apresApostrophe)
-      case _ => List(mot)
-    }
-  }.toList
+  phrase.split("[ ,./:!?<>();_+-={}&#|']+").toList
 }
 
 def compartList(lMotsBdd:List[String], lMotsRequet:List[String]): Boolean ={
@@ -35,5 +25,7 @@ def areEqualIgnoreCaseAndAccents(char1: Char, char2: Char): Boolean = {
             str1.substring(0, 1).toLowerCase == str2.substring(0, 1).toLowerCase
         }
 
-
+def removeWords(mots: List[String], motsSupp: List[String]): List[String] = {
+  mots.filterNot(motsSupp.contains)
+}
 }
