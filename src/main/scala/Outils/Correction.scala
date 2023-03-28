@@ -7,7 +7,7 @@ object Correction {
       * prend en entre une list de mots a corriger et une list de mots de référance et renvoie une liste de mot corriger si cela est possible
       * @param mots une list de mot a corriger
       * @param motsCorrect une liste de mots de référance
-      * @return
+      * @return la list de mot corriger
       */
     def correct(mots: List[String], motsCorrect: List[String]): List[String] = {
         mots.map(x => correctMot(x,motsCorrect))
@@ -22,6 +22,12 @@ object Correction {
         phrase =("bonjour","ou","est","la","mairie","Rennes") => phrase =("bonjour","ou","est","la","Mairie de Rennes"")
     */
 
+    /**
+      * prend en entre un mot a corriger et une list de mots de référance et renvoie une liste de mot corriger si cela est possible
+      * @param mot un string a corrige
+      * @param motsCorrect une liste de mots de référance
+      * @return le mot corriger si il y en a un, sinon mot
+      */
     def correctMot(mot: String, motsCorrect: List[String]): String = {
         motsCorrect match {
             case head :: next => compartMot(mot,head) match {
@@ -55,14 +61,6 @@ object Correction {
             return Some(s2)
         }else{
             return None
-        }
-
-    }
-
-    def compartList(lMotsBdd:List[String], lMotsRequet:List[String]): Boolean ={
-        lMotsBdd match {
-            case head :: next => lMotsRequet.contains(head)&&compartList(next,lMotsRequet)
-            case Nil => true
         }
     }
 
