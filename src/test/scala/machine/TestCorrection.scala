@@ -7,7 +7,7 @@ import Outils.LongDiffException
 class TestCorrection {
 
   @Test
-  def testHammingDistance {
+  def testHammingDistance1 {
     assertEquals(
       0,
       hammingDistance("a","a")

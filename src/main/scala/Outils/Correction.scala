@@ -58,6 +58,9 @@ object Correction {
         }
 
     }
+
+    object ExceptionMotsDifferant
+
     def hammingDistance(s1: String, s2: String): Int = {
         if (s1.length != s2.length){
             throw new LongDiffException("Les chaînes doivent être de même longueur.")
