@@ -57,10 +57,10 @@ object Correction {
         } else if (ll - sl == 1) {
             var diff = 0
             for (x <- 0 until sl) {
-                if ( !AnalysePhrase.areEqualIgnoreCaseAndAccents(shorter.charAt(x),longer.charAt(x + diff))) {
+                if ( !AnalysePhrase.areEqualIgnoreCaseAndAccents(shorter.charAt(x),longer.charAt(x+ diff ))) {
                     diff += 1
                 }
-                if (diff > 1) {
+                if (diff > 1 || !AnalysePhrase.areEqualIgnoreCaseAndAccents(shorter.charAt(x),longer.charAt(x + diff))) {
                     return None
                 }
             }
