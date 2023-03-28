@@ -23,8 +23,8 @@ object Correction {
     */
 
     /**
-      * prend en entre un mot a corriger et une list de mots de référance et renvoie une liste de mot corriger si cela est possible
-      * @param mot un string a corrige
+      * prend en entre un mot a corriger et une list de mots de référance et renvoie un mot corriger si cela est possible
+      * @param mot un string non vide a corrige
       * @param motsCorrect une liste de mots de référance
       * @return le mot corriger si il y en a un, sinon mot
       */
@@ -38,6 +38,12 @@ object Correction {
         }
     }
 
+    /**
+      * prend en entre un mot a corriger et un mot correct si la distance de hamming est egale a 0 ou a 1 renvoie le mot corriger, sinon ne renvoie rien
+      * @param mot un string a corrige
+      * @param mot Correct 
+      * @return le mot corriger ou rien
+      */
     def compartMot(s1: String, s2: String): Option[String] = {
         val (shorter, longer) = if (s1.length() < s2.length()) (s1, s2) else (s2, s1)
         val sl = shorter.length()
@@ -64,6 +70,12 @@ object Correction {
         }
     }
 
+    /**
+      * prend en entrer 2 de même longueur mot et calcule la distance de hamming sans prendre compte des majuscule et des accent
+      * @param s1 un string
+      * @param s2 un string
+      * @return le mot corriger ou rien
+      */
     def hammingDistance(s1: String, s2: String): Int = {
         if (s1.length != s2.length){
             throw new LongDiffException("Les chaînes doivent être de même longueur.")
