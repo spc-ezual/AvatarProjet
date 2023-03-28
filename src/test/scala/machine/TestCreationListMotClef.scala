@@ -4,17 +4,15 @@ import org.junit.Test
 import org.junit.Assert._
 import Outils.CreationListMotClef._
 import DB.ListLieuxDAO
-import DB.PolitesseDAO
 
 class TestCreationListMotClef {
     //Objet qui donne acces a la base de donné des lieux
     val dsbLieux = ListLieuxDAO
     //Objet qui donne acces a la base de donné des politesses
-    val dsbPolitesse = PolitesseDAO
     @Test
     def testRecupPoli_1ele {
     assertEquals(
-        dsbPolitesse.getReponse("Bonjour").get,RecupPoli(List("Bonjour"))
+        "Bonjour ",RecupPoli(List("Bonjour"))
         )
     }
     @Test
@@ -38,19 +36,19 @@ class TestCreationListMotClef {
     @Test
     def testRecupPoli_nele1 {
     assertEquals(
-        dsbPolitesse.getReponse("Bonjour").get,RecupPoli(List("Bonjour","salsa"))
+        "Bonjour ",RecupPoli(List("Bonjour","salsa"))
         )
     }
     @Test
     def testRecupPoli_nele2 {
     assertEquals(
-        dsbPolitesse.getReponse("Bonjour").get,RecupPoli(List("bingo","Bonjour","nonnnn"))
+        "Bonjour ",RecupPoli(List("bingo","Bonjour","nonnnn"))
         )
     }
     @Test
     def testRecupPoli_nele3 {
     assertEquals(
-        dsbPolitesse.getReponse("Bonjour").get+" "+dsbPolitesse.getReponse("Bonjour").get,RecupPoli(List("Bonjour","bonsssssoir","Bonjour"))
+        "Bonjour Bonjour ",RecupPoli(List("Bonjour","bonsssssoir","Bonjour"))
         )
     }
     
