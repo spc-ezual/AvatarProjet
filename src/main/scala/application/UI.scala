@@ -77,6 +77,9 @@ class UI extends MainFrame {
         contents += new ScrollPane(chatArea)
         contents += new FlowPanel(inputField, sendButton)
     }
+    
+    def reinit():Unit={
         
+    }
         
 }

@@ -9,9 +9,11 @@ object MachineImpl extends MachineDialogue {
   // Pour la partie test par le client
   def reinit(): Unit = {}
   def test(l: List[String]): List[String] = {
-    var rep = Nil
+    var rep = List() : List[String]
     for( i <- l){
-       rep :: ask(i)
+      for(j <- ask(i)){
+        rep = rep ++ List(j)
+      }
     }
     rep
   }

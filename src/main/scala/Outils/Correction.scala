@@ -48,27 +48,28 @@ object Correction {
         val (shorter, longer) = if (s1.length() < s2.length()) (s1, s2) else (s2, s1)
         val sl = shorter.length()
         val ll = longer.length()
-        if (sl == ll){
-            if(hammingDistance(s1,s2) <= 1){
-                return Some(s2)
-            }else{
-                return None
+        if (sl == ll) {
+            if (hammingDistance(s1, s2) <= 1) {
+            Some(s2)
+            } else {
+            None
             }
-        }else if(ll- sl == 1){
+        } else if (ll - sl == 1) {
             var diff = 0
-            for(x <- 0 until(ll)){
-                if(shorter.charAt(x + diff) != longer.charAt(x)){
+            for (x <- 0 until sl) {
+                if ( !AnalysePhrase.areEqualIgnoreCaseAndAccents(shorter.charAt(x),longer.charAt(x + diff))) {
                     diff += 1
                 }
-                if(diff > 1){
+                if (diff > 1) {
                     return None
                 }
             }
-            return Some(s2)
-        }else{
-            return None
+            Some(s2)
+        } else {
+            None
         }
-    }
+}
+
 
     /**
       * prend en entrer 2 de même longueur mot et calcule la distance de hamming sans prendre compte des majuscule et des accent

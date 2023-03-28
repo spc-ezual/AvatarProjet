@@ -21,11 +21,9 @@ object CreationListMotClef {
       val NMots = AnalysePhrase.SepMots(Nele)
       Corri=Correction.correct(Corri,NMots)
       if(AnalysePhrase.compartList(NMots,Corri)){
-        System.out.println(Nele,RecupLieux(Nele))
         RepNA=(Nele,RecupLieux(Nele))::RepNA
       }
     }
-    System.out.print(RepNA.length)
     (RepPoli,RepNA)
   }
 
@@ -39,7 +37,7 @@ object CreationListMotClef {
     var rep = ""
     for (mot <- mots) {
       if (dsbPolitesse.contains(mot)) {
-        rep += "Bonjour "
+        rep += "Bonjour"
       }
     }
     rep
