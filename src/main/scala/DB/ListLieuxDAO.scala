@@ -47,7 +47,7 @@ object  ListLieuxDAO {
         val resultSet = statement.executeQuery("SELECT nom FROM Lieux")
         var noms: List[String] = List()
         while (resultSet.next()) {
-        noms = resultSet.getString("nom") :: noms
+            noms = resultSet.getString("nom") :: noms
         }
         resultSet.close()
         statement.close()
