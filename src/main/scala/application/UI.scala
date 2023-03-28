@@ -20,12 +20,18 @@ class UI extends MainFrame {
     val chatArea= new BoxPanel(Orientation.Vertical)
     val inputField = new TextField{columns=40}
     val sendButton = new Button{text = "Send"}
+    val resetButton = new Button{text = "New Conversation"}
     val avatarIcon= new ImageIcon("Image/Avatar.png")
     val userIcon = new ImageIcon("Image/User.png")
     
-    listenTo(sendButton, inputField.keys)
+    listenTo(sendButton, inputField.keys,resetButton)
     
     reactions += {
+        case ButtonClicked(`resetButton`) => 
+            chatArea.contents.clear()
+            inputField.text = ""
+            chatArea.revalidate()
+            chatArea.repaint()
     
         case ButtonClicked(`sendButton`) =>
             
@@ -40,7 +46,7 @@ class UI extends MainFrame {
                 // Create avatar message
                 val avatarMessage = new FlowPanel {
                     contents += new Label {icon = avatarIcon}
-                    contents += new Label {text = "Avatar: " + Reponse(message)}
+                    contents += new Label {text = "Avatar: " + formatReponse(Reponse(message))}
                 }
                 // Add messages to chat area
                 chatArea.contents += userMessage
@@ -63,7 +69,7 @@ class UI extends MainFrame {
                 // Create avatar message
                 val avatarMessage = new FlowPanel {
                     contents += new Label {icon = avatarIcon}
-                    contents += new Label {text = "Avatar: " + Reponse(message)}
+                    contents += new Label {text = "Avatar: " + formatReponse(Reponse(message))}
                 }
                 // Add messages to chat area
                 chatArea.contents += userMessage
@@ -75,11 +81,7 @@ class UI extends MainFrame {
         }
         contents= new  BoxPanel(Orientation.Vertical){
         contents += new ScrollPane(chatArea)
-        contents += new FlowPanel(inputField, sendButton)
-    }
-    
-    def reinit():Unit={
-        
+        contents += new FlowPanel(inputField, sendButton,resetButton)
     }
         
 }

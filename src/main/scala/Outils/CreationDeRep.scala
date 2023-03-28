@@ -1,6 +1,7 @@
 package Outils
 
 object CreationDeRep {
+
   def Reponse(message: String): List[String] = {
     val a = CreationListMotClef.MatchMotClef(AnalysePhrase.SepMots(message))
     var rep=List() : List[String]
@@ -8,7 +9,7 @@ object CreationDeRep {
       rep= rep :+("Bonjour")
     }
     if(a._2.isEmpty){
-      rep = rep:+("La demande entrée est invalide.")
+      rep = rep:+("Je ne comprends pas votre demande")
     }
     else{
       for((nom,adresse) <- a._2 ){
@@ -17,4 +18,8 @@ object CreationDeRep {
     }
     rep
   }
+  def formatReponse(reponse: List[String]): String = {
+    reponse.map(_ + ".").mkString(" ")
+  }
+
 }
