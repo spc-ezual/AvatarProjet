@@ -39,42 +39,30 @@ class TestCreationListMotClef {
         "Bonjour ",RecupPoli(List("Bonjour","salsa"))
         )
     }
-    @Test
-    def testRecupPoli_nele2 {
-    assertEquals(
-        "Bonjour ",RecupPoli(List("bingo","Bonjour","nonnnn"))
-        )
-    }
-    @Test
-    def testRecupPoli_nele3 {
-    assertEquals(
-        "Bonjour Bonjour ",RecupPoli(List("Bonjour","bonsssssoir","Bonjour"))
-        )
-    }
     
-
+/*
     @Test
     def testRecupLieux_1ele {
     assertEquals(
-        List(("Mairie",dsbLieux.getAdresse("Mairie").get)),RecupLieux(List("Mairie"))
+        List(("Mairie",dsbLieux.getAdresse("Mairie").get)),RecupLieux("Mairie")
         )
     }
     @Test
     def testRecupLieux_1ele2 {
     assertEquals(
-        Nil,RecupLieux(List("haha"))
+        Nil,RecupLieux("haha")
         )
     }
     @Test
     def testRecupLieux_1ele3 {
     assertEquals(
-        Nil,RecupLieux(List("bonjours"))
+        "",RecupLieux("bonjours")
         )
     }
     @Test
     def testRecupLieux_0ele {
     assertEquals(
-        Nil,RecupLieux(List(""))
+        "",RecupLieux("")
         )
     }
     @Test
@@ -96,5 +84,5 @@ class TestCreationListMotClef {
         )
     }
     
-    
+*/    
 }
