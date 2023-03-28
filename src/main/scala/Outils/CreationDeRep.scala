@@ -1,21 +1,21 @@
 package Outils
 
 object CreationDeRep {
-  def Reponse(message: String): String = {
+  def Reponse(message: String): List[String] = {
     val a = CreationListMotClef.MatchMotClef(AnalysePhrase.SepMots(message))
     a match {
-      case ("", Nil)        => "La demande entrée est invalide."
-      case (politesse, Nil) => politesse + ", la demande entrée est invalide."
+      case ("", Nil)        => List("La demande entrée est invalide.")
+      case (politesse, Nil) => List(politesse, "la demande entrée est invalide.")
       case ("", reste) =>
-        var rep = ""
+        var rep:List[String] = List()
         for (ele <- reste) {
-          rep += ("L'adresse de " + ele._1 + " est : " + ele._2 + "./n")
+          rep = ("L'adresse de " + ele._1 + " est : " + ele._2 + ".") :: rep
         }
         rep
       case (politesse, reste) =>
-        var rep = politesse+" "
+        var rep:List[String] = List(politesse)
         for (ele <- reste) {
-          rep += ("L'adresse de " + ele._1 + " est : " + ele._2 + ". ")
+          rep = ("L'adresse de " + ele._1 + " est : " + ele._2 + ".") :: rep
         }
         rep
     }
