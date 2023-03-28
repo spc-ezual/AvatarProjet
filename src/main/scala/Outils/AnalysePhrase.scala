@@ -5,7 +5,7 @@ object AnalysePhrase {
   /** @return
     */
   def SepMots(phrase: String): List[String] = {
-  val mots = phrase.split("[ ,]+")
+  val mots = phrase.split("[ ,./:!?<>();_+-={}&#|]+")
   mots.flatMap { mot =>
     mot match {
       case motAvecApostrophe if motAvecApostrophe.endsWith("'") =>
