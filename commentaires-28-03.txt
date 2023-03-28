@@ -1,0 +1,18 @@
+ListLieuxDAO :
+    Attention à l'indentation dans le while
+PolitesseDAO :
+    Idem
+
+Attention à l'indentation partout (notamment AnalysePhrase)
+
+AnalysePhrase :
+    SepMot : vous avez bcp plus simple pour gérer les apostrophes
+    areEqualIgnoreCaseAndAccents :
+        C'est tordu.
+        Pourquoi normaliser caractères par caractères ? 
+        Pourquoi ne le faire que lors d'un test d'égalité ?
+
+Correction :
+    compart ? = compare ?
+
+Bon ça avance mais il faudrait que tout le monde travail entre les séances.
