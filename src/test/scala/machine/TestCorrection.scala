@@ -24,7 +24,7 @@ class TestCorrection {
   def testHammingDistance3 {
     assertEquals(
       1,
-      hammingDistance("Mairie","maire")
+      hammingDistance("Mairie","mairee")
     )
   }
   @Test

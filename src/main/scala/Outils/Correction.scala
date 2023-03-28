@@ -1,7 +1,6 @@
 package Outils
 
 import scala.collection.immutable
-import java.text.Normalizer
 class LongDiffException(message: String) extends Exception(message)
 object Correction {
     /**
@@ -60,16 +59,14 @@ object Correction {
 
     }
     def hammingDistance(s1: String, s2: String): Int = {
-        val s1SAcc = Normalizer.normalize(s2, Normalizer.Form.NFD)
-        s1.replaceAll("[^\\p{ASCII}]", "")
-        val s2SAcc = Normalizer.normalize(s2, Normalizer.Form.NFD)
-        s2.replaceAll("[^\\p{ASCII}]", "")
         if (s1.length != s2.length){
             throw new LongDiffException("Les chaînes doivent être de même longueur.")
         }
         else{
-            s1SAcc.zip(s2SAcc).count{case (c1, c2) => c1.toUpper != c2.toUpper}
+            s1.zip(s2).count{case (c1, c2) => !AnalysePhrase.areEqualIgnoreCaseAndAccents(c1,c2) }
         }
     }
+        
+    
     
 }
