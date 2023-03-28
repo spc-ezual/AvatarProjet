@@ -101,10 +101,18 @@ class TestCorrection {
   }
 
   @Test
-  def testCorrct1{
+  def testCorrcte1{
     assertEquals(
       List("bonjour","ou","est","la","Mairie"),
       correct(List("bonjour","ou","est","la","mairie"), List("Mairie"))
+    )
+  }
+
+  @Test
+  def testCorrcte2{
+    assertEquals(
+      List("bonjour","ou","est","la","Maarie"),
+      correct(List("bonjour","ou","est","la","mairie"), List("Maarie"))
     )
   }
 }
