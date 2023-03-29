@@ -154,7 +154,22 @@ object  PolitesseDAO {
         adresseOpt
     }
 }
-
+---------------------------------------------------------------------------------------------------------------------------------------
+CREATE TABLE langues (
+    id INT PRIMARY KEY,
+    nom VARCHAR(50),
+    politesse TEXT[],
+    recherche TEXT[],
+    vrai VARCHAR(50),
+    faux VARCHAR(50),
+    reponse_unique TEXT[],
+    inconnu VARCHAR(50),
+    demande_lang VARCHAR(50),
+    demande VARCHAR(50),
+    choix_multiple TEXT[],
+    demande_choix VARCHAR(50),
+    mots_site TEXT[]
+);
 
 ------------------------------------------------------------------------------------------------------------------------------
 

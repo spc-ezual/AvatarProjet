@@ -1,0 +1,58 @@
+
+@startuml Avatar
+
+interface CreationListMotClef{
+    MatchMotClef(Mots : List[String], BDListLieux, BDPolitesse): (String,List[(String, String)])
+}
+
+interface AnalysePhrase{
+    SepMots(s:String): List[String]
+}
+interface CreationDeRep{
+    Reponse(message: String): String
+}
+interface Correction{
+    Correct(Mots : List[String], BDListLieux, BDPolitesse): List[String]
+}
+
+interface Interface{
+    ask(s: String): List[String]
+    
+}
+
+Interface <-> CreationDeRep
+AnalysePhrase --> CreationDeRep
+Correction --|> CreationListMotClef
+
+
+
+
+class BDListLieux <<(B,Orange)>>{
+    nom 
+    adresse
+    nomReel
+}
+
+class BDLang <<(B,Orange)>>{
+    id = int primary key
+    Nom : String
+    Politesse : String
+    Recherche : String
+    True : String
+    False : String
+    ReponseUnique : String
+    Inconnue : String
+    DemandeLang : String
+    Demande : String
+    MultipleChoix : String
+    DemandeChoix : String
+    MotsSite : String
+
+}
+CreationListMotClef --> CreationDeRep
+BDListLieux --|> CreationListMotClef
+BDLang --|> CreationListMotClef
+
+EntréUtilisateur --|> Interface
+
+@enduml
