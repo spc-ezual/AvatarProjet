@@ -1,0 +1,33 @@
+<!ELEMENT opendata (request, answer)>
+<!ELEMENT request (#PCDATA)>
+<!ELEMENT answer (status, data)>
+<!ELEMENT status EMPTY>
+<!ATTLIST status
+  code CDATA #REQUIRED
+  message CDATA #REQUIRED>
+<!ELEMENT data (organization*)>
+<!ELEMENT organization (id,acronym?, name, description?, email?, web?, schedule?, addresses, theme+, receptiontype?)>
+<!ELEMENT id (#PCDATA)>
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT web (#PCDATA)>
+<!ELEMENT schedule (#PCDATA)>
+<!ELEMENT addresses (address)>
+<!ELEMENT address (street, zipcode, pobox?, city?, district?, phone*, fax?, latitude?, longitude?, accessibility?)>
+<!ELEMENT street (number?, extension?, building?, name?)>
+<!ELEMENT number (#PCDATA)>
+<!ELEMENT extension (#PCDATA)>
+<!ELEMENT building (#PCDATA)>
+<!ELEMENT zipcode (#PCDATA)>
+<!ELEMENT pobox (#PCDATA)>
+<!ELEMENT city (#PCDATA)>
+<!ELEMENT district (#PCDATA)>
+<!ELEMENT phone (#PCDATA)>
+<!ELEMENT fax (#PCDATA)>
+<!ELEMENT latitude (#PCDATA)>
+<!ELEMENT longitude (#PCDATA)>
+<!ELEMENT accessibility (#PCDATA)>
+<!ELEMENT theme (#PCDATA)>
+<!ELEMENT receptiontype(#PCDATA)>
+<!ELEMENT acronym (#PCDATA)>

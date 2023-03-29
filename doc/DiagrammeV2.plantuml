@@ -49,10 +49,39 @@ class BDLang <<(B,Orange)>>{
     MotsSite : String
 
 }
+class BDOrganisation<<(B,Orange)>>{
+    id
+    acronym
+    name
+    description
+    minitel
+    email
+    information
+    web
+    schedule
+    adresseId
+    theme
+}
+class BDDAdresses<<(B,Orange)>>{
+    idOrga
+    number
+    building
+    name
+    zicode
+    pobox
+    city
+    district
+    phone
+    fax
+    latitude
+    longitude
+    accessibility
+}
 CreationListMotClef --> CreationDeRep
 BDListLieux --|> CreationListMotClef
 BDLang --|> CreationListMotClef
 
 EntréUtilisateur --|> Interface
+
 
 @enduml

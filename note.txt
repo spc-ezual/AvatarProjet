@@ -171,6 +171,41 @@ CREATE TABLE langues (
     mots_site TEXT[]
 );
 
+
+CREATE TABLE organizations (
+  id VARCHAR(50) PRIMARY KEY,
+  acronym VARCHAR(50),
+  name VARCHAR(255) NOT NULL,
+  description TEXT,
+  email VARCHAR(255),
+  web VARCHAR(255),
+  schedule TEXT,
+  theme VARCHAR(255) NOT NULL,
+  receptiontype VARCHAR(255),
+  latitude VARCHAR(50),
+  longitude VARCHAR(50),
+  accessibility TEXT
+);
+
+CREATE TABLE addresses (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  organization_id VARCHAR(50) NOT NULL,
+  street_number VARCHAR(50),
+  street_extension VARCHAR(50),
+  building VARCHAR(50),
+  street_name VARCHAR(255) ,
+  zipcode VARCHAR(50) NOT NULL,
+  pobox VARCHAR(50),
+  city VARCHAR(255),
+  district VARCHAR(255),
+  phone VARCHAR(50),
+  fax VARCHAR(50),
+  latitude VARCHAR(50),
+  longitude VARCHAR(50),
+  accessibility TEXT,
+  FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE
+);
+
 ------------------------------------------------------------------------------------------------------------------------------
 
 Test 1 ----------------------------------------------------------------------------------------------------------------------------------------
