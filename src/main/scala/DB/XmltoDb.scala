@@ -25,8 +25,10 @@ object XmlToSql {
     val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 
     System.out.println("Connecter au fichier db")
-    connection.createStatement().execute("DROP TABLE organizations")
+    connection.createStatement().execute("DROP TABLE IF EXISTS organizations;")
     connection.createStatement().execute("CREATE TABLE organizations (id VARCHAR(50) PRIMARY KEY,acronym VARCHAR(50),name VARCHAR(255) NOT NULL,description TEXT,email VARCHAR(255),web VARCHAR(255),schedule TEXT,theme VARCHAR(255) NOT NULL,receptiontype VARCHAR(255));")
+    connection.createStatement().execute("DROP TABLE IF EXISTS addresses;")
+    connection.createStatement().execute("CREATE TABLE addresses (id INTEGER PRIMARY KEY, organization_id VARCHAR(50) NOT NULL, street_number VARCHAR(50), street_extension VARCHAR(50), building VARCHAR(50), street_name VARCHAR(255), zipcode VARCHAR(50) NOT NULL, pobox VARCHAR(50), city VARCHAR(255), district VARCHAR(255), phone VARCHAR(50), fax VARCHAR(50), latitude VARCHAR(50), longitude VARCHAR(50), accessibility TEXT, FOREIGN KEY (organization_id) REFERENCES organizations(id) ON DELETE CASCADE);")
     try {
 
       // Iterate over the organizations
@@ -43,13 +45,13 @@ object XmlToSql {
         val receptiontype = (org \ "receptiontype").text
         val theme = (org \ "theme").map(_.text)
         
-    System.out.println("Fin recup orga")
+    System.out.println("Fin recup orgaé")
 
         // Insert the organization into the database
         val orgInsert = s"INSERT INTO organizations (id, acronym, name, description, email, web, schedule, theme, receptiontype) " +
-          s"VALUES ('$id', '$acronym', '$name', '$description', '$email', '$web', '$schedule', '${theme.mkString(",")}', '$receptiontype')"
+          s"VALUES ('${id}', '${acronym.replace("'"," ")}', '${name.replace("'"," ")}', '${description.replace("'"," ")}', '${email.replace("'"," ")}', '${web}', '${schedule.replace("'"," ")}', '${theme.mkString(",")}', '${receptiontype}')"
         val orgStatement = connection.createStatement()
-        System.out.print(orgInsert)
+        System.out.println(orgInsert)
         orgStatement.executeUpdate(orgInsert)
 
     System.out.println("fin insert orga")
@@ -74,8 +76,9 @@ object XmlToSql {
     System.out.println("fin recup add")
           // Insert the address into the database
           val addrInsert = s"INSERT INTO addresses (organization_id, street_number, street_extension, building, street_name, zipcode, pobox, city, district, phone, fax, latitude, longitude, accessibility) " +
-            s"VALUES ('$id', '$streetNumber', '$streetExtension', '$building', '$streetName', '$zipcode', '$pobox', '$city', '$district', '${phone.mkString(",")}', '$fax', '$latitude', '$longitude', '$accessibility')"
+            s"VALUES ('$id', '$streetNumber', '${streetExtension.replace("'"," ")}', '${building.replace("'"," ")}', '${streetName.replace("'"," ")}', '$zipcode', '$pobox', '${city.replace("'"," ")}', '${district.replace("'"," ")}', '${phone.mkString(",")}', '$fax', '$latitude', '$longitude', '$accessibility')"
           val addrStatement = connection.createStatement()
+          System.out.println(addrInsert)
           addrStatement.executeUpdate(addrInsert)
 
     System.out.println("fin insert add")
@@ -88,5 +91,5 @@ object XmlToSql {
       connection.close()
     }
   }
-
+ 
 }
