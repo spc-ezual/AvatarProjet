@@ -8,13 +8,14 @@ import scala.xml.{Elem, Node, XML}
 
 
 object XmlToSql {
-  
+  /*
+
   def main(args: Array[String]): Unit = {
     // Parse the XML file
     val xmlFile = "BaseDeDonnees/vAr.xml"
     val xmlData = XML.loadFile(xmlFile)
 
-    System.out.println("Connecter au fichier xml")
+    //System.out.println("Connecter au fichier xml")
     // Connect to the database
     val dbFilePath = "BaseDeDonnees/DataLieuxXML.db"
     // Vérification que le fichier existe
@@ -24,7 +25,7 @@ object XmlToSql {
 
     val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 
-    System.out.println("Connecter au fichier db")
+    //System.out.println("Connecter au fichier db")
     connection.createStatement().execute("DROP TABLE IF EXISTS organizations;")
     connection.createStatement().execute("CREATE TABLE organizations (id VARCHAR(50) PRIMARY KEY,acronym VARCHAR(50),name VARCHAR(255) NOT NULL,description TEXT,email VARCHAR(255),web VARCHAR(255),schedule TEXT,theme VARCHAR(255) NOT NULL,receptiontype VARCHAR(255));")
     connection.createStatement().execute("DROP TABLE IF EXISTS addresses;")
@@ -45,16 +46,16 @@ object XmlToSql {
         val receptiontype = (org \ "receptiontype").text
         val theme = (org \ "theme").map(_.text)
         
-    System.out.println("Fin recup orgaé")
+    //System.out.println("Fin recup orgaé")
 
         // Insert the organization into the database
         val orgInsert = s"INSERT INTO organizations (id, acronym, name, description, email, web, schedule, theme, receptiontype) " +
-          s"VALUES ('${id}', '${acronym.replace("'"," ")}', '${name.replace("'"," ")}', '${description.replace("'"," ")}', '${email.replace("'"," ")}', '${web}', '${schedule.replace("'"," ")}', '${theme.mkString(",")}', '${receptiontype}')"
+          s"VALUES ('${id}', '${acronym.replace("'","''")}', '${name.replace("'","''")}', '${description.replace("'","''")}', '${email.replace("'","''")}', '${web}', '${schedule.replace("'","''")}', '${theme.mkString(",")}', '${receptiontype}')"
         val orgStatement = connection.createStatement()
-        System.out.println(orgInsert)
+        //System.out.println(orgInsert)
         orgStatement.executeUpdate(orgInsert)
 
-    System.out.println("fin insert orga")
+    //System.out.println("fin insert orga")
         // Extract the addresses
         val addresses = org \ "addresses" \ "address"
         addresses.foreach(addr => {
@@ -73,15 +74,15 @@ object XmlToSql {
           val longitude = (addr \ "longitude").text
           val accessibility = (addr \ "accessibility").text
 
-    System.out.println("fin recup add")
+    //System.out.println("fin recup add")
           // Insert the address into the database
           val addrInsert = s"INSERT INTO addresses (organization_id, street_number, street_extension, building, street_name, zipcode, pobox, city, district, phone, fax, latitude, longitude, accessibility) " +
-            s"VALUES ('$id', '$streetNumber', '${streetExtension.replace("'"," ")}', '${building.replace("'"," ")}', '${streetName.replace("'"," ")}', '$zipcode', '$pobox', '${city.replace("'"," ")}', '${district.replace("'"," ")}', '${phone.mkString(",")}', '$fax', '$latitude', '$longitude', '$accessibility')"
+            s"VALUES ('$id', '$streetNumber', '${streetExtension.replace("'","''")}', '${building.replace("'","''")}', '${streetName.replace("'","''")}', '$zipcode', '$pobox', '${city.replace("'","''")}', '${district.replace("'","''")}', '${phone.mkString(",")}', '$fax', '$latitude', '$longitude', '$accessibility')"
           val addrStatement = connection.createStatement()
-          System.out.println(addrInsert)
+          //System.out.println(addrInsert)
           addrStatement.executeUpdate(addrInsert)
 
-    System.out.println("fin insert add")
+    //System.out.println("fin insert add")
         })
       })
       println("Data imported successfully!")
@@ -91,5 +92,5 @@ object XmlToSql {
       connection.close()
     }
   }
- 
+ */
 }
