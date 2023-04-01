@@ -181,10 +181,7 @@ CREATE TABLE organizations (
   web VARCHAR(255),
   schedule TEXT,
   theme VARCHAR(255) NOT NULL,
-  receptiontype VARCHAR(255),
-  latitude VARCHAR(50),
-  longitude VARCHAR(50),
-  accessibility TEXT
+  receptiontype VARCHAR(255)
 );
 
 CREATE TABLE addresses (
