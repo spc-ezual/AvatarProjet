@@ -2,47 +2,133 @@ package DB
 
 import java.sql._
 import java.io.File
-/**
-  * Classe permettant d'interagir avec la table ListLieux de la base de données ListLieux.db
+
+/** Classe permettant d'interagir avec la table ListLieux de la base de données ListLieux.db
   */
-object  LangDAO {
-    val dbFilePath = "BaseDeDonnees/Lang.db"
-    // Vérification que le fichier existe
-    if (!new File(dbFilePath).exists() || !new File(dbFilePath).isFile()) {
-        throw new RuntimeException("Le fichier de base de données n'existe pas ou n'est pas un fichier valide.")
-    }
+object LangDAO {
+	val dbFilePath = "BaseDeDonnees/Lang.db"
+	// Vérification que le fichier existe
+	if (!new File(dbFilePath).exists() || !new File(dbFilePath).isFile()) {
+		throw new RuntimeException(
+		"Le fichier de base de données n'existe pas ou n'est pas un fichier valide."
+		)
+	}
 
-    val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
-    
-    /**
-    * Ajouter une donnée à la table ListLieux
-    *
-    * @param nom le nom à ajouter
-    * @param adresse l'adresse correspondante au nom
-    */
-    def ajouterDonnee(): Unit = {???}
-    /**
-     * Supprime une ligne dans la table "ListLieux" en fonction du nom donnée
-     * @param nom nom de la ligne à supprimer
-     */
-    def deleteByID(id: Int): Unit = {
-            val stmt: Statement = connection.createStatement()
-            val query: String = s"DELETE FROM langues WHERE id = '$id'"
-            stmt.executeUpdate(query)
-            stmt.close()
-    }
+	val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+	connection.close()
 
-    /**
-     * Récupère le nom de l'id dans la table "langues"
-     * @return nom
-     */
-    def getNomLangue(id :Int): Option[String] = {
-        val statement = connection.createStatement()
-        val resultSet = statement.executeQuery(s"SELECT nom FROM Lieux WHERE id = '$id'" )
-        val nom = if (resultSet.next()) Some(resultSet.getString("nom")) else None
-        resultSet.close()
-        statement.close()
-        nom
-    }
-    
+	def getMotsLang(l: Int): List[String] = {
+		var rep = List(): List[String]
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet = statement.executeQuery(
+		s"SELECT nom,politesse,recherche FROM langues WHERE id=$l"
+		)
+		while (resultSet.next()) {
+		val nom = resultSet.getString("nom")
+		val politesseValues =
+			resultSet.getString("politesse").split(",").map(_.trim)
+		val rechercheValues =
+			resultSet.getString("recherche").split(",").map(_.trim)
+		rep = nom +: (politesseValues ++ rechercheValues).toList
+
+		}
+		connection.close()
+		rep
+	}
+
+	def politesse(l: Int): List[String] = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT politesse FROM langues WHERE id=$l")
+		val result = if (resultSet.next()) resultSet.getString("politesse") else ""
+		connection.close()
+		result.split(",").map(_.trim).toList
+	}
+
+	def vrai(l: Int): String = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT vrai FROM langues WHERE id=$l")
+		val result = if (resultSet.next()) resultSet.getString("vrai") else ""
+		connection.close()
+		result
+	}
+
+	def faux(l: Int): String = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT faux FROM langues WHERE id=$l")
+		val result = if (resultSet.next()) resultSet.getString("faux") else ""
+		connection.close()
+		result
+	}
+
+	def reponseUni(l: Int): String = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT reponse_unique FROM langues WHERE id=$l")
+		val result =
+		if (resultSet.next()) resultSet.getString("reponse_unique") else ""
+		connection.close()
+		result
+	}
+
+	def inconnu(l: Int): String = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT inconnu FROM langues WHERE id=$l")
+		val result = if (resultSet.next()) resultSet.getString("inconnu") else ""
+		connection.close()
+		result
+	}
+
+	def demandeLieux(l: Int): String = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT demande FROM langues WHERE id=$l")
+		val result = if (resultSet.next()) resultSet.getString("demande") else ""
+		connection.close()
+		result
+	
+	}
+	def demandeLang(l: Int): String = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT demande_lang FROM langues WHERE id=$l")
+		val result =
+		if (resultSet.next()) resultSet.getString("demande_lang") else ""
+		connection.close()
+		result
+	}
+
+	def demandeChoix(l: Int): String = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT demande_choix FROM langues WHERE id=$l")
+		val result =
+		if (resultSet.next()) resultSet.getString("demande_choix") else ""
+		connection.close()
+		result
+	}
+
+	def multReponse(l: Int): String = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT choix_multiple FROM langues WHERE id=$l")
+		val result =
+		if (resultSet.next()) resultSet.getString("choix_multiple") else ""
+		connection.close()
+		result
+	}
+
 }
