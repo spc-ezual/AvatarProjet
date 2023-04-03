@@ -14,7 +14,7 @@ object ListLieuxDAO {
         )
     }
 
-    val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+    
 
     /** Ajouter une donnée à la table ListLieux
         *
@@ -22,6 +22,7 @@ object ListLieuxDAO {
         * @param adresse l'adresse correspondante au nom
         */
     def ajouterDonnee(nom: String, adresse: String): Unit = {
+        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
         val statement = connection.prepareStatement(
         "INSERT INTO Lieux (nom, adresse) VALUES (?, ?)"
         )
@@ -29,22 +30,26 @@ object ListLieuxDAO {
         statement.setString(2, adresse)
         statement.executeUpdate()
         statement.close()
+        connection.close()
     }
 
     /** Supprime une ligne dans la table "ListLieux" en fonction du nom donnée
         * @param nom nom de la ligne à supprimer
         */
     def deleteByNom(nom: String): Unit = {
+        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
         val stmt: Statement = connection.createStatement()
         val query: String = s"DELETE FROM Lieux WHERE nom = '$nom'"
         stmt.executeUpdate(query)
         stmt.close()
+        connection.close()
     }
 
     /** Récupère la liste des nom présentes dans la table "ListLieux"
         * @return une liste des nom
         */
     def getNom(): List[String] = {
+        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
         val statement = connection.createStatement()
         val resultSet = statement.executeQuery("SELECT nom FROM Lieux")
         var noms: List[String] = List()
@@ -53,6 +58,7 @@ object ListLieuxDAO {
         }
         resultSet.close()
         statement.close()
+        connection.close()
         noms
     }
 
@@ -61,6 +67,7 @@ object ListLieuxDAO {
         * @return une Option[String] contenant la réponse si elle existe, None sinon
         */
     def getAdresse(nom: String): Option[String] = {
+        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
         val statement =
         connection.prepareStatement("SELECT adresse FROM Lieux WHERE nom = ?")
         statement.setString(1, nom)
@@ -69,10 +76,12 @@ object ListLieuxDAO {
         if (resultSet.next()) Some(resultSet.getString("adresse")) else None
         resultSet.close()
         statement.close()
+        connection.close()
         adresseOpt
     }
 
     def getNomReel(nom: String): Option[String] = {
+        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
         val statement =
         connection.prepareStatement("SELECT nomReel FROM Lieux WHERE nom = ?")
         statement.setString(1, nom)
@@ -81,6 +90,7 @@ object ListLieuxDAO {
         if (resultSet.next()) Some(resultSet.getString("nomReel")) else None
         resultSet.close()
         statement.close()
+        connection.close()
         adresseOpt
     }
 }

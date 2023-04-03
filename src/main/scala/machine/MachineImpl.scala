@@ -9,6 +9,7 @@ object MachineImpl extends MachineDialogue {
   // Pour la partie test par le client
   def reinit(): Unit = {
     Avatar.reinit()
+    CreationDeRep.reInit
   }
   def test(l: List[String]): List[String] = {
     var rep = List() : List[String]

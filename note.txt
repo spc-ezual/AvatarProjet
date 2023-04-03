@@ -168,7 +168,8 @@ CREATE TABLE langues (
     demande VARCHAR(50),
     choix_multiple TEXT[],
     demande_choix VARCHAR(50),
-    mots_site TEXT[]
+    mots_site TEXT[],
+    liaison TEXT[]
 );
 
 

@@ -1,87 +1,163 @@
 
 @startuml Avatar
 
-interface CreationListMotClef{
-    MatchMotClef(Mots : List[String], BDListLieux, BDPolitesse): (String,List[(String, String)])
+
+package Application{
+    interface Avatar {
+        ui
+        top(): MainFrame
+        reinit():Unit
+    }
+    interface UI{
+        chatArea
+        inputField
+        sendButton
+        resetButton
+        avatarIcon
+        userIcon
+    }
 }
 
-interface AnalysePhrase{
-    SepMots(s:String): List[String]
-}
-interface CreationDeRep{
-    Reponse(message: String): String
-}
-interface Correction{
-    Correct(Mots : List[String], BDListLieux, BDPolitesse): List[String]
+
+package DB {
+    interface LangDAO{
+        getMotsLang(l: Int): List[String]
+        politesse(l: Int): List[String]
+        recherche(l: Int): List[String]
+        nom(l: Int): String
+        vrai(l: Int): String
+        faux(l: Int): String
+        reponseUni(l: Int): String
+        inconnu(l: Int): String
+        demandeLieux(l: Int): String
+        demandeLang(l: Int): String
+        demandeChoix(l: Int): String
+        multReponse(l: Int): String
+    }
+    interface ListLieuxDAO{
+        ajouterDonnee(nom: String, adresse: String): Unit
+        deleteByNom(nom: String): Unit
+        getNom(): List[String]
+        getAdresse(nom: String): Option[String]
+        getNomReel(nom: String): Option[String]
+    }
+    interface XmltoDb
 }
 
-interface Interface{
-    ask(s: String): List[String]
-    
+
+package Machine{
+    interface MachineImpl{
+        ask(s: String): List[String]
+        reinit(): Unit
+        test(l: List[String]): List[String]
+    }
 }
 
-Interface <-> CreationDeRep
+
+package Outils{
+    interface CreationListMotClef{
+        dsbLieux
+
+        MatchMotClef(Mots : List[String], BDListLieux, BDPolitesse): (String,List[(String, String)])
+        RecupPoli(mots: List[String],dsbPolitesse :List[String]): Int
+        RecupLieux(mot: String): String
+        RecupNomReel(mot: String): String
+    }
+    interface AnalysePhrase{
+
+
+        SepMots(s:String): List[String]
+        compartList(lMotsBdd: List[String],lMotsRequet: List[String]): Boolean 
+        areEqualIgnoreCaseAndAccents(char1: Char, char2: Char): Boolean
+        removeWords(mots: List[String], motsSupp: List[String]): List[String]
+        VerifLang(l:Int,mots :List[String]):Int
+        VerifLangCorrect(l:Int,mots :List[String]):Int
+    }
+    interface CreationDeRep{
+        langues
+        action
+        Reponse(message: String): String
+        formatReponse(reponse: List[String]): String
+        reInit(): Unit
+    }
+    interface Correction{
+        dsbLieux
+        Correct(Mots : List[String], BDListLieux, BDPolitesse): List[String]
+        correctMot(mot: String, motsCorrect: List[String]): String
+        compartMot(s1: String, s2: String): Option[String]
+        hammingDistance(s1: String, s2: String): Int
+    }
+}
+
+package "Base de donnes"{
+    class BDListLieux <<(B,Orange)>>{
+        nom 
+        adresse
+        nomReel
+    }
+    package LIeuxXml{
+        class BDOrganisation<<(B,Orange)>>{
+            id VARCHAR(50) PRIMARY KEY,
+            acronym VARCHAR(50),
+            name VARCHAR(255) NOT NULL,
+            description TEXT,
+            email VARCHAR(255),
+            web VARCHAR(255),
+            schedule TEXT,
+            theme VARCHAR(255) NOT NULL,
+            receptiontype VARCHAR(255)
+        }
+        class BDDAdresses<<(B,Orange)>>{
+            id INT PRIMARY KEY AUTO_INCREMENT,
+            organization_id VARCHAR(50) FOREIGN KEY (organization_id),
+            street_number VARCHAR(50),
+            street_extension VARCHAR(50),
+            building VARCHAR(50),
+            street_name VARCHAR(255) ,
+            zipcode VARCHAR(50) NOT NULL,
+            pobox VARCHAR(50),
+            city VARCHAR(255),
+            district VARCHAR(255),
+            phone VARCHAR(50),
+            fax VARCHAR(50),
+            latitude VARCHAR(50),
+            longitude VARCHAR(50),
+            accessibility TEXT
+        }
+    }
+    class BDLang <<(B,Orange)>>{
+        id INT PRIMARY KEY,
+        nom VARCHAR(50),
+        politesse TEXT[],
+        recherche TEXT[],
+        vrai VARCHAR(50),
+        faux VARCHAR(50),
+        reponse_unique TEXT[],
+        inconnu VARCHAR(50),
+        demande_lang VARCHAR(50),
+        demande VARCHAR(50),
+        choix_multiple TEXT[],
+        demande_choix VARCHAR(50),
+        mots_site TEXT[],
+        liaison TEXT[]
+
+    }
+    class vArXML<<(X , Pink)>>
+}
+
+ListLieuxDAO --> CreationListMotClef
+LangDAO --> CreationListMotClef
+AnalysePhrase --> CreationListMotClef
+LangDAO --> AnalysePhrase
+Correction --> AnalysePhrase
+AnalysePhrase --> Correction
+LangDAO --> CreationDeRep
 AnalysePhrase --> CreationDeRep
-Correction --|> CreationListMotClef
-
-
-
-
-class BDListLieux <<(B,Orange)>>{
-    nom 
-    adresse
-    nomReel
-}
-
-class BDLang <<(B,Orange)>>{
-    id = int primary key
-    Nom : String
-    Politesse : String
-    Recherche : String
-    True : String
-    False : String
-    ReponseUnique : String
-    Inconnue : String
-    DemandeLang : String
-    Demande : String
-    MultipleChoix : String
-    DemandeChoix : String
-    MotsSite : String
-
-}
-class BDOrganisation<<(B,Orange)>>{
-    id
-    acronym
-    name
-    description
-    minitel
-    email
-    information
-    web
-    schedule
-    adresseId
-    theme
-}
-class BDDAdresses<<(B,Orange)>>{
-    idOrga
-    number
-    building
-    name
-    zicode
-    pobox
-    city
-    district
-    phone
-    fax
-    latitude
-    longitude
-    accessibility
-}
 CreationListMotClef --> CreationDeRep
-BDListLieux --|> CreationListMotClef
-BDLang --|> CreationListMotClef
-
-EntréUtilisateur --|> Interface
-
+BDLang -|> LangDAO
+BDListLieux-|> ListLieuxDAO
+Avatar --> MachineImpl
+CreationDeRep --> MachineImpl
+UI --> Avatar
 
 @enduml

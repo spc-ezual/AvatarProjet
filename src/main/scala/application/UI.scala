@@ -8,6 +8,7 @@ import java.awt.Color
 import scala.swing.event._
 import Outils.CreationDeRep._
 import javax.swing.ImageIcon
+import machine.MachineImpl
 
 /**
  * MainFrame realizing the CopyThat application
@@ -28,10 +29,7 @@ class UI extends MainFrame {
     
     reactions += {
         case ButtonClicked(`resetButton`) => 
-            chatArea.contents.clear()
-            inputField.text = ""
-            chatArea.revalidate()
-            chatArea.repaint()
+            MachineImpl.reinit()
     
         case ButtonClicked(`sendButton`) =>
             

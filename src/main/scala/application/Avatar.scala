@@ -14,6 +14,5 @@ object  Avatar extends SimpleSwingApplication {
         ui.inputField.text = ""
         ui.chatArea.revalidate()
         ui.chatArea.repaint()
-        CreationDeRep.reInit
     }
 }
