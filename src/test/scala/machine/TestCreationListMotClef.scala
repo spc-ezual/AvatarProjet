@@ -4,39 +4,42 @@ import org.junit.Test
 import org.junit.Assert._
 import Outils.CreationListMotClef._
 import DB.ListLieuxDAO
+import DB.LangDAO
 
 class TestCreationListMotClef {
     //Objet qui donne acces a la base de donné des lieux
     val dsbLieux = ListLieuxDAO
+
     //Objet qui donne acces a la base de donné des politesses
+    val dsbPolitesse = LangDAO
     @Test
     def testRecupPoli_1ele {
     assertEquals(
-        "Bonjour ",RecupPoli(List("Bonjour"))
+        "Bonjour ",RecupPoli(List("Bonjour"),LangDAO.politesse(0))
         )
     }
     @Test
     def testRecupPoli_1ele2 {
     assertEquals(
-        "",RecupPoli(List("haha"))
+        "",RecupPoli(List("haha"),LangDAO.politesse(0))
         )
     }
     @Test
     def testRecupPoli_1ele3 {
     assertEquals(
-        "",RecupPoli(List("bonjours"))
+        "",RecupPoli(List("bonjours"),LangDAO.politesse(0))
         )
     }
     @Test
     def testRecupPoli_0ele {
     assertEquals(
-        "",RecupPoli(List(""))
+        "",RecupPoli(List(""),LangDAO.politesse(0))
         )
     }
     @Test
     def testRecupPoli_nele1 {
     assertEquals(
-        "Bonjour ",RecupPoli(List("Bonjour","salsa"))
+        "Bonjour ",RecupPoli(List("Bonjour","salsa"),LangDAO.politesse(0))
         )
     }
     

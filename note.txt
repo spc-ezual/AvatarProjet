@@ -447,7 +447,7 @@ Test 32 ------------------------------------------------------------------------
 
  Entr├®: bongiorno
 
- Reponse: No capisco.
+ Reponse: Buongiorno.
 ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 Test 33 ------------------------------------------------------------------------------------------------------------------------------
  Entr├®: wo ist teatre paillette
@@ -473,7 +473,7 @@ Test 34 ------------------------------------------------------------------------
 
  Entr├®: hallo
 
- Reponse: Ich verstehe nicht.
+ Reponse: Hallo.
 
  Entr├®: wo ist gare
 
@@ -519,8 +519,8 @@ Test 35 ------------------------------------------------------------------------
 Test 36 ------------------------------------------------------------------------------------------------------------------------------
  Entr├®: bonjour where ist gare
 
- Reponse: Do you speak english?
-✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+ Reponse: Bonjour. L'adresse de  Gare SNCF  est : 19, Place de la Gare.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 Test 37 ------------------------------------------------------------------------------------------------------------------------------
  Entr├®: hola
 
@@ -622,49 +622,49 @@ Test 39 ------------------------------------------------------------------------
 
  Entr├®: hablas espanol?
 
- Reponse: I do not understand.
+ Reponse: Hablas espa├▒ol?
 
  Entr├®: si
 
- Reponse: I do not understand.
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
 
  Entr├®: busco gare
 
- Reponse: Hablas espa├▒ol?
-✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+ Reponse: La direcci├│n de  Gare SNCF  es : 19, Place de la Gare.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 Test 40 ------------------------------------------------------------------------------------------------------------------------------
  Entr├®: deutch?
 
- Reponse: Je ne comprends pas votre demande.
+ Reponse: Sprechen Sie Deutsch?
 
  Entr├®: ja
 
- Reponse: Je ne comprends pas votre demande.
+ Reponse: Okay, was ist Ihr Wunsch?
 
  Entr├®: tnb?
 
- Reponse: L'adresse de  Th├®├ótre National de Bretagne  est : 1, Rue Saint-H├®lier.
+ Reponse: Die adresse von  Th├®├ótre National de Bretagne  ist : 1, Rue Saint-H├®lier.
 
  Entr├®: espanol?
 
- Reponse: Je ne comprends pas votre demande.
+ Reponse: Hablas espa├▒ol?
 
  Entr├®: si
 
- Reponse: Je ne comprends pas votre demande.
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
 
  Entr├®: gloubi
 
- Reponse: Je ne comprends pas votre demande.
+ Reponse: No comprendo.
 
  Entr├®: gar
 
- Reponse: L'adresse de  Gare SNCF  est : 19, Place de la Gare.
+ Reponse: La direcci├│n de  Gare SNCF  es : 19, Place de la Gare.
 
  Entr├®: donde esta el hotel de ville?
 
- Reponse: Hablas espa├▒ol?
-✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+ Reponse: La direcci├│n de  Mairie de Rennes  es : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 Test 41 ------------------------------------------------------------------------------------------------------------------------------
  Entr├®: hello
 
@@ -865,11 +865,11 @@ Test 57 ------------------------------------------------------------------------
 Test 58 ------------------------------------------------------------------------------------------------------------------------------
  Entr├®: Hallo
 
- Reponse: Je ne comprends pas votre demande.
+ Reponse: Do you speak english?
 
  Entr├®: ja
 
- Reponse: Je ne comprends pas votre demande.
+ Reponse: Hablas espa├▒ol?
 
  Entr├®: suche piscone
 
