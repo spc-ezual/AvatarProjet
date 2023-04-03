@@ -58,7 +58,7 @@ package Outils{
     interface CreationListMotClef{
         dsbLieux
 
-        MatchMotClef(Mots : List[String], BDListLieux, BDPolitesse): (String,List[(String, String)])
+        MatchMotClef(Mots : List[String],l:Int): (String,List[(String, String)])
         RecupPoli(mots: List[String],dsbPolitesse :List[String]): Int
         RecupLieux(mot: String): String
         RecupNomReel(mot: String): String
