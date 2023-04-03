@@ -1,21 +1,23 @@
 package Outils
 
 import DB.ListLieuxDAO
+import DB.LangDAO
 
 object CreationListMotClef {
   //Objet qui donne acces a la base de donné des lieux
   val dsbLieux = ListLieuxDAO
-  //Objet qui donne acces a la base de donné des politesses
-  val dsbPolitesse = List("Bonjour","Salut","Bonsoir")
   /**
     * 
     * @param mots Phrase couper a chaque mots
     * @return 1ere string: les politesses, List (nom,adresse)
     */
-  def MatchMotClef(mots: List[String]): (Int, List[(String, String)]) = {
+  def MatchMotClef(mots: List[String],l:Int): (Int, List[(String, String)]) = {
     var RepNA : List[(String, String)] = List()
-    var Corri = Correction.correct(mots,dsbPolitesse)
-    val RepPoli = RecupPoli(Corri)
+    var Corri :List[String] = mots
+    if(l!=1){
+      Corri = Correction.correct(Corri,LangDAO.politesse(l))
+    }
+    val RepPoli = RecupPoli(Corri,LangDAO.politesse(l))
     for(Nele <- dsbLieux.getNom()){
       val NMots = AnalysePhrase.SepMots(Nele)
       Corri=Correction.correct(Corri,NMots)
@@ -33,7 +35,7 @@ object CreationListMotClef {
   * @param mots une liste de mots clés permettant d'identifier la politesse à rechercher.
   * @return une chaîne de caractères contenant toutes les salutations trouvées dans la liste dsbPolitesse, séparées par un espace.
   */
-  def RecupPoli(mots: List[String]): Int = {
+  def RecupPoli(mots: List[String],dsbPolitesse :List[String]): Int = {
     var rep = 0
     for (mot <- mots) {
       if (dsbPolitesse.contains(mot)) {

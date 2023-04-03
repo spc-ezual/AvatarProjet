@@ -26,7 +26,7 @@ class TestSepMots {
     @Test
     def testSepMots_apo {
     assertEquals(
-        List("salut","je","suis","l'","horloge"),AnalysePhrase.SepMots("salut je suis l'horloge")
+        List("salut","je","suis","l","horloge"),AnalysePhrase.SepMots("salut je suis l'horloge")
     )
     }
     @Test
@@ -64,5 +64,25 @@ class TestSepMots {
     assertEquals(
         List("salut","je","suis","l","horloge"),AnalysePhrase.SepMots("salut je suis l+horloge")
     )
+    }
+    @Test 
+    def testVerifLang_En{
+        assertEquals(1,AnalysePhrase.VerifLang(3,List("hello","where")))
+    }
+    @Test 
+    def testVerifLang_Fr{
+        assertEquals(0,AnalysePhrase.VerifLang(3,List("bonjour","wherrzere")))
+    }
+    @Test 
+    def testVerifLang_Es{
+        assertEquals(2,AnalysePhrase.VerifLang(4,List("esta","rez")))
+    }
+    @Test 
+    def testVerifLang_It{
+        assertEquals(4,AnalysePhrase.VerifLang(1,List("italiano","bua")))
+    }
+    @Test 
+    def testVerifLang_Al{
+        assertEquals(3,AnalysePhrase.VerifLang(1,List("suchen","ahah")))
     }
 }

@@ -10,7 +10,7 @@ object Correction {
         * @return la list de mot corriger
         */
     def correct(mots: List[String], motsCorrect: List[String]): List[String] = {
-        mots.map(x => correctMot(x, motsCorrect))
+        mots.map(x => {if(x.length>2)correctMot(x, motsCorrect) else x})
     }
     //TODO A refaire / finir
     // L'on souhaite que correct concat en cas de nececiter

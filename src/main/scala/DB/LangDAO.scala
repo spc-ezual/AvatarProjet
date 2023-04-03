@@ -47,6 +47,30 @@ object LangDAO {
 		result.split(",").map(_.trim).toList
 	}
 
+	def recherche(l: Int): List[String] = {
+		var rep = List(): List[String]
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet = statement.executeQuery(
+		s"SELECT recherche FROM langues WHERE id=$l"
+		)
+		while (resultSet.next()) {
+		rep= resultSet.getString("recherche").split(",").map(_.trim).toList
+		}
+		connection.close()
+		rep
+	}
+
+	def nom(l: Int): String = {
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet =
+		statement.executeQuery(s"SELECT nom FROM langues WHERE id=$l")
+		val result = if (resultSet.next()) resultSet.getString("nom") else ""
+		connection.close()
+		result
+	}
+
 	def vrai(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()

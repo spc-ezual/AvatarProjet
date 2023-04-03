@@ -1,6 +1,7 @@
 package Outils
 
 import java.text.Normalizer
+import DB.LangDAO
 
 object AnalysePhrase {
 
@@ -31,5 +32,24 @@ object AnalysePhrase {
 
     def removeWords(mots: List[String], motsSupp: List[String]): List[String] = {
         mots.filterNot(motsSupp.contains)
+    }
+    def VerifLang(l:Int,mots :List[String]):Int= {
+        for (i <- 0 to 4)  {
+            for(mot <- LangDAO.getMotsLang(i)){
+                if(mots.contains(mot))return i
+            }
+        }
+        return VerifLangCorrect(l,mots)
+    }
+    def VerifLangCorrect(l:Int,mots :List[String]):Int={
+            for( i <- 0 to 4 ){
+            val MotsPol = LangDAO.politesse(i)
+            val NomLang = LangDAO.nom(i)
+                for(mot <- Correction.correct(mots,MotsPol)){
+                    if(MotsPol.contains(mot))return i
+                }
+                if(Correction.correct(mots,List(NomLang)).contains(NomLang)) return i   
+            }
+                return l
     }
 }
