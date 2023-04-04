@@ -2,7 +2,7 @@ package application
 
 import library._
 
-object HTMLToString extends HtmlVersString {
+object HTMLToString {
   def traduire(html: Html): String = {
     html match {
       case Tag(name, attributes, children) =>

@@ -2,7 +2,7 @@ package application
 
 import library._
 
-object AnalysePageObjet extends AnalysePage {
+object AnalysePageObjet {
 
   /** A partir d’une URL de requete sur le site de reference et d’une expression
     * exp, retourne une liste de pages issues de la requeete et satisfaisant
@@ -15,7 +15,7 @@ object AnalysePageObjet extends AnalysePage {
     *   la liste des couples (titre,ref) o`u ref est l’URL d’une page
     *   satisfaisant l’expression et titre est son titre.
     */
-  override def resultats(url: String): String = {
+  def resultats(url: String): String = {
     val html: Html = urlToHtml(url)
     obtenirAddr(html)
   }
@@ -28,29 +28,34 @@ object AnalysePageObjet extends AnalysePage {
     OutilsWebObjet.obtenirHtml(url)
   }
 
-  /** A partir d'une liste de couple (URL, page HTML) revoie la liste de couple
-    * (URL,page HTML) filtrée qui répond à la requète
-    * @param lurlsHtml
-    *   La liste de couple référence
-    * @param exp
-    *   l'expretion correspondente a la requète
-    */
+  def lURL(html: Html): List[String] = html match {
+    case Tag(_, attributes, children) =>
+      val links = attributes.collect { case ("href", url) => url }
+      val images = attributes.collect { case ("src", url) => url }
+      (links ++ images) ++ children.flatMap(lURL)
+    case Texte(_) => Nil
+  }
+
+  def selectURL(lurl:List[String],exp:String):Option[Html]={
+    lurl match {
+        case Nil => None
+        case head :: next => if(head.contains(exp)){Some(urlToHtml(head))}else{selectURL(next,exp)}
+      }
+  }
 
   /** A partir d'un HTML, renvoie le titre de la page
     * @param h
     *   la page HTML
     */
   def obtenirAddr(h: Html): String = {
-    def loop(html: Html): Option[String] = {
-      html match {
-        case Tag("title", _, List(Texte(title))) => Some(title)
-        case Tag(_, _, children) =>
-          children.flatMap(loop).headOption
-        case _ => None
+    def selectURL(lurl:List[String],exp:String):Option[Html]={
+      lurl match {
+        case Nil => None
+        case head :: next => if(head.contains(exp)){Some(urlToHtml(head))}else{selectURL(next,exp)}
       }
     }
 
-    loop(h).getOrElse(
+    selectURL(h).getOrElse(
       throw new NoSuchElementException("Aucun titre trouvé.")
     )
   }
