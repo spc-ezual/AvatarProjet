@@ -47,16 +47,7 @@ object AnalysePageObjet {
     * @param h
     *   la page HTML
     */
-  def obtenirAddr(h: Html): String = {
-    def selectURL(lurl:List[String],exp:String):Option[Html]={
-      lurl match {
-        case Nil => None
-        case head :: next => if(head.contains(exp)){Some(urlToHtml(head))}else{selectURL(next,exp)}
-      }
-    }
 
-    selectURL(h).getOrElse(
-      throw new NoSuchElementException("Aucun titre trouvé.")
-    )
-  }
+  
+  def obtenirAddr(h: Html): String = ???
 }
