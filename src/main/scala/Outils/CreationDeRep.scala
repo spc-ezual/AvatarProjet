@@ -68,7 +68,7 @@ object CreationDeRep {
 		reponse.map(_ + ".").mkString(" ")
 	}
 
-	def reInit{
+	def reInit():Unit={
 		langues =0
 		action =1
 	}
