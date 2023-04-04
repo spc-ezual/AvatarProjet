@@ -54,7 +54,7 @@ object CreationDeRep {
 				}
 				else{
 					for((nom,adresse) <- corres._2){
-						rep = rep :+ ((firstPart+" "+nom+" "+secondPart+" : "+adresse))
+						rep = rep :+ ((firstPart+nom+secondPart+" : "+adresse))
 					}
 				}
 				//System.out.println("\n Reponse: "+formatReponse(rep))
