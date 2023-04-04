@@ -55,7 +55,7 @@ class TestCorrection {
   @Test
   def testCompartMot2 {
     assertEquals(
-      None,
+      Some("mairiee"),
       compartMot("Màirie","mairiee")
     )
   }
