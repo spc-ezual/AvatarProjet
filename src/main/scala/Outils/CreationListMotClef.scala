@@ -13,16 +13,17 @@ object CreationListMotClef {
     */
   def MatchMotClef(mots: List[String],l:Int): (Int, List[(String, String)]) = {
     var RepNA : List[(String, String)] = List()
-    var Corri :List[String] = mots
-    if(l!=1){
-      Corri = Correction.correct(Corri,LangDAO.politesse(l))
-    }
-    val RepPoli = RecupPoli(Corri,LangDAO.politesse(l))
+    var Corri :(List[String],List[String]) = Correction.correct(mots,LangDAO.politesse(l),2)
+    
+    
+    val RepPoli = Corri._1.length
     for(Nele <- dsbLieux.getNom()){
       val NMots = AnalysePhrase.SepMots(Nele)
-      Corri=Correction.correct(Corri,NMots)
-      if(AnalysePhrase.compartList(NMots,Corri)){
-        Corri= AnalysePhrase.removeWords(Corri,NMots)
+      val temp =  Correction.correct(Corri._2,NMots,1)
+      Corri= (Corri._1 ::: temp._1,temp._2)
+      
+      if(AnalysePhrase.compartList(NMots,Corri._1)){
+        Corri =(AnalysePhrase.removeWords(Corri._1,NMots),Corri._2)
         RepNA=(RecupNomReel(Nele),RecupLieux(Nele))::RepNA
       }
     }

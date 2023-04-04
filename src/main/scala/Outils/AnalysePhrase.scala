@@ -45,10 +45,10 @@ object AnalysePhrase {
             for( i <- 0 to 4 ){
             val MotsPol = LangDAO.politesse(i)
             val NomLang = LangDAO.nom(i)
-                for(mot <- Correction.correct(mots,MotsPol)){
+                for(mot <- Correction.correct(mots,MotsPol,3)._1){
                     if(MotsPol.contains(mot))return i
                 }
-                if(Correction.correct(mots,List(NomLang)).contains(NomLang)) return i   
+                if(Correction.correct(mots,List(NomLang),2)._1.contains(NomLang)) return i   
             }
                 return l
     }

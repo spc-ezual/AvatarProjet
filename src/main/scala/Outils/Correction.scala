@@ -9,10 +9,19 @@ object Correction {
         * @param motsCorrect une liste de mots de référance
         * @return la list de mot corriger
         */
-    def correct(mots: List[String], motsCorrect: List[String]): List[String] = {
-        mots.map(x => {if(x.length>2)correctMot(x, motsCorrect) else x})
+    def correct(mots: List[String], motsCorrect: List[String],min :Int): (List[String],List[String]) = {
+        var corr = List():List[String]
+        var nonCorr =List():List[String]
+        for(mot <- mots){
+            if(mot.length()>=min){
+                val corriger =  correctMot(mot, motsCorrect)
+                if(!corriger.equals("")) corr = corr :+ corriger
+                else nonCorr = nonCorr :+ mot
+            }
+        }
+        //mots.map(x => {if(x.length>2)correctMot(x, motsCorrect) else x})
+        (corr,nonCorr)
     }
-    //TODO A refaire / finir
     // L'on souhaite que correct concat en cas de nececiter
     /*
         exemple :
@@ -34,7 +43,7 @@ object Correction {
             case None        => correctMot(mot, next)
             case Some(value) => value
             }
-        case Nil => mot
+        case Nil => ""
         }
     }
 
