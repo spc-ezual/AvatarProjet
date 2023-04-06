@@ -77,6 +77,7 @@ object LieuxXMLDAO {
         statement.close()
         connection.close()
         result.distinct
+        
 
     }
 

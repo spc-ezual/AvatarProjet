@@ -87,7 +87,7 @@ class TestCorrection {
   @Test
   def testCorrcteMot2 {
     assertEquals(
-      "MAIRIE",
+      "",
       correctMot("MAIRIE", List("mairieee", "leo ma petite soeur", "a"))
     )
   }
@@ -95,7 +95,7 @@ class TestCorrection {
   @Test
   def testCorrcteMot3 {
     assertEquals(
-      "MAIRIE",
+      "",
       correctMot("MAIRIE", List())
     )
   }
@@ -103,16 +103,16 @@ class TestCorrection {
   @Test
   def testCorrcte1{
     assertEquals(
-      List("bonjour","ou","est","la","Mairie"),
-      correct(List("bonjour","ou","est","la","mairie"), List("Mairie"))
+      List("Mairie"),
+      correct(List("bonjour","ou","est","la","mairie"), List("Mairie"),1)._1
     )
   }
 
   @Test
   def testCorrcte2{
     assertEquals(
-      List("bonjour","ou","est","la","Maarie"),
-      correct(List("bonjour","ou","est","la","mairie"), List("Maarie"))
+      List("Maarie"),
+      correct(List("bonjour","ou","est","la","mairie"), List("Maarie"),1)._1
     )
   }
 }

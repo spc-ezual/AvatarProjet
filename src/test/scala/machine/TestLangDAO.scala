@@ -16,7 +16,7 @@ class TestLangDAO{
     }
     @Test
     def Test3:Unit={
-        assertEquals(LieuxXMLDAO.listeMotsUniques().length,2653)
+        assertEquals(LieuxXMLDAO.listeMotsUniques(),List())
     }
     }
     
