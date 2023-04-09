@@ -37,6 +37,22 @@ object LangDAO {
 		rep
 	}
 
+	def getMotsRech(l: Int): List[String] = {
+		var rep = List(): List[String]
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet = statement.executeQuery(
+		s"SELECT recherche FROM langues WHERE id=$l"
+		)
+		while (resultSet.next()) {
+		val rechercheValues = resultSet.getString("recherche").split(",").map(_.trim).toList
+		rep = rep ::: rechercheValues
+
+		}
+		connection.close()
+		rep
+	}
+
 	def politesse(l: Int): List[String] = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()

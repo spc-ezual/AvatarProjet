@@ -973,3 +973,719 @@ Test 69 ------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
+
+
+Test 1 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est donc la Mairie de Rennes?
+
+ Reponse: L'adresse de  Mairie de Rennes  est : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 2 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ se trouve le Th├®├ótre National de Bretagne?
+
+ Reponse: L'adresse de  Th├®├ótre National de Bretagne  est : 1, Rue Saint-H├®lier.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 3 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est la Mairie?
+
+ Reponse: L'adresse de  Mairie de Rennes  est : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 4 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: Je recherche le Th├®├ótre de la Paillette
+
+ Reponse: L'adresse de  Th├®├ótre la Paillette  est : 2, Rue du Pr├® de Bris.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 5 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est le TNB?
+
+ Reponse: L'adresse de  Th├®├ótre National de Bretagne  est : 1, Rue Saint-H├®lier.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 6 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: ou trouver?
+
+ Reponse: L'adresse de  Ville de Rennes ÔÇô Direction de la Police Municipale et du Domaine Public - Objets trouv├®s  est : 16, RUE JEAN-MARIE HUCHET.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 7 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: Je cherche
+
+ Reponse: Je ne comprends pas votre demande.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 8 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: askdhlkajh
+
+ Reponse: Je ne comprends pas votre demande.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 9 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est la Gare?
+
+ Reponse: L'adresse de  Gare SNCF  est : 19, Place de la Gare.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 10 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est donc la Mairie Rennes?
+
+ Reponse: L'adresse de  Mairie de Rennes  est : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 11 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: h├┤tel ville?
+
+ Reponse: L'adresse de  Mairie de Rennes  est : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 12 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: Je recherche le th├®├ótre paillette
+
+ Reponse: L'adresse de  Th├®├ótre la Paillette  est : 2, Rue du Pr├® de Bris.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 13 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est donc l'htel de ville?
+
+ Reponse: L'adresse de  Mairie de Rennes  est : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 14 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est donc l'hotil de ville?
+
+ Reponse: L'adresse de  Mairie de Rennes  est : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 15 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est donc l'otel de ville?
+
+ Reponse: L'adresse de  Mairie de Rennes  est : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 16 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est donc l'hote de ville?
+
+ Reponse: L'adresse de  Mairie de Rennes  est : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 17 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ est donc l'hote de valle?
+
+ Reponse: L'adresse de  Mairie de Rennes  est : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 18 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: Je recherche le teatre paillete
+
+ Reponse: L'adresse de  Th├®├ótre la Paillette  est : 2, Rue du Pr├® de Bris.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 19 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: O├╣ se trouve le th├®├ótre de bretagne?
+
+ Reponse: L'adresse de  Th├®├ótre National de Bretagne  est : 1, Rue Saint-H├®lier.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 20 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: bonjour
+
+ Reponse: Bonjour.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 21 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: bonjour je cherche le tnb
+
+ Reponse: Bonjour. L'adresse de  Th├®├ótre National de Bretagne  est : 1, Rue Saint-H├®lier.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 22 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: bonour
+
+ Reponse: Bonjour.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 23 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: bojour je cherche le tnb
+
+ Reponse: Bonjour. L'adresse de  Th├®├ótre National de Bretagne  est : 1, Rue Saint-H├®lier.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 24 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: bojour je cherche le hgshg
+
+ Reponse: Bonjour. Je ne comprends pas votre demande.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 25 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: bijour djkslfdsklj
+
+ Reponse: Je ne comprends pas votre demande.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 26 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: bonour
+
+ Reponse: Bonjour.
+
+ Entr├®: bonjoir
+
+ Reponse: Bonjour.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 27 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: salut, je cherche le tnb
+
+ Reponse: Bonjour. L'adresse de  Th├®├ótre National de Bretagne  est : 1, Rue Saint-H├®lier.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 28 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: yo busco hotel de vile
+
+ Reponse: Hablas espa├▒ol?
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 29 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: bonjour
+
+ Reponse: Bonjour.
+
+ Entr├®: hola
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 30 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: hola
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: as
+
+ Reponse: Sprechen Sie Deutsch?
+
+ Entr├®: as
+
+ Reponse: Parli italiano?
+
+ Entr├®: as
+
+ Reponse: Parlez-vous fran├ºais?
+
+ Entr├®: as
+
+ Reponse: Do you speak english?
+
+ Entr├®: as
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: as
+
+ Reponse: Sprechen Sie Deutsch?
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 31 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: hola
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+
+ Entr├®: busco gare
+
+ Reponse: La direcci├│n de  Gare SNCF  es : 19, Place de la Gare.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 32 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: suche theatre pailllette
+
+ Reponse: Sprechen Sie Deutsch?
+
+ Entr├®: cerco hotel ville
+
+ Reponse: Parli italiano?
+
+ Entr├®: si
+
+ Reponse: Va bene, qual ├¿ la tua richiesta?
+
+ Entr├®: bongiorno
+
+ Reponse: Buongiorno.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 33 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: wo ist teatre paillette
+
+ Reponse: Sprechen Sie Deutsch?
+
+ Entr├®: ja
+
+ Reponse: Okay, was ist Ihr Wunsch?
+
+ Entr├®: wo ist teatre paillette
+
+ Reponse: Die adresse von  Th├®├ótre la Paillette  ist : 2, Rue du Pr├® de Bris.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 34 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: gutten tag
+
+ Reponse: Sprechen Sie Deutsch?
+
+ Entr├®: ja
+
+ Reponse: Okay, was ist Ihr Wunsch?
+
+ Entr├®: hallo
+
+ Reponse: Hallo.
+
+ Entr├®: wo ist gare
+
+ Reponse: Die adresse von  Gare SNCF  ist : 19, Place de la Gare.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 35 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: ou est la gare?
+
+ Reponse: L'adresse de  Gare SNCF  est : 19, Place de la Gare.
+
+ Entr├®: hallo
+
+ Reponse: Sprechen Sie Deutsch?
+
+ Entr├®: ja
+
+ Reponse: Okay, was ist Ihr Wunsch?
+
+ Entr├®: donde esta el tnb?
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+
+ Entr├®: tnb?
+
+ Reponse: La direcci├│n de  Th├®├ótre National de Bretagne  es : 1, Rue Saint-H├®lier.
+
+ Entr├®: italiano?
+
+ Reponse: Parli italiano?
+
+ Entr├®: si
+
+ Reponse: Va bene, qual ├¿ la tua richiesta?
+
+ Entr├®: cerco paillette
+
+ Reponse: Indirizzo di  Th├®├ótre la Paillette  ├¿ : 2, Rue du Pr├® de Bris.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 36 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: bonjour where ist gare
+
+ Reponse: Bonjour. L'adresse de  Gare SNCF  est : 19, Place de la Gare.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 37 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: hola
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: buongiorno
+
+ Reponse: Parli italiano?
+
+ Entr├®: si
+
+ Reponse: Va bene, qual ├¿ la tua richiesta?
+
+ Entr├®: cerco
+
+ Reponse: Ho 23 risposte. 1) Le Th├®├ótre du Cercle. 2) Cercle Paul Bert Villejean-Beauregard. 3) Cercle Paul Bert Rapatel. 4) Cercle Paul Bert Nord-Ouest. 5) Cercle Paul Bert Longs Champs. 6) Cercle Paul Bert Ginguen├®. 7) Cercle Paul Bert Gayeulles . 8) Cercle Paul Bert Cleunay. 9) Cercle Paul Bert Centre. 10) Cercle Paul Bert Br├®quigny. 11) Cercle Paul Bert Blosne P├┤le Savary. 12) Cercle Paul Bert Blosne P├┤le Landrel. 13) Cercle Paul Bert - si├¿ge social. 14) Cercle Paul Bert - Le Noro├«t. 15) Cercle Paul Bert - Centre Ren├®e Pr├®vert. 16) Cercle d'Outre-Ille. 17) Cercle celtique des cheminots de Rennes - Tud an Hent Houarn. 18) Cercle celtique de Vern-sur-Seiche. 19) Cercle celtique de Rennes - Kelc'h Keltiek Roazhon- Cercl celtiq de Resnn                . 20) Cercle celtique de la Lande - Kelc'h Al Lann de Pont P├®an. 21) Cercle celtique de Chartres-de-Bretagne. 22) Cercle celtique de Cesson-S├®vign├®. 23) Cercle celtique de Bruz.
+
+ Entr├®: hallo
+
+ Reponse: Sprechen Sie Deutsch?
+
+ Entr├®: bonjour
+
+ Reponse: Parlez-vous fran├ºais?
+
+ Entr├®: oui
+
+ Reponse: D'accord, quelle est votre demande?
+
+ Entr├®: ciao
+
+ Reponse: Parli italiano?
+
+ Entr├®: as
+
+ Reponse: Parlez-vous fran├ºais?
+
+ Entr├®: as
+
+ Reponse: Do you speak english?
+
+ Entr├®: bonjour
+
+ Reponse: Parlez-vous fran├ºais?
+
+ Entr├®: oui
+
+ Reponse: D'accord, quelle est votre demande?
+
+ Entr├®: tnb
+
+ Reponse: L'adresse de  Th├®├ótre National de Bretagne  est : 1, Rue Saint-H├®lier.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 38 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: ciao
+
+ Reponse: Parli italiano?
+
+ Entr├®: si
+
+ Reponse: Va bene, qual ├¿ la tua richiesta?
+
+ Entr├®: si
+
+ Reponse: No capisco.
+
+ Entr├®: si
+
+ Reponse: No capisco.
+
+ Entr├®: hallo
+
+ Reponse: Sprechen Sie Deutsch?
+
+ Entr├®: ja
+
+ Reponse: Okay, was ist Ihr Wunsch?
+
+ Entr├®: so
+
+ Reponse: Ich verstehe nicht.
+
+ Entr├®: so
+
+ Reponse: Ich verstehe nicht.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 39 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: do you speak english?
+
+ Reponse: Do you speak english?
+
+ Entr├®: yes
+
+ Reponse: OK, what is your query?
+
+ Entr├®: i am looking for tnb
+
+ Reponse: The address of  Th├®├ótre National de Bretagne  is : 1, Rue Saint-H├®lier.
+
+ Entr├®: hablas espanol?
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+
+ Entr├®: busco gare
+
+ Reponse: La direcci├│n de  Gare SNCF  es : 19, Place de la Gare.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 40 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: deutch?
+
+ Reponse: Sprechen Sie Deutsch?
+
+ Entr├®: ja
+
+ Reponse: Okay, was ist Ihr Wunsch?
+
+ Entr├®: tnb?
+
+ Reponse: Die adresse von  Th├®├ótre National de Bretagne  ist : 1, Rue Saint-H├®lier.
+
+ Entr├®: espanol?
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+
+ Entr├®: gloubi
+
+ Reponse: No comprendo.
+
+ Entr├®: gar
+
+ Reponse: La direcci├│n de  Gare SNCF  es : 19, Place de la Gare.
+
+ Entr├®: donde esta el hotel de ville?
+
+ Reponse: La direcci├│n de  Mairie de Rennes  es : Place de la Mairie.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 41 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: hello
+
+ Reponse: Do you speak english?
+
+ Entr├®: yes
+
+ Reponse: OK, what is your query?
+
+ Entr├®: I lokk for la gare
+
+ Reponse: The address of  Gare SNCF  is : 19, Place de la Gare.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 42 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: Je cherche la Piscine de brequigny
+
+ Reponse: L'adresse de  Piscine Br├®quigny  est : 10, Boulevard Albert 1er.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 43 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: ou est la piscine des gayeulles?
+
+ Reponse: L'adresse de  Piscine Gayeulles  est : 16, AVENUE DES GAYEULLES,AVENUE DES GAYEULLES.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 44 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: ou est le 40mcube?
+
+ Reponse: L'adresse de  40mcube  est : 48, AVENUE SERGENT MAGINOT.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 45 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: clair obscur?
+
+ Reponse: L'adresse de  Clair Obscur  est : 5, RUE DE LORRAINE,RUE DE LORRAINE.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 46 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: hola
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+
+ Entr├®: donde esta el consulat honoraire espagne
+
+ Reponse: La direcci├│n de  Consulat honoraire d'Espagne  es : 7, QUAI CHATEAUBRIAND,QUAI CHATEAUBRIAND.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 47 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche le complexe sportif du moulin du comte
+
+ Reponse: L'adresse de  Complexe sportif Moulin du Comte  est : 22, RUE JULES VALLES.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 48 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche le complexe sportif du moulin
+
+ Reponse: L'adresse de  Complexe sportif Moulin du Comte  est : 22, RUE JULES VALLES.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 49 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche la pisicine saint georges
+
+ Reponse: L'adresse de  Piscine Saint-Georges  est : 4, RUE GAMBETTA.
+
+ Entr├®: et la piscine brequigny elle est ou?
+
+ Reponse: L'adresse de  Piscine Br├®quigny  est : 10, Boulevard Albert 1er.
+
+ Entr├®: et la piscine des gayeulles?
+
+ Reponse: L'adresse de  Piscine Gayeulles  est : 16, AVENUE DES GAYEULLES,AVENUE DES GAYEULLES.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 50 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: accompagnement femme enceinte
+
+ Reponse: L'adresse de  Service d'accompagnement des femmes enceintes en difficult├® ÔÇô D├®partement dÔÇÖIlle-et-Vilaine (PMI) - CHU  est : 7, RUE KLEBER,RUE KLEBER.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 51 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: fret sndf
+
+ Reponse: L'adresse de  Service Fret - SNCF  est : 55, BOULEVARD VILLEBOIS-MAREUIL.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
+Test 52 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche une piscine
+
+ Reponse: J'ai 6 r├®ponses possibles. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.    
+
+ Entr├®: je choisis la 3
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 53 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche une piscine
+
+ Reponse: J'ai 6 r├®ponses possibles. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.    
+
+ Entr├®: ke choisis la 0
+Exception lev├®e par le test de l'application
+Test 54 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche une piscone
+
+ Reponse: J'ai 6 r├®ponses possibles. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.    
+
+ Entr├®: le 1
+
+ Entr├®: hola
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+
+ Entr├®: hello
+
+ Reponse: Do you speak english?
+
+ Entr├®: yes
+
+ Reponse: OK, what is your query?
+
+ Entr├®: i look for a piscine
+
+ Reponse: I found 6 answers. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.
+
+ Entr├®: i choose number 2
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 55 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: buongiorno
+
+ Reponse: Parli italiano?
+
+ Entr├®: si
+
+ Reponse: Va bene, qual ├¿ la tua richiesta?
+
+ Entr├®: cerco  mairie
+
+ Reponse: Indirizzo di  Mairie de Rennes  ├¿ : Place de la Mairie.
+
+ Entr├®: cerco theatre
+
+ Reponse: Indirizzo di  Le Th├®├ótre du Cercle  ├¿ : 30, RUE DE PARIS.
+
+ Entr├®: 2
+
+ Reponse:
+
+ Entr├®: hola
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+
+ Entr├®: busco tnb
+
+ Reponse: La direcci├│n de  Th├®├ótre National de Bretagne  es : 1, Rue Saint-H├®lier.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 56 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: hola
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+
+ Entr├®: busco piscine
+
+ Reponse: Tengo 2 opciones. 1) Ecole maternelle Saint-Jean Bosco. 2) Ecole ├®l├®mentaire Saint-Jean Bosco.
+
+ Entr├®: 4
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 57 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: hello man
+
+ Reponse: Do you speak english?
+
+ Entr├®: yes
+
+ Reponse: OK, what is your query?
+
+ Entr├®: i search for a piscine
+
+ Reponse: I found 6 answers. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.
+
+ Entr├®: i choose 1
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 58 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: Hallo
+
+ Reponse: Do you speak english?
+
+ Entr├®: ja
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: suche piscone
+
+ Reponse: Sprechen Sie Deutsch?
+
+ Entr├®: 4
+
+ Reponse: Parli italiano?
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 59 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche marcel
+
+ Reponse: J'ai 6 r├®ponses possibles. 1) Eglise Saint-Marcel. 2) Ecole maternelle Marcel-Pagnol. 3) Ecole maternelle Marcel Callo. 4) Ecole ├®l├®mentaire Marcel-Pagnol. 5) Ecole ├®l├®mentaire Marcel Callo. 6) Accueil de loisirs Marcel Pagnol.
+
+ Entr├®: 3
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 60 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche le college de l'assomption
+
+ Reponse: L'adresse de  Coll├¿ge l'Assomption  est : 18, BOULEVARD PAUL PAINLEVE,BOULEVARD PAUL PAINLEVE.
+
+ Entr├®: je cherche un college
+
+ Reponse: J'ai 38 r├®ponses possibles. 1) Le Grand Coll├¿ge (Gestrim). 2) Complexe sportif Motte-Br├╗lon (coll├¿ge). 3) Coll├¿ge Th├®odore Monod. 4) Coll├¿ge Sainte-Th├®r├¿se. 5) Coll├¿ge Saint-Yves. 6) Coll├¿ge Saint-Vincent - Providence. 7) Coll├¿ge Saint-Martin (ex Sainte-Genevi├¿ve). 8) Coll├¿ge Saint-Joseph. 9) Coll├¿ge Saint-H├®lier. 10) Coll├¿ge Saint-Gabriel. 11) Coll├¿ge Rosa Parks (ex-Montbarrot-Malifeu). 12) Coll├¿ge Pierre Brossolette. 13) Coll├¿ge Notre-Dame du Vieux Cours. 14) Coll├¿ge Morvan Lebesque. 15) Coll├¿ge Montessori. 16) Coll├¿ge Les Ormeaux. 17) Coll├¿ge Les Hautes Ourmes. 18) Coll├¿ge Les Gayeulles. 19) Coll├¿ge Les Chalais. 20) Coll├¿ge Le Landry. 21) Coll├¿ge La Binquenais. 22) Coll├¿ge l'Assomption. 23) Coll├¿ge Jean Moulin. 24) Coll├¿ge Jacques Pr├®vert. 25) Coll├¿ge Immacul├®e-Lyc├®e Jean-Paul II. 26) Coll├¿ge Georges Brassens. 27) Coll├¿ge Fran├ºoise Dolto. 28) Coll├¿ge Fran├ºois Truffaut. 29) Coll├¿ge Emile Zola. 30) Coll├¿ge Echange. 31) Coll├¿ge de la Tour d'Auvergne/ La Salle. 32) Coll├¿ge de Fontenay. 33) Coll├¿ge coop├®ratif en Bretagne. 34) Coll├¿ge Clotilde Vautier (ex Coll├¿ge la Motte-Br├╗lon). 35) Coll├¿ge Cleunay. 36) Coll├¿ge Bourgchevreuil. 37) Coll├¿ge Anne de Bretagne. 38) Coll├¿ge Andr├®e R├®cipon.
+
+ Entr├®: 21
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 61 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche la pizz├®ria la tomate
+
+ Reponse: Je ne comprends pas votre demande.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 62 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: Je cherche le restaurant le caf├® des bricoles
+
+ Reponse: J'ai 13 r├®ponses possibles. 1) Relais assistantes maternelles de la Caf. 2) Cl├® de fa---------------------------------------------------------------------------------------------------------------------------------- - Caf. 3) Caisse d'Allocations Familiales (Caf) d'Ille-et-Vilaine. 4) Caf├®t├®ria-brasserie - b├ótiment R (Er├¿ve/maison des ├®tudiants). 5) Caf├®t├®ria p├┤le langues - b├ótiment L. 6) Caf├®t├®ria IUT de Rennes. 7) Caf├®t├®ria hall b├ótiment B. 8) Caf├®t├®ria du restoÔÇÖU lÔÇÖ├®toile. 9) Caf├®t├®ria diapason. 10) 
+Caf├®t├®ria Beaulieu l'Astrolabe. 11) Caf et familles. 12) Brasserie-caf├®t├®ria  facult├® de m├®decine. 13) Association L'antre-2 / L'antre-2-Caf├®.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 63 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche le restaurant la pimprenelle
+
+ Reponse: Je ne comprends pas votre demande.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 64 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche le restaurant atelier des gourmets
+
+ Reponse: J'ai 2 r├®ponses possibles. 1) Les Ateliers du Vent. 2) EHPAD La Maison des Ateliers.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 65 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: hola
+
+ Reponse: Hablas espa├▒ol?
+
+ Entr├®: si
+
+ Reponse: Est├í bien, cu├íl es tu petici├│n?
+
+ Entr├®: busco restaurante atelier des gourmets
+
+ Reponse: Tengo 2 opciones. 1) Les Ateliers du Vent. 2) EHPAD La Maison des Ateliers.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 66 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: cherche restaurant tomate
+
+ Reponse: Je ne comprends pas votre demande.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 67 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche le restaurant la choppe
+
+ Reponse: Je ne comprends pas votre demande.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 68 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: je cherche la pizzeria pimprenelle
+
+ Reponse: Je ne comprends pas votre demande.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+Test 69 ----------------------------------------------------------------------------------------------------------------------------------
+ Entr├®: buongiorno bambino
+
+ Reponse: Parli italiano?
+
+ Entr├®: si
+
+ Reponse: Va bene, qual ├¿ la tua richiesta?
+
+ Entr├®: cerco la pizzeria pimprenelle
+
+ Reponse: Ho 23 risposte. 1) Le Th├®├ótre du Cercle. 2) Cercle Paul Bert Villejean-Beauregard. 3) Cercle Paul Bert Rapatel. 4) Cercle Paul Bert Nord-Ouest. 5) Cercle Paul Bert Longs Champs. 6) Cercle Paul Bert Ginguen├®. 7) Cercle Paul Bert Gayeulles . 8) Cercle Paul Bert Cleunay. 9) Cercle Paul Bert Centre. 10) Cercle Paul Bert Br├®quigny. 11) Cercle Paul Bert Blosne P├┤le Savary. 12) Cercle Paul Bert Blosne P├┤le Landrel. 13) Cercle Paul Bert - si├¿ge social. 14) Cercle Paul Bert - Le Noro├«t. 15) Cercle Paul Bert - Centre Ren├®e Pr├®vert. 16) Cercle d'Outre-Ille. 17) Cercle celtique des cheminots de Rennes - Tud an Hent Houarn. 18) Cercle celtique de Vern-sur-Seiche. 19) Cercle celtique de Rennes - Kelc'h Keltiek Roazhon- Cercl celtiq de Resnn                . 20) Cercle celtique de la Lande - Kelc'h Al Lann de Pont P├®an. 21) Cercle celtique de Chartres-de-Bretagne. 22) Cercle celtique de Cesson-S├®vign├®. 23) Cercle celtique de Bruz.
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘

@@ -3,6 +3,7 @@ import org.junit.Test
 import org.junit.Assert._
 import DB.LangDAO
 import DB.LieuxXMLDAO
+import Outils.AnalysePhrase
 
 class TestLangDAO{
 
@@ -16,7 +17,9 @@ class TestLangDAO{
     }
     @Test
     def Test3:Unit={
-        assertEquals(LieuxXMLDAO.getId(List("Piscine","Gayeulles")),Some(List("511")))
+        assertEquals(
+            List("oua"),AnalysePhrase.removeWords(List("oua","cherche"),LangDAO.getMotsRech(0))
+        )
     }
 
     }
