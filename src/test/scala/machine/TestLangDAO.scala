@@ -16,7 +16,8 @@ class TestLangDAO{
     }
     @Test
     def Test3:Unit={
-        assertEquals(LieuxXMLDAO.listeMotsUniques(),List())
+        assertEquals(LieuxXMLDAO.getId(List("Piscine","Gayeulles")),Some(List("511")))
     }
+
     }
     

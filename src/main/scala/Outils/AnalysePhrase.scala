@@ -57,12 +57,12 @@ object AnalysePhrase {
         matche.map(_.toInt)
     }
 
-    def combinaisonsAux[T](liste: List[T], acc: List[List[T]]): List[List[T]] = {
+    def combinaisons[T](liste: List[T], acc: List[List[T]]): List[List[T]] = {
         liste match {
         case Nil => acc.reverse
         case x :: xs => {
             val nouvellesCombinaisons = acc.map(_ :+ x)
-            combinaisonsAux(xs, nouvellesCombinaisons ++ acc :+ List(x))
+            combinaisons(xs, nouvellesCombinaisons ++ acc :+ List(x))
         }
         }
     }

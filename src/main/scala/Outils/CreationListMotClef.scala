@@ -30,7 +30,20 @@ object CreationListMotClef {
         RepNA=(RecupNomReel(Nele),RecupLieux(Nele))::RepNA
       }
     }
-    
+    if(RepNA.isEmpty)
+        {val motsCorrect = Corri._1 ::: Correction.correct(Corri._2,dsbLieuxXML.listeMotsUniques(),4)._1
+
+        for(nMot <- AnalysePhrase.combinaisons(motsCorrect,Nil)){
+          LieuxXMLDAO.getId(nMot) match {
+            case None => {}
+            case Some(value) => {
+              if(memoire.isEmpty||memoire.length>value.length)memoire = value
+            }
+          }
+        }
+        for( id <- memoire){
+          RepNA = (RecupNomXML(id), RecupAdrXML(id))::RepNA
+        }}
     (RepPoli,RepNA)
   }
 
@@ -69,5 +82,16 @@ object CreationListMotClef {
       case Some(value) => value
     } 
     }
-    
+    def RecupNomXML(id:String):String={
+      dsbLieuxXML.getNameId(id) match {
+        case None => ""
+        case Some(value) => value
+      }
+    }
+    def RecupAdrXML(id:String):String={
+      dsbLieuxXML.getAdresseId(id) match{
+        case None => ""
+        case Some(value) => value
+      }
+    }
 }

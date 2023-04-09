@@ -35,22 +35,26 @@ object LieuxXMLDAO {
     def getId(noms: List[String]): Option[List[String]] = {
         val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
         val statement: Statement = connection.createStatement()
-        var req: String = "SELECT id FROM organizations WHERE"
+        var req: String = "SELECT id FROM organizations WHERE "
         for(i <- 0 until noms.length){
-            req = req + "organization LIKE '%" + noms(i) + "%'"
-            if (i != noms.length-1) req += "AND"
+            req = req + " name LIKE '%" + noms(i) + "%' "
+            if (i != noms.length-1) req += " AND "
         }
-        req += "COLLATE utf8_general_ci;"
+        req += " COLLATE utf8_general_ci; "
         val resultSet=statement.executeQuery(req)
-        val result = 
-            if(resultSet.next()) Some(resultSet.getString("id").split(",").map(_.trim).toList)else None
-        
+
+        var resultList = List[String]()
+        while (resultSet.next()) {
+            resultList = resultList ++ resultSet.getString("id").split(",").map(_.trim).toList
+        }
 
         resultSet.close()
         statement.close()
         connection.close()
-        result
-    }
+
+        if (resultList.nonEmpty) Some(resultList) else None
+}
+
     def getNameId(id: String): Option[String] = {
         val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
         val statement: Statement = connection.createStatement()
