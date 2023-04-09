@@ -6,6 +6,7 @@ object CreationDeRep {
 	
 	var langues = 0 :Int
 	var action = 1 : Int 
+	var memoire =List() :List[(String, String)]
 	/*
 	0 -> demande validation lang
 	1 -> attente demande lieux
@@ -13,26 +14,26 @@ object CreationDeRep {
 	3 -> 
 	*/
 	def Reponse(message: String): List[String] = {
-		System.out.println("\n Entré: " +message)
+		//System.out.println("\n Entré: " +message)
 		val messageSep=AnalysePhrase.SepMots(message)
 
 		val langTrouve = AnalysePhrase.VerifLang(langues,messageSep)
 		if(langTrouve!=langues){
 			langues = langTrouve
 			action = 0
-			System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
+			//System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
 			return List(LangDAO.demandeLang(langues))
 		}
 		action match{
 			case 0  => {
 				if(message.replace(" ","").equals(LangDAO.vrai(langues))){
 					action = 1
-					System.out.println("\n Reponse: "+LangDAO.demandeLieux(langues))
+					//System.out.println("\n Reponse: "+LangDAO.demandeLieux(langues))
 					return List(LangDAO.demandeLieux(langues))
 				}
 				else{
 					langues = (langues + 1)%5
-					System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
+					//System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
 					return List(LangDAO.demandeLang(langues))
 				}
 			}
@@ -46,19 +47,47 @@ object CreationDeRep {
 					rep = rep :+ (politesse.capitalize)
 				}
 				if(messageSep.length==corres._1){
-					System.out.println("\n Reponse: "+formatReponse(rep))
+					//System.out.println("\n Reponse: "+formatReponse(rep))
 					return rep
 				}
 				if(corres._2.isEmpty){
 					rep = rep :+ LangDAO.inconnu(langues)
 				}
+				else if(corres._2.length==1){
+						rep = rep :+ ((firstPart+" "+corres._2.head._1+" "+secondPart+" : "+corres._2.head._2))
+					}
 				else{
+					rep = rep :+ LangDAO.multReponse(langues).replace("XXX",corres._2.length.toString())
+					for( i <- 0 until corres._2.length){
+						rep = rep :+ ((i+1)+") "+corres._2(i)._1)
+					}
+					action=2
+					memoire=corres._2
+					/*
 					for((nom,adresse) <- corres._2){
 						rep = rep :+ ((firstPart+" "+nom+" "+secondPart+" : "+adresse))
 					}
+					*/
 				}
-				System.out.println("\n Reponse: "+formatReponse(rep))
+				//System.out.println("\n Reponse: "+formatReponse(rep))
 				return rep
+			}
+			case 2 =>{
+				
+				val reponse = AnalysePhrase.premierNombreDansString(message)
+				val Array(firstPart, secondPart) = LangDAO.reponseUni(langues).split("XXX", 2)
+				action=1
+				reponse match{
+					case Some(value) => {
+						if(value <= memoire.length)return List(((firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2)))
+						else return List(LangDAO.inconnu(langues)) 
+					}
+					case None => {
+						return List(LangDAO.inconnu(langues))
+					}
+				}
+				
+
 			}
 		
 		}
@@ -71,5 +100,6 @@ object CreationDeRep {
 	def reInit{
 		langues =0
 		action =1
+		memoire =List()
 	}
 }

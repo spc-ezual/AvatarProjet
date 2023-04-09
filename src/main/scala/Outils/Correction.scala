@@ -18,6 +18,9 @@ object Correction {
                 if(!corriger.equals("")) corr = corr :+ corriger
                 else nonCorr = nonCorr :+ mot
             }
+            else{
+                nonCorr = nonCorr :+ mot 
+            }
         }
         //mots.map(x => {if(x.length>2)correctMot(x, motsCorrect) else x})
         (corr,nonCorr)
@@ -37,6 +40,7 @@ object Correction {
         * @return le mot corriger si il y en a un, sinon mot
         */
     def correctMot(mot: String, motsCorrect: List[String]): String = {
+        if(motsCorrect.contains(mot))return mot
         motsCorrect match {
         case head :: next =>
             compartMot(mot, head) match {

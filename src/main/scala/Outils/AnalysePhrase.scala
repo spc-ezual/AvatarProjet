@@ -5,8 +5,7 @@ import DB.LangDAO
 
 object AnalysePhrase {
 
-    /** @return
-        */
+    
     def SepMots(phrase: String): List[String] = {
         phrase.split("[ ,./:!?<>();_+-={}&#|']+").toList
     }
@@ -51,5 +50,20 @@ object AnalysePhrase {
                 if(Correction.correct(mots,List(NomLang),2)._1.contains(NomLang)) return i   
             }
                 return l
+    }
+    def premierNombreDansString(chaine: String): Option[Int] = {
+        val regex = """\d+""".r
+        val matche = regex.findFirstIn(chaine)
+        matche.map(_.toInt)
+    }
+
+    def combinaisonsAux[T](liste: List[T], acc: List[List[T]]): List[List[T]] = {
+        liste match {
+        case Nil => acc.reverse
+        case x :: xs => {
+            val nouvellesCombinaisons = acc.map(_ :+ x)
+            combinaisonsAux(xs, nouvellesCombinaisons ++ acc :+ List(x))
+        }
+        }
     }
 }

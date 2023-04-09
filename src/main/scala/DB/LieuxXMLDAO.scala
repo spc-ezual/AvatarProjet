@@ -43,7 +43,7 @@ object LieuxXMLDAO {
         req += "COLLATE utf8_general_ci;"
         val resultSet=statement.executeQuery(req)
         val result = 
-             if(resultSet.next()) Some(resultSet.getString("id").split(",").map(_.trim).toList)else None
+            if(resultSet.next()) Some(resultSet.getString("id").split(",").map(_.trim).toList)else None
         
 
         resultSet.close()
@@ -79,6 +79,20 @@ object LieuxXMLDAO {
         result.distinct
         
 
+    }
+
+    def getNom(): List[String] = {
+        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+        val statement = connection.createStatement()
+        val resultSet = statement.executeQuery("SELECT nom FROM organizations")
+        var noms: List[String] = List()
+        while (resultSet.next()) {
+        noms = resultSet.getString("nom") :: noms
+        }
+        resultSet.close()
+        statement.close()
+        connection.close()
+        noms
     }
 
 }

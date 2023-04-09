@@ -2,22 +2,25 @@ package Outils
 
 import DB.ListLieuxDAO
 import DB.LangDAO
+import DB.LieuxXMLDAO
 
 object CreationListMotClef {
-  //Objet qui donne acces a la base de donné des lieux
-  val dsbLieux = ListLieuxDAO
+  //Objet qui donne acces a la base de donné des lieux de base
+  val dsbLieuxBase= ListLieuxDAO
+  val dsbLieuxXML = LieuxXMLDAO
   /**
     * 
     * @param mots Phrase couper a chaque mots
     * @return 1ere string: les politesses, List (nom,adresse)
     */
   def MatchMotClef(mots: List[String],l:Int): (Int, List[(String, String)]) = {
+    var memoire =List() : List[String]
     var RepNA : List[(String, String)] = List()
     var Corri :(List[String],List[String]) = Correction.correct(mots,LangDAO.politesse(l),2)
     
     
     val RepPoli = Corri._1.length
-    for(Nele <- dsbLieux.getNom()){
+    for(Nele <- dsbLieuxBase.getNom()){
       val NMots = AnalysePhrase.SepMots(Nele)
       val temp =  Correction.correct(Corri._2,NMots,1)
       Corri= (Corri._1 ::: temp._1,temp._2)
@@ -27,6 +30,7 @@ object CreationListMotClef {
         RepNA=(RecupNomReel(Nele),RecupLieux(Nele))::RepNA
       }
     }
+    
     (RepPoli,RepNA)
   }
 
@@ -53,16 +57,17 @@ object CreationListMotClef {
     * @return l'adresse d'un lieu correspondant à un nom 
     */
   def RecupLieux(mot: String): String = {
-    dsbLieux.getAdresse(mot) match{
+    dsbLieuxBase.getAdresse(mot) match{
       case None => ""
       case Some(value) => value
     } 
     }
 
     def RecupNomReel(mot: String): String = {
-    dsbLieux.getNomReel(mot) match{
+    dsbLieuxBase.getNomReel(mot) match{
       case None => ""
       case Some(value) => value
     } 
     }
+    
 }
