@@ -974,7 +974,6 @@ Test 69 ------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------------------------------------------------
 
-
 Test 1 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: O├╣ est donc la Mairie de Rennes?
 
@@ -1003,8 +1002,8 @@ Test 5 -------------------------------------------------------------------------
 Test 6 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: ou trouver?
 
- Reponse: L'adresse de  Ville de Rennes ÔÇô Direction de la Police Municipale et du Domaine Public - Objets trouv├®s  est : 16, RUE JEAN-MARIE HUCHET.
-✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+ Reponse: Je ne comprends pas votre demande.
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 Test 7 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: Je cherche
 
@@ -1278,7 +1277,7 @@ Test 37 ------------------------------------------------------------------------
 
  Entr├®: cerco
 
- Reponse: Ho 23 risposte. 1) Le Th├®├ótre du Cercle. 2) Cercle Paul Bert Villejean-Beauregard. 3) Cercle Paul Bert Rapatel. 4) Cercle Paul Bert Nord-Ouest. 5) Cercle Paul Bert Longs Champs. 6) Cercle Paul Bert Ginguen├®. 7) Cercle Paul Bert Gayeulles . 8) Cercle Paul Bert Cleunay. 9) Cercle Paul Bert Centre. 10) Cercle Paul Bert Br├®quigny. 11) Cercle Paul Bert Blosne P├┤le Savary. 12) Cercle Paul Bert Blosne P├┤le Landrel. 13) Cercle Paul Bert - si├¿ge social. 14) Cercle Paul Bert - Le Noro├«t. 15) Cercle Paul Bert - Centre Ren├®e Pr├®vert. 16) Cercle d'Outre-Ille. 17) Cercle celtique des cheminots de Rennes - Tud an Hent Houarn. 18) Cercle celtique de Vern-sur-Seiche. 19) Cercle celtique de Rennes - Kelc'h Keltiek Roazhon- Cercl celtiq de Resnn                . 20) Cercle celtique de la Lande - Kelc'h Al Lann de Pont P├®an. 21) Cercle celtique de Chartres-de-Bretagne. 22) Cercle celtique de Cesson-S├®vign├®. 23) Cercle celtique de Bruz.
+ Reponse: No capisco.
 
  Entr├®: hallo
 
@@ -1315,7 +1314,7 @@ Test 37 ------------------------------------------------------------------------
  Entr├®: tnb
 
  Reponse: L'adresse de  Th├®├ótre National de Bretagne  est : 1, Rue Saint-H├®lier.
-✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓
 Test 38 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: ciao
 
@@ -1489,23 +1488,29 @@ Test 51 ------------------------------------------------------------------------
 Test 52 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: je cherche une piscine
 
- Reponse: J'ai 6 r├®ponses possibles. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.    
+ Reponse: J'ai 6 r├®ponses possibles. 1) Piscine Br├®quigny. 2) Piscine Gayeulles. 3) Piscine Saint-Georges. 4) Piscine Villejean. 5) Piscine de Cesson-S├®vign├®. 6) Piscine intercommunale de la Conterie.    
 
  Entr├®: je choisis la 3
+
+ Reponse:L'adresse de  Piscine Saint-Georges  est : 4, RUE GAMBETTA
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 53 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: je cherche une piscine
 
- Reponse: J'ai 6 r├®ponses possibles. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.    
+ Reponse: J'ai 6 r├®ponses possibles. 1) Piscine Br├®quigny. 2) Piscine Gayeulles. 3) Piscine Saint-Georges. 4) Piscine Villejean. 5) Piscine de Cesson-S├®vign├®. 6) Piscine intercommunale de la Conterie.    
 
  Entr├®: ke choisis la 0
-Exception lev├®e par le test de l'application
+
+ Reponse :Je ne comprends pas votre demande
+✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 54 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: je cherche une piscone
 
- Reponse: J'ai 6 r├®ponses possibles. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.    
+ Reponse: J'ai 6 r├®ponses possibles. 1) Piscine Br├®quigny. 2) Piscine Gayeulles. 3) Piscine Saint-Georges. 4) Piscine Villejean. 5) Piscine de Cesson-S├®vign├®. 6) Piscine intercommunale de la Conterie.    
 
  Entr├®: le 1
+
+ Reponse:L'adresse de  Piscine Br├®quigny  est : 10, Boulevard Albert 1er
 
  Entr├®: hola
 
@@ -1525,9 +1530,11 @@ Test 54 ------------------------------------------------------------------------
 
  Entr├®: i look for a piscine
 
- Reponse: I found 6 answers. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.
+ Reponse: I found 6 answers. 1) Piscine Br├®quigny. 2) Piscine Gayeulles. 3) Piscine Saint-Georges. 4) Piscine Villejean. 5) Piscine de Cesson-S├®vign├®. 6) Piscine intercommunale de la Conterie.
 
  Entr├®: i choose number 2
+
+ Reponse:The address of  Piscine Gayeulles  is : 16, AVENUE DES GAYEULLES,AVENUE DES GAYEULLES
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 55 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: buongiorno
@@ -1544,11 +1551,11 @@ Test 55 ------------------------------------------------------------------------
 
  Entr├®: cerco theatre
 
- Reponse: Indirizzo di  Le Th├®├ótre du Cercle  ├¿ : 30, RUE DE PARIS.
+ Reponse: Ho 7 risposte. 1) ADEC-Maison du th├®├ótre amateur. 2) Art'Comedia-Th├®├ótre de B├®cherel. 3) Le Th├®├ótre du Cercle. 4) Th├®├ótre La Paillette. 5) Th├®├ótre National de Bretagne. 6) Th├®├ótre de l'Arpenteur. 7) Th├®├ótre du Vieux Saint-├ëtienne.
 
  Entr├®: 2
 
- Reponse:
+ Reponse:Indirizzo di  Art'Comedia-Th├®├ótre de B├®cherel  ├¿ : 7, Chemin de la Roncette
 
  Entr├®: hola
 
@@ -1573,9 +1580,11 @@ Test 56 ------------------------------------------------------------------------
 
  Entr├®: busco piscine
 
- Reponse: Tengo 2 opciones. 1) Ecole maternelle Saint-Jean Bosco. 2) Ecole ├®l├®mentaire Saint-Jean Bosco.
+ Reponse: Tengo 6 opciones. 1) Piscine Br├®quigny. 2) Piscine Gayeulles. 3) Piscine Saint-Georges. 4) Piscine Villejean. 5) Piscine de Cesson-S├®vign├®. 6) Piscine intercommunale de la Conterie.
 
  Entr├®: 4
+
+ Reponse:La direcci├│n de  Piscine Villejean  es : 1, SQUARE D'ALSACE
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 57 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: hello man
@@ -1588,9 +1597,11 @@ Test 57 ------------------------------------------------------------------------
 
  Entr├®: i search for a piscine
 
- Reponse: I found 6 answers. 1) Piscine Villejean. 2) Piscine Saint-Georges. 3) Piscine intercommunale de la Conterie. 4) Piscine Gayeulles. 5) Piscine de Cesson-S├®vign├®. 6) Piscine Br├®quigny.
+ Reponse: I found 6 answers. 1) Piscine Br├®quigny. 2) Piscine Gayeulles. 3) Piscine Saint-Georges. 4) Piscine Villejean. 5) Piscine de Cesson-S├®vign├®. 6) Piscine intercommunale de la Conterie.
 
  Entr├®: i choose 1
+
+ Reponse:The address of  Piscine Br├®quigny  is : 10, Boulevard Albert 1er
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 58 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: Hallo
@@ -1612,9 +1623,11 @@ Test 58 ------------------------------------------------------------------------
 Test 59 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: je cherche marcel
 
- Reponse: J'ai 6 r├®ponses possibles. 1) Eglise Saint-Marcel. 2) Ecole maternelle Marcel-Pagnol. 3) Ecole maternelle Marcel Callo. 4) Ecole ├®l├®mentaire Marcel-Pagnol. 5) Ecole ├®l├®mentaire Marcel Callo. 6) Accueil de loisirs Marcel Pagnol.
+ Reponse: J'ai 6 r├®ponses possibles. 1) Accueil de loisirs Marcel Pagnol. 2) Ecole maternelle Marcel Callo. 3) Ecole maternelle Marcel-Pagnol. 4) Ecole ├®l├®mentaire Marcel Callo. 5) Ecole ├®l├®mentaire Marcel-Pagnol. 6) Eglise Saint-Marcel.
 
  Entr├®: 3
+
+ Reponse:L'adresse de  Ecole maternelle Marcel-Pagnol  est : 19, RUE JEANNE JUGAN
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 60 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: je cherche le college de l'assomption
@@ -1623,9 +1636,11 @@ Test 60 ------------------------------------------------------------------------
 
  Entr├®: je cherche un college
 
- Reponse: J'ai 38 r├®ponses possibles. 1) Le Grand Coll├¿ge (Gestrim). 2) Complexe sportif Motte-Br├╗lon (coll├¿ge). 3) Coll├¿ge Th├®odore Monod. 4) Coll├¿ge Sainte-Th├®r├¿se. 5) Coll├¿ge Saint-Yves. 6) Coll├¿ge Saint-Vincent - Providence. 7) Coll├¿ge Saint-Martin (ex Sainte-Genevi├¿ve). 8) Coll├¿ge Saint-Joseph. 9) Coll├¿ge Saint-H├®lier. 10) Coll├¿ge Saint-Gabriel. 11) Coll├¿ge Rosa Parks (ex-Montbarrot-Malifeu). 12) Coll├¿ge Pierre Brossolette. 13) Coll├¿ge Notre-Dame du Vieux Cours. 14) Coll├¿ge Morvan Lebesque. 15) Coll├¿ge Montessori. 16) Coll├¿ge Les Ormeaux. 17) Coll├¿ge Les Hautes Ourmes. 18) Coll├¿ge Les Gayeulles. 19) Coll├¿ge Les Chalais. 20) Coll├¿ge Le Landry. 21) Coll├¿ge La Binquenais. 22) Coll├¿ge l'Assomption. 23) Coll├¿ge Jean Moulin. 24) Coll├¿ge Jacques Pr├®vert. 25) Coll├¿ge Immacul├®e-Lyc├®e Jean-Paul II. 26) Coll├¿ge Georges Brassens. 27) Coll├¿ge Fran├ºoise Dolto. 28) Coll├¿ge Fran├ºois Truffaut. 29) Coll├¿ge Emile Zola. 30) Coll├¿ge Echange. 31) Coll├¿ge de la Tour d'Auvergne/ La Salle. 32) Coll├¿ge de Fontenay. 33) Coll├¿ge coop├®ratif en Bretagne. 34) Coll├¿ge Clotilde Vautier (ex Coll├¿ge la Motte-Br├╗lon). 35) Coll├¿ge Cleunay. 36) Coll├¿ge Bourgchevreuil. 37) Coll├¿ge Anne de Bretagne. 38) Coll├¿ge Andr├®e R├®cipon.
+ Reponse: J'ai 38 r├®ponses possibles. 1) Coll├¿ge Andr├®e R├®cipon. 2) Coll├¿ge Anne de Bretagne. 3) Coll├¿ge Bourgchevreuil. 4) Coll├¿ge Cleunay. 5) Coll├¿ge Clotilde Vautier (ex Coll├¿ge la Motte-Br├╗lon). 6) Coll├¿ge Echange. 7) Coll├¿ge Emile Zola. 8) Coll├¿ge Fran├ºois Truffaut. 9) Coll├¿ge Fran├ºoise Dolto. 10) Coll├¿ge Georges Brassens. 11) Coll├¿ge Immacul├®e-Lyc├®e Jean-Paul II. 12) Coll├¿ge Jacques Pr├®vert. 13) Coll├¿ge Jean Moulin. 14) Coll├¿ge La Binquenais. 15) Coll├¿ge Le Landry. 16) Coll├¿ge Les Chalais. 17) Coll├¿ge Les Gayeulles. 18) Coll├¿ge Les Hautes Ourmes. 19) Coll├¿ge Les Ormeaux. 20) Coll├¿ge Montessori. 21) Coll├¿ge Morvan Lebesque. 22) Coll├¿ge Notre-Dame du Vieux Cours. 23) Coll├¿ge Pierre Brossolette. 24) Coll├¿ge Rosa Parks (ex-Montbarrot-Malifeu). 25) Coll├¿ge Saint-Gabriel. 26) Coll├¿ge Saint-H├®lier. 27) Coll├¿ge Saint-Joseph. 28) Coll├¿ge Saint-Martin (ex Sainte-Genevi├¿ve). 29) Coll├¿ge Saint-Vincent - Providence. 30) Coll├¿ge Saint-Yves. 31) Coll├¿ge Sainte-Th├®r├¿se. 32) Coll├¿ge Th├®odore Monod. 33) Coll├¿ge coop├®ratif en Bretagne. 34) Coll├¿ge de Fontenay. 35) Coll├¿ge de la Tour d'Auvergne/ La Salle. 36) Coll├¿ge l'Assomption. 37) Complexe sportif Motte-Br├╗lon (coll├¿ge). 38) Le Grand Coll├¿ge (Gestrim).
 
  Entr├®: 21
+
+ Reponse:L'adresse de  Coll├¿ge Morvan Lebesque  est : 34, Avenue Beaus├®jour
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 61 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: je cherche la pizz├®ria la tomate
@@ -1635,8 +1650,8 @@ Test 61 ------------------------------------------------------------------------
 Test 62 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: Je cherche le restaurant le caf├® des bricoles
 
- Reponse: J'ai 13 r├®ponses possibles. 1) Relais assistantes maternelles de la Caf. 2) Cl├® de fa---------------------------------------------------------------------------------------------------------------------------------- - Caf. 3) Caisse d'Allocations Familiales (Caf) d'Ille-et-Vilaine. 4) Caf├®t├®ria-brasserie - b├ótiment R (Er├¿ve/maison des ├®tudiants). 5) Caf├®t├®ria p├┤le langues - b├ótiment L. 6) Caf├®t├®ria IUT de Rennes. 7) Caf├®t├®ria hall b├ótiment B. 8) Caf├®t├®ria du restoÔÇÖU lÔÇÖ├®toile. 9) Caf├®t├®ria diapason. 10) 
-Caf├®t├®ria Beaulieu l'Astrolabe. 11) Caf et familles. 12) Brasserie-caf├®t├®ria  facult├® de m├®decine. 13) Association L'antre-2 / L'antre-2-Caf├®.
+ Reponse: J'ai 13 r├®ponses possibles. 1) Association L'antre-2 / L'antre-2-Caf├®. 2) Brasserie-caf├®t├®ria  facult├® de m├®decine. 3) Caf et familles. 4) Caf├®t├®ria Beaulieu l'Astrolabe. 5) Caf├®t├®ria IUT 
+de Rennes. 6) Caf├®t├®ria diapason. 7) Caf├®t├®ria du restoÔÇÖU lÔÇÖ├®toile. 8) Caf├®t├®ria hall b├ótiment B. 9) Caf├®t├®ria p├┤le langues - b├ótiment L. 10) Caf├®t├®ria-brasserie - b├ótiment R (Er├¿ve/maison des ├®tudiants). 11) Caisse d'Allocations Familiales (Caf) d'Ille-et-Vilaine. 12) Cl├® de fa---------------------------------------------------------------------------------------------------------------------------------- - Caf. 13) Relais assistantes maternelles de la Caf.
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 63 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: je cherche le restaurant la pimprenelle
@@ -1646,7 +1661,7 @@ Test 63 ------------------------------------------------------------------------
 Test 64 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: je cherche le restaurant atelier des gourmets
 
- Reponse: J'ai 2 r├®ponses possibles. 1) Les Ateliers du Vent. 2) EHPAD La Maison des Ateliers.
+ Reponse: J'ai 2 r├®ponses possibles. 1) EHPAD La Maison des Ateliers. 2) Les Ateliers du Vent.
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 65 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: hola
@@ -1659,7 +1674,7 @@ Test 65 ------------------------------------------------------------------------
 
  Entr├®: busco restaurante atelier des gourmets
 
- Reponse: Tengo 2 opciones. 1) Les Ateliers du Vent. 2) EHPAD La Maison des Ateliers.
+ Reponse: Tengo 2 opciones. 1) EHPAD La Maison des Ateliers. 2) Les Ateliers du Vent.
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
 Test 66 ----------------------------------------------------------------------------------------------------------------------------------
  Entr├®: cherche restaurant tomate
@@ -1687,5 +1702,14 @@ Test 69 ------------------------------------------------------------------------
 
  Entr├®: cerco la pizzeria pimprenelle
 
- Reponse: Ho 23 risposte. 1) Le Th├®├ótre du Cercle. 2) Cercle Paul Bert Villejean-Beauregard. 3) Cercle Paul Bert Rapatel. 4) Cercle Paul Bert Nord-Ouest. 5) Cercle Paul Bert Longs Champs. 6) Cercle Paul Bert Ginguen├®. 7) Cercle Paul Bert Gayeulles . 8) Cercle Paul Bert Cleunay. 9) Cercle Paul Bert Centre. 10) Cercle Paul Bert Br├®quigny. 11) Cercle Paul Bert Blosne P├┤le Savary. 12) Cercle Paul Bert Blosne P├┤le Landrel. 13) Cercle Paul Bert - si├¿ge social. 14) Cercle Paul Bert - Le Noro├«t. 15) Cercle Paul Bert - Centre Ren├®e Pr├®vert. 16) Cercle d'Outre-Ille. 17) Cercle celtique des cheminots de Rennes - Tud an Hent Houarn. 18) Cercle celtique de Vern-sur-Seiche. 19) Cercle celtique de Rennes - Kelc'h Keltiek Roazhon- Cercl celtiq de Resnn                . 20) Cercle celtique de la Lande - Kelc'h Al Lann de Pont P├®an. 21) Cercle celtique de Chartres-de-Bretagne. 22) Cercle celtique de Cesson-S├®vign├®. 23) Cercle celtique de Bruz.
+ Reponse: No capisco.
 ✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘✘
+
+Bilan:
+F1: 9 tests ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓s sur 9
+F2: 10 tests ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓s sur 10
+F3: 8 tests ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓s sur 8
+F4: 14 tests ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓s sur 14
+F5: 10 tests ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓s sur 10
+F6: 0 tests ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓s sur 9
+F7: 0 tests ✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓✓s sur 9

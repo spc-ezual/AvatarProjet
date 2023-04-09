@@ -20,7 +20,7 @@ object LieuxXMLDAO {
         val query: String = s"SELECT street_number,street_name FROM addresses WHERE organization_id= '$id'"
         val resultSet=statement.executeQuery(query)
         val rep =
-            if(resultSet.next()) Some(resultSet.getString("street_number")+", "+resultSet.getString("street_name"))else None
+            if(resultSet.next()) Some(resultSet.getString("street_number")+", "+resultSet.getString("street_name").split(" ").map(word => word.head.toUpper  + word.tail.toLowerCase).mkString(" "))else None
         resultSet.close()
         statement.close()
         connection.close()
@@ -35,7 +35,7 @@ object LieuxXMLDAO {
     def getId(noms: List[String]): Option[List[String]] = {
         val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
         val statement: Statement = connection.createStatement()
-        var req: String = "SELECT id FROM organizations WHERE "
+        var req: String = "SELECT id FROM organizations WHERE id IN (SELECT organization_id FROM addresses WHERE city = 'Rennes') AND "
         for(i <- 0 until noms.length){
             req = req + " name LIKE '%" + noms(i) + "%' "
             if (i != noms.length-1) req += " AND "

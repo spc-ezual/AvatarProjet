@@ -14,26 +14,26 @@ object CreationDeRep {
 	3 -> 
 	*/
 	def Reponse(message: String): List[String] = {
-		//System.out.println("\n Entré: " +message)
+		System.out.println("\n Entré: " +message)
 		val messageSep=AnalysePhrase.SepMots(message)
 
 		val langTrouve = AnalysePhrase.VerifLang(langues,messageSep)
 		if(langTrouve!=langues){
 			langues = langTrouve
 			action = 0
-			//System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
+			System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
 			return List(LangDAO.demandeLang(langues))
 		}
 		action match{
 			case 0  => {
 				if(message.replace(" ","").equals(LangDAO.vrai(langues))){
 					action = 1
-					//System.out.println("\n Reponse: "+LangDAO.demandeLieux(langues))
+					System.out.println("\n Reponse: "+LangDAO.demandeLieux(langues))
 					return List(LangDAO.demandeLieux(langues))
 				}
 				else{
 					langues = (langues + 1)%5
-					//System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
+					System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
 					return List(LangDAO.demandeLang(langues))
 				}
 			}
@@ -47,7 +47,7 @@ object CreationDeRep {
 					rep = rep :+ (politesse.capitalize)
 				}
 				if(messageSep.length==corres._1){
-					//System.out.println("\n Reponse: "+formatReponse(rep))
+					System.out.println("\n Reponse: "+formatReponse(rep))
 					return rep
 				}
 				if(corres._2.isEmpty){
@@ -66,7 +66,7 @@ object CreationDeRep {
 					}
 					action=2
 				}
-				//System.out.println("\n Reponse: "+formatReponse(rep))
+				System.out.println("\n Reponse: "+formatReponse(rep))
 				return rep
 			}
 			case 2 =>{
@@ -77,11 +77,15 @@ object CreationDeRep {
 				reponse match{
 					case Some(value) => {
 						if(value <= memoire.length&&value>0){
-							//println( "\n Reponse:"+ firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2)
+							System.out.println( "\n Reponse:"+ firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2)
 							return List((firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2))}
-						else return List(LangDAO.inconnu(langues)) 
+						else {
+							System.out.println("\n Reponse :"+LangDAO.inconnu(langues))
+							return List(LangDAO.inconnu(langues)) 
+						}
 					}
 					case None => {
+						System.out.println("\n Reponse :"+LangDAO.inconnu(langues))
 						return List(LangDAO.inconnu(langues))
 					}
 				}
