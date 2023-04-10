@@ -4,6 +4,7 @@ import org.junit.Assert._
 import DB.LangDAO
 import DB.LieuxXMLDAO
 import Outils.AnalysePhrase
+import application.AnalysePageObjet
 
 class TestLangDAO{
 
@@ -21,6 +22,9 @@ class TestLangDAO{
             List(),LangDAO.getMotsRest(0)
         )
     }
-
+    @Test 
+    def Test4:Unit={
+        assertEquals(AnalysePageObjet.getNomAdres(List("chez")),Some(("La Tomate","18, rue Saint Georges")))
+    }
     }
     

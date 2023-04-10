@@ -25,7 +25,6 @@ case class Texte(content: String) extends Html
  *      </center>
  *    </body>
  *  </html>
- */
 
 object HtmlExample {
   val exemple = Tag("html", List(),
@@ -39,3 +38,5 @@ object HtmlExample {
           Tag("a", List(("href", "http://www.irisa.fr")),
             List(Texte("Lien")))))))))
 }
+ */
+
