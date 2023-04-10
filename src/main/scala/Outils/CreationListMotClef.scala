@@ -3,6 +3,7 @@ package Outils
 import DB.ListLieuxDAO
 import DB.LangDAO
 import DB.LieuxXMLDAO
+import application.AnalysePageObjet
 
 object CreationListMotClef {
   //Objet qui donne acces a la base de donné des lieux de base
@@ -21,6 +22,13 @@ object CreationListMotClef {
     
     
     val RepPoli = Corri._1.length
+    val resto = AnalysePhrase.rechercheResto(Corri._2,LangDAO.getMotsRest(l))
+    if(resto!=None){
+      AnalysePageObjet.getNomAdres(resto.get) match{
+        case None => return (RepPoli,Nil)
+        case Some(value) => return (RepPoli,List(value))
+      }
+    }
     for(Nele <- dsbLieuxBase.getNom()){
       val NMots = AnalysePhrase.SepMots(Nele)
       val temp =  Correction.correct(Corri._2,NMots,1)

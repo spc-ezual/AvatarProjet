@@ -18,13 +18,13 @@ object AnalysePageObjet {
     
   }
   def resultatsPage(url: String): Option[(String,String)] = {
-    println("HTML")
+    //println("HTML")
     val html: Html = urlToHtml(url)
-    println("Adresse")
+    //println("Adresse")
     val adresse =obtenirAdr(html)
-    println("Nom")
+    //println("Nom")
     val nom = obtenirNom(html)
-    println(adresse,nom)
+    //println(adresse,nom)
     if(adresse!=None && nom != None) return Some((nom.get,adresse.get))
     else None
   }
@@ -46,7 +46,7 @@ object AnalysePageObjet {
     lurl match {
       case Nil => None
       case head :: next =>
-        if (exp.forall( s => head.toLowerCase().contains(s.toLowerCase()))) { Some(head) }
+        if (exp.forall( s => if(s.length>2)head.toLowerCase().contains(s.toLowerCase())else true) ) { Some(head) }
         else { selectURL(next, exp) }
     }
   }
@@ -58,15 +58,15 @@ object AnalysePageObjet {
     
     case Tag("li", attributes, children) =>
       if (attributes.contains(("class", "icomoon-location"))) {
-        println("trouver")
+        //println("trouver")
         val addressNodes = children.collect {
           case Tag("span", _, List(Texte(content))) => content.trim
         }
         if (addressNodes.length >= 1) {
-          println("re trouver")
+          //println("re trouver")
           Some(addressNodes(0))
         } else {
-          println("non trouver")
+          //println("non trouver")
           None
         }
       } else {
@@ -84,7 +84,7 @@ object AnalysePageObjet {
         if attributes.contains(
           ("class", "bu_restaurant_title_xl")
         ) || attributes.contains(("itemprop", "name")) =>{
-          println("trouver")
+          //println("trouver")
       children.collectFirst { case Texte(content) =>
         content
       }}

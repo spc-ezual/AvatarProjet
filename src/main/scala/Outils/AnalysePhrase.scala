@@ -66,4 +66,14 @@ object AnalysePhrase {
         }
         }
     }
+
+    def rechercheResto(mots :List[String],Resto :List[String]):Option[List[String]]={
+        mots match {
+            case Nil => None
+            case head :: next => {
+                if (Correction.correctMot(head,Resto).equals("")) rechercheResto(next,Resto)
+                else Some(next)
+            }
+        }
+    }
 }
