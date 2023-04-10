@@ -171,4 +171,18 @@ object LangDAO {
 		result
 	}
 
+    def getMotsRest(l:Int):List[String] ={
+		var rep = List(): List[String]
+		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+		val statement = connection.createStatement()
+		val resultSet = statement.executeQuery(
+		s"SELECT mots_site FROM langues WHERE id=$l"
+		)
+		while (resultSet.next()) {
+		rep= resultSet.getString("mots_site").split(",").map(_.trim).toList
+		}
+		connection.close()
+		rep
+	}
+
 }

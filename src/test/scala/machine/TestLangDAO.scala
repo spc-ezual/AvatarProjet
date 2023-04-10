@@ -18,7 +18,7 @@ class TestLangDAO{
     @Test
     def Test3:Unit={
         assertEquals(
-            List("oua"),AnalysePhrase.removeWords(List("oua","cherche"),LangDAO.getMotsRech(0))
+            List(),LangDAO.getMotsRest(0)
         )
     }
 
