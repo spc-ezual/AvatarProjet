@@ -8,8 +8,8 @@ object AnalysePageObjet {
   def getNomAdres(mots :List[String]):Option[(String,String)]={
     val req ="https://www.linternaute.com/restaurant/guide/ville-rennes-35000/?name="+mots.mkString("+")
     val pageRech=urlToHtml(req)
-    val listUrl = lURL(pageRech)
-    selectURL(listUrl,mots) match{
+    
+    obtenir1liens(pageRech) match{
       case None => None
       case Some(value) => {
         resultatsPage("https://www.linternaute.com"+value)
@@ -51,7 +51,25 @@ object AnalysePageObjet {
     }
   }
 
-  
+  def obtenir1liens(h: Html): Option[String] = h match {
+    case Texte(content) => None
+    
+    case Tag("div", attributes, children) => {
+      if (attributes.contains(("class", "grid_col w25"))){
+        children.collectFirst{ case Tag(_,attributes,_) => attributes.collect{case ("href", url)=> url}(0)}
+        // TODO (0) est IMMONDE trouver une alternative
+      }
+      else {
+        children.foldLeft[Option[String]](None)((acc, child) =>
+        acc.orElse(obtenir1liens(child)))
+    }}
+      
+      case Tag(_, _, children) =>{
+      children.foldLeft[Option[String]](None)((acc, child) =>
+        acc.orElse(obtenir1liens(child))
+      )
+    }
+  }
 
   def obtenirAdr(h: Html): Option[String] = h match {
     case Texte(content) => None
