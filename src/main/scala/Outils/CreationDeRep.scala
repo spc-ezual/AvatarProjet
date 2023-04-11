@@ -1,6 +1,7 @@
 package Outils
 
 import DB.LangDAO
+import Speech.Discours
 
 object CreationDeRep {
 	
@@ -22,6 +23,7 @@ object CreationDeRep {
 			langues = langTrouve
 			action = 0
 			System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
+			Discours.generateDiscours(LangDAO.demandeLang(langues),langues)
 			return List(LangDAO.demandeLang(langues))
 		}
 		action match{
@@ -29,11 +31,13 @@ object CreationDeRep {
 				if(message.replace(" ","").equals(LangDAO.vrai(langues))){
 					action = 1
 					System.out.println("\n Reponse: "+LangDAO.demandeLieux(langues))
+					Discours.generateDiscours(LangDAO.demandeLieux(langues),langues)
 					return List(LangDAO.demandeLieux(langues))
 				}
 				else{
 					langues = (langues + 1)%5
 					System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
+					Discours.generateDiscours(LangDAO.demandeLang(langues),langues)
 					return List(LangDAO.demandeLang(langues))
 				}
 			}
@@ -48,6 +52,7 @@ object CreationDeRep {
 				}
 				if(messageSep.length==corres._1){
 					System.out.println("\n Reponse: "+formatReponse(rep))
+					Discours.generateDiscours(formatReponse(rep),langues)
 					return rep
 				}
 				if(corres._2.isEmpty){
@@ -68,6 +73,7 @@ object CreationDeRep {
 					action=2
 				}
 				System.out.println("\n Reponse: "+formatReponse(rep))
+				Discours.generateDiscours(formatReponse(rep),langues)
 				return rep
 			}
 			case 2 =>{
@@ -79,14 +85,17 @@ object CreationDeRep {
 					case Some(value) => {
 						if(value <= memoire.length&&value>0){
 							System.out.println( "\n Reponse:"+ firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2)
+							Discours.generateDiscours(firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2,langues)
 							return List((firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2))}
 						else {
 							System.out.println("\n Reponse :"+LangDAO.inconnu(langues))
+							Discours.generateDiscours(LangDAO.inconnu(langues),langues)
 							return List(LangDAO.inconnu(langues)) 
 						}
 					}
 					case None => {
 						System.out.println("\n Reponse :"+LangDAO.inconnu(langues))
+						Discours.generateDiscours(LangDAO.inconnu(langues),langues)
 						return List(LangDAO.inconnu(langues))
 					}
 				}
