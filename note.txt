@@ -965,10 +965,10 @@ Test 69 ------------------------------------------------------------------------
 
 
 Bilan:
-F1: 9 tests  sur 9
-F2: 10 tests  sur 10
-F3: 8 tests  sur 8
-F4: 14 tests  sur 14
-F5: 10 tests  sur 10
-F6: 0 tests  sur 9
-F7: 6 tests  sur 9
+F1: 9 tests réussis sur 9
+F2: 10 tests réussis sur 10
+F3: 8 tests réussis sur 8
+F4: 14 tests réussis sur 14
+F5: 10 tests réussis sur 10
+F6: 0 tests réussis sur 9
+F7: 6 tests réussis sur 9

@@ -64,6 +64,7 @@ object CreationDeRep {
 					for( i <- 0 until memoire.length){
 						rep = rep :+ ((i+1)+") "+memoire(i)._1)
 					}
+					rep = rep :+ LangDAO.demandeChoix(langues)
 					action=2
 				}
 				System.out.println("\n Reponse: "+formatReponse(rep))

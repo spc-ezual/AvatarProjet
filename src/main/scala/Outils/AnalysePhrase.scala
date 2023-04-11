@@ -34,8 +34,8 @@ object AnalysePhrase {
     }
     def VerifLang(l:Int,mots :List[String]):Int= {
         for (i <- 0 to 4)  {
-            for(mot <- LangDAO.getMotsLang(i)){
-                if(mots.contains(mot))return i
+            for(mot <- mots){
+                if(LangDAO.getMotsLang(i).contains(mot.toLowerCase()))return i
             }
         }
         return VerifLangCorrect(l,mots)
