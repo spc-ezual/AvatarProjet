@@ -6,7 +6,7 @@ object AnalysePageObjet {
 
 
   def getNomAdres(mots :List[String]):Option[(String,String)]={
-    val req ="https://www.linternaute.com/restaurant/guide/ville-rennes-35000/?name="+mots.mkString("+")
+    val req ="https://www.linternaute.com/restaurant/guide/ville-rennes-35000/?name="+mots.mkString("+").replace("é","e")
     val pageRech=urlToHtml(req)
     
     obtenir1liens(pageRech) match{
@@ -98,10 +98,7 @@ object AnalysePageObjet {
   }
   def obtenirNom(h: Html): Option[String] = h match {
     case Texte(_) => None
-    case Tag("h1", attributes, children)
-        if attributes.contains(
-          ("class", "bu_restaurant_title_xl")
-        ) || attributes.contains(("itemprop", "name")) =>{
+    case Tag("h1", attributes, children) =>{
           //println("trouver")
       children.collectFirst { case Texte(content) =>
         content

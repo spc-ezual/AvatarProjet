@@ -26,7 +26,7 @@ object CreationListMotClef {
     if(resto!=None){
       AnalysePageObjet.getNomAdres(resto.get) match{
         case None => return (RepPoli,Nil)
-        case Some(value) => return (RepPoli,List(value))
+        case Some(value) => return (RepPoli,List((AnalysePhrase.replaceHtmlEntities(value._1),AnalysePhrase.replaceHtmlEntities(value._2))))
       }
     }
     for(Nele <- dsbLieuxBase.getNom()){

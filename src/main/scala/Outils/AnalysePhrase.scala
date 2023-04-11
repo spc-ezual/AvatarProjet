@@ -1,5 +1,5 @@
 package Outils
-
+import org.apache.commons.text.StringEscapeUtils
 import java.text.Normalizer
 import DB.LangDAO
 
@@ -76,4 +76,7 @@ object AnalysePhrase {
             }
         }
     }
+    def replaceHtmlEntities(mots: String): String = {
+        StringEscapeUtils.unescapeHtml4(mots)
+}
 }

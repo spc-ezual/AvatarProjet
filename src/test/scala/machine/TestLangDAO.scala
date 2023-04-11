@@ -24,7 +24,7 @@ class TestLangDAO{
     }
     @Test 
     def Test4:Unit={
-        assertEquals(AnalysePageObjet.getNomAdres(List("chez")),Some(("La Tomate","18, rue Saint Georges")))
+        assertEquals(AnalysePageObjet.getNomAdres(List("Atelier","des")),Some(("La Tomate","18, rue Saint Georges")))
     }
     }
     
