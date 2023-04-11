@@ -11,11 +11,11 @@ import machine.MachineImpl
   */
 class UI extends MainFrame {
 
-  preferredSize = new Dimension(1000, 1000)
+  preferredSize = new Dimension(750, 750)
   title = "Avatar"
 
   val chatArea = new BoxPanel(Orientation.Vertical)
-  val inputField = new TextField { columns = 40 }
+  val inputField = new TextField
   val sendButton = new Button { text = "Send" }
   val resetButton = new Button { text = "New Conversation" }
   val avatarIcon = new ImageIcon("Image/Avatar.png")
@@ -34,13 +34,13 @@ class UI extends MainFrame {
         // Create user message
         val userMessage = new FlowPanel {
           contents += new Label { icon = userIcon }
-          contents += new Label { text = s"You: $message" }
+          contents += new Label { text = s"You : $message" }
         }
         // Create avatar message
         val avatarMessage = new FlowPanel {
           contents += new Label { icon = avatarIcon }
           contents += new Label {
-            text = "Avatar: " + formatReponse(Reponse(message))
+            text = "Avatar : " + formatReponse(Reponse(message))
           }
         }
         // Add messages to chat area
@@ -58,13 +58,13 @@ class UI extends MainFrame {
         // Create user message
         val userMessage = new FlowPanel {
           contents += new Label { icon = userIcon }
-          contents += new Label { text = s"You: $message" }
+          contents += new Label { text = s"You : $message" }
         }
         // Create avatar message
         val avatarMessage = new FlowPanel {
           contents += new Label { icon = avatarIcon }
           contents += new Label {
-            text = "Avatar: " + formatReponse(Reponse(message))
+            text = "Avatar : " + formatReponse(Reponse(message))
           }
         }
         // Add messages to chat area
@@ -76,12 +76,17 @@ class UI extends MainFrame {
       }
   }
 
-  var chat = new ScrollPane(chatArea)
-  chat.preferredSize = new Dimension(1000, 950)
+  val chat = new ScrollPane(chatArea)
+  chat.preferredSize = new Dimension(750, 700)
+
+  inputField.preferredSize = new Dimension(400, 40)
+
+  val inputAndButtons = new FlowPanel(inputField, sendButton, resetButton)
+  inputAndButtons.preferredSize = new Dimension(750, 50)
 
   contents = new BoxPanel(Orientation.Vertical) {
     contents += chat
-    contents += new FlowPanel(inputField, sendButton, resetButton)
+    contents += inputAndButtons
   }
 
 }
