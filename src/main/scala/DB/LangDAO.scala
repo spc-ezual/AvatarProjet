@@ -13,10 +13,12 @@ object LangDAO {
 		"Le fichier de base de données n'existe pas ou n'est pas un fichier valide."
 		)
 	}
-
-	val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
-	connection.close()
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la list des politesse, mot de recherche et le nom de la langue d'id l
+	  */
 	def getMotsLang(l: Int): List[String] = {
 		var rep = List(): List[String]
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
@@ -36,23 +38,12 @@ object LangDAO {
 		connection.close()
 		rep
 	}
-
-	def getMotsRech(l: Int): List[String] = {
-		var rep = List(): List[String]
-		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
-		val statement = connection.createStatement()
-		val resultSet = statement.executeQuery(
-		s"SELECT recherche FROM langues WHERE id=$l"
-		)
-		while (resultSet.next()) {
-		val rechercheValues = resultSet.getString("recherche").split(",").map(_.trim).toList
-		rep = rep ::: rechercheValues
-
-		}
-		connection.close()
-		rep
-	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la list des politesse de la langue d'id l
+	  */
 	def politesse(l: Int): List[String] = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -62,7 +53,12 @@ object LangDAO {
 		connection.close()
 		result.split(",").map(_.trim).toList
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la list des mot de recherche de la langue d'id l
+	  */
 	def recherche(l: Int): List[String] = {
 		var rep = List(): List[String]
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
@@ -76,7 +72,12 @@ object LangDAO {
 		connection.close()
 		rep
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne le nom de la langue d'id l
+	  */
 	def nom(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -86,7 +87,12 @@ object LangDAO {
 		connection.close()
 		result
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne le mot qui veut dire true de la langue d'id l
+	  */
 	def vrai(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -96,7 +102,12 @@ object LangDAO {
 		connection.close()
 		result
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne le mot qui veut dire false de la langue d'id l
+	  */
 	def faux(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -106,7 +117,12 @@ object LangDAO {
 		connection.close()
 		result
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la phrase pour une reponse unique de la langue d'id l
+	  */
 	def reponseUni(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -117,7 +133,12 @@ object LangDAO {
 		connection.close()
 		result
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la phrase une incompehension de la langue d'id l
+	  */
 	def inconnu(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -127,7 +148,12 @@ object LangDAO {
 		connection.close()
 		result
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la phrase pour une demande lieux de la langue d'id l
+	  */
 	def demandeLieux(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -138,6 +164,12 @@ object LangDAO {
 		result
 	
 	}
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la phrase pour une demande de langue de la langue d'id l
+	  */
 	def demandeLang(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -148,7 +180,12 @@ object LangDAO {
 		connection.close()
 		result
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la phrase pour une demande de choix de la langue d'id l
+	  */
 	def demandeChoix(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -159,7 +196,12 @@ object LangDAO {
 		connection.close()
 		result
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la phrase pour de multiple reponse de la langue d'id l
+	  */
 	def multReponse(l: Int): String = {
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
 		val statement = connection.createStatement()
@@ -170,7 +212,12 @@ object LangDAO {
 		connection.close()
 		result
 	}
-
+	/**
+	  * 
+	  *
+	  * @param l Id de la langue
+	  * @return	retourne la liste des nom qui sont compris comme des restaurant de la langue d'id l
+	  */
     def getMotsRest(l:Int):List[String] ={
 		var rep = List(): List[String]
 		val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)

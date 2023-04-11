@@ -79,7 +79,12 @@ object ListLieuxDAO {
         connection.close()
         adresseOpt
     }
-
+    /**
+      * 
+      *
+      * @param nom nom d'un lieux
+      * @return retourne sont nom reel
+      */
     def getNomReel(nom: String): Option[String] = {
         val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
         val statement =

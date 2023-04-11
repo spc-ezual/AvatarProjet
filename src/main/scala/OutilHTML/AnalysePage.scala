@@ -4,7 +4,12 @@ import library._
 
 object AnalysePageObjet {
 
-
+  /**
+    * 
+    *
+    * @param mots liste des mot de la recherche
+    * @return retourne le couple nom adresse du restaurant si inconnu None
+    */
   def getNomAdres(mots :List[String]):Option[(String,String)]={
     val req ="https://www.linternaute.com/restaurant/guide/ville-rennes-35000/?name="+mots.mkString("+").replace("é","e")
     val pageRech=urlToHtml(req)
@@ -17,6 +22,12 @@ object AnalysePageObjet {
     }
     
   }
+  /**
+    * 
+    *
+    * @param url url sur la quel rechercher
+    * @return retourne le couple nom adresse du restaurant si inconnu None
+    */
   def resultatsPage(url: String): Option[(String,String)] = {
     //println("HTML")
     val html: Html = urlToHtml(url)
@@ -29,28 +40,21 @@ object AnalysePageObjet {
     else None
   }
 
-
+  /**
+    * 
+    *
+    * @param url url a recupere
+    * @return la page html associer
+    */
   def urlToHtml(url: String): Html = {
     OutilsWebObjet.obtenirHtml(url)
   }
-
-  def lURL(html: Html): List[String] = html match {
-    case Tag(_, attributes, children) =>
-      val links = attributes.collect { case ("href", url) => url }
-      val images = attributes.collect { case ("src", url) => url }
-      (links ++ images) ++ children.flatMap(lURL)
-    case Texte(_) => Nil
-  }
-
-  def selectURL(lurl: List[String], exp: List[String]): Option[String] = {
-    lurl match {
-      case Nil => None
-      case head :: next =>
-        if (exp.forall( s => if(s.length>2)head.toLowerCase().contains(s.toLowerCase())else true) ) { Some(head) }
-        else { selectURL(next, exp) }
-    }
-  }
-
+/**
+  * 
+  *
+  * @param h page html dans la quel rechercher le lien
+  * @return retourn le 1er lien qui correspond a la recherche sinon None
+  */
   def obtenir1liens(h: Html): Option[String] = h match {
     case Texte(content) => None
     
@@ -70,7 +74,12 @@ object AnalysePageObjet {
       )
     }
   }
-
+  /**
+    * 
+    *
+    * @param h page html dans la quel rechercher l'adresse
+    * @return retourne l'adresse sinon None
+    */
   def obtenirAdr(h: Html): Option[String] = h match {
     case Texte(content) => None
     
@@ -96,6 +105,12 @@ object AnalysePageObjet {
         acc.orElse(obtenirAdr(child))
       )
   }
+  /**
+    * 
+    *
+    * @param h page html dans la quel rechercher le nom
+    * @return retourne le nom sinon None
+    */
   def obtenirNom(h: Html): Option[String] = h match {
     case Texte(_) => None
     case Tag("h1", attributes, children) =>{
