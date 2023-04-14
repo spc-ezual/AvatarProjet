@@ -5,11 +5,22 @@ import DB.LangDAO
 
 object AnalysePhrase {
 
-    
+    /**
+      * 
+      *
+      * @param phrase Phrase 
+      * @return separe l'ensemble des mots de la phrase
+      */
     def SepMots(phrase: String): List[String] = {
         phrase.split("[ ,./:!?<>();_+-={}&#|']+").toList
     }
-
+    /**
+      * 
+      *
+      * @param lMotsBdd
+      * @param lMotsRequet
+      * @return
+      */
     def compartList(
         lMotsBdd: List[String],
         lMotsRequet: List[String]

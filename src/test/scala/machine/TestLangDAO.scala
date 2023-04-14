@@ -5,6 +5,7 @@ import DB.LangDAO
 import DB.LieuxXMLDAO
 import Outils.AnalysePhrase
 import application.AnalysePageObjet
+import Outils.CreationDeRep
 
 class TestLangDAO{
 
@@ -24,7 +25,7 @@ class TestLangDAO{
     }
     @Test 
     def Test4:Unit={
-        assertEquals(AnalysePageObjet.getNomAdres(List("Atelier","des")),Some(("La Tomate","18, rue Saint Georges")))
+        assertEquals(CreationDeRep.Reponse("123456789"),List("je ne comprend pas votre demande"))
     }
     }
     

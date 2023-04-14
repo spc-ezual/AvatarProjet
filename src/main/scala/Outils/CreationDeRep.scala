@@ -1,7 +1,6 @@
 package Outils
 
 import DB.LangDAO
-import Speech.Discours
 
 object CreationDeRep {
 	
@@ -14,30 +13,29 @@ object CreationDeRep {
 	2 -> attente demande dans un choix 
 	3 -> 
 	*/
+	def getLangue():Int=langues
 	def Reponse(message: String): List[String] = {
-		System.out.println("\n Entré: " +message)
+		//System.out.println("\n Entré: " +message)
 		val messageSep=AnalysePhrase.SepMots(message)
-
+		if(messageSep.isEmpty)return List(LangDAO.inconnu(langues))
 		val langTrouve = AnalysePhrase.VerifLang(langues,messageSep)
 		if(langTrouve!=langues){
 			langues = langTrouve
 			action = 0
-			System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
-			Discours.generateDiscours(LangDAO.demandeLang(langues),langues)
+			//System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
+			
 			return List(LangDAO.demandeLang(langues))
 		}
 		action match{
 			case 0  => {
 				if(message.replace(" ","").equals(LangDAO.vrai(langues))){
 					action = 1
-					System.out.println("\n Reponse: "+LangDAO.demandeLieux(langues))
-					Discours.generateDiscours(LangDAO.demandeLieux(langues),langues)
+					//System.out.println("\n Reponse: "+LangDAO.demandeLieux(langues))
 					return List(LangDAO.demandeLieux(langues))
 				}
 				else{
 					langues = (langues + 1)%5
-					System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
-					Discours.generateDiscours(LangDAO.demandeLang(langues),langues)
+					//System.out.println("\n Reponse: "+LangDAO.demandeLang(langues))
 					return List(LangDAO.demandeLang(langues))
 				}
 			}
@@ -51,15 +49,14 @@ object CreationDeRep {
 					rep = rep :+ (politesse.capitalize)
 				}
 				if(messageSep.length==corres._1){
-					System.out.println("\n Reponse: "+formatReponse(rep))
-					Discours.generateDiscours(formatReponse(rep),langues)
+					//System.out.println("\n Reponse: "+formatReponse(rep))
 					return rep
 				}
 				if(corres._2.isEmpty){
 					rep = rep :+ LangDAO.inconnu(langues)
 				}
 				else if(corres._2.length==1){
-						rep = rep :+ ((firstPart+" "+corres._2.head._1+" "+secondPart+" : "+corres._2.head._2))
+						rep = rep :+ ((firstPart+corres._2.head._1+secondPart+" : "+corres._2.head._2))
 					}
 				else{
 					
@@ -72,8 +69,7 @@ object CreationDeRep {
 					rep = rep :+ LangDAO.demandeChoix(langues)
 					action=2
 				}
-				System.out.println("\n Reponse: "+formatReponse(rep))
-				Discours.generateDiscours(formatReponse(rep),langues)
+				//System.out.println("\n Reponse: "+formatReponse(rep))
 				return rep
 			}
 			case 2 =>{
@@ -84,18 +80,15 @@ object CreationDeRep {
 				reponse match{
 					case Some(value) => {
 						if(value <= memoire.length&&value>0){
-							System.out.println( "\n Reponse:"+ firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2)
-							Discours.generateDiscours(firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2,langues)
+							//System.out.println( "\n Reponse:"+ firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2)
 							return List((firstPart+" "+memoire(value-1)._1+" "+secondPart+" : "+memoire(value-1)._2))}
 						else {
-							System.out.println("\n Reponse :"+LangDAO.inconnu(langues))
-							Discours.generateDiscours(LangDAO.inconnu(langues),langues)
+							//System.out.println("\n Reponse :"+LangDAO.inconnu(langues))
 							return List(LangDAO.inconnu(langues)) 
 						}
 					}
 					case None => {
-						System.out.println("\n Reponse :"+LangDAO.inconnu(langues))
-						Discours.generateDiscours(LangDAO.inconnu(langues),langues)
+						//System.out.println("\n Reponse :"+LangDAO.inconnu(langues))
 						return List(LangDAO.inconnu(langues))
 					}
 				}

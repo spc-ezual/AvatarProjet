@@ -16,7 +16,7 @@ object CreationListMotClef {
     */
   def MatchMotClef(mots: List[String],l:Int): (Int, List[(String, String)]) = {
     var memoire =List() : List[String]
-    val sansRecherche = AnalysePhrase.removeWords(mots,LangDAO.getMotsRech(l))
+    val sansRecherche = AnalysePhrase.removeWords(mots,LangDAO.recherche(l))
     var RepNA : List[(String, String)] = List()
     var Corri :(List[String],List[String]) = Correction.correct(sansRecherche,LangDAO.politesse(l),2)
     

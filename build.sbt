@@ -14,6 +14,7 @@ libraryDependencies ++= Seq(
   "org.apache.commons" % "commons-text" % "1.9",
   // "com.eed3si9n" % "sbt-assembly" % "2.1.1"  
 )
+//fork := true
 
 // assembly / mainClass := Some("gui.Main") // le nom de la classe main
 // assembly / assemblyJarName := "avatar.jar"

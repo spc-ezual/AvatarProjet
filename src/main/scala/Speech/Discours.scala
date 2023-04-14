@@ -13,8 +13,8 @@ object Discours {
     if(langIndex!=2){
     mary.setLocale(langues(langIndex))
     //mary.setVoice("dfki-spike-hsmm")
-
-    val audio = mary.generateAudio(text)
+      val texte_modif = text//.replaceAll("[-‐‑‒–—―]", "")
+    val audio = mary.generateAudio(texte_modif)
     val clip = AudioSystem.getClip()
     clip.open(audio)
     clip.start()}
