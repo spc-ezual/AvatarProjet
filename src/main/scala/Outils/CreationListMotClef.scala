@@ -84,19 +84,37 @@ object CreationListMotClef {
       case Some(value) => value
     } 
     }
-
+    /**
+      * 
+      *
+      * @param mot nom rechercher dans la base
+      * @return retourn le vraie nom du lieux
+      */
     def RecupNomReel(mot: String): String = {
     dsbLieuxBase.getNomReel(mot) match{
       case None => ""
       case Some(value) => value
-    } 
     }
+
+    }
+    /**
+      * 
+      *
+      * @param id id de l'organisation
+      * @return le nom de l'organisation avec cette id
+      */
     def RecupNomXML(id:String):String={
       dsbLieuxXML.getNameId(id) match {
         case None => ""
         case Some(value) => value
       }
     }
+    /**
+      * 
+      *
+      * @param id id de l'organisation
+      * @return l'adresse de l'organisation avec cette id
+      */
     def RecupAdrXML(id:String):String={
       dsbLieuxXML.getAdresseId(id) match{
         case None => ""

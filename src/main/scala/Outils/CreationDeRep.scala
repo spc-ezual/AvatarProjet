@@ -13,7 +13,20 @@ object CreationDeRep {
 	2 -> attente demande dans un choix 
 	3 -> 
 	*/
+	/**
+	  * 
+	  *
+	  * @return retourn l'entier de la langue actuel
+	  */
 	def getLangue():Int=langues
+
+
+	/**
+	  * 
+	  *
+	  * @param message phrase a analyse
+	  * @return retourn la ou les reponse sous forme de liste de chaine de caratere
+	  */
 	def Reponse(message: String): List[String] = {
 		//System.out.println("\n Entré: " +message)
 		val messageSep=AnalysePhrase.SepMots(message)
@@ -99,10 +112,18 @@ object CreationDeRep {
 		}
 		
 	}
+	/**
+	  * 
+	  *
+	  * @param reponse chaine de caratere a formater
+	  * @return retourne la chaine de caratere formater
+	  */
 	def formatReponse(reponse: List[String]): String = {
-		reponse.map(_ + ".").mkString(" ")
+		reponse.mkString(" ")
 	}
-
+	/**
+	  * re-init l'objet
+	  */
 	def reInit{
 		langues =0
 		action =1
