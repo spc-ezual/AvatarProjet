@@ -94,7 +94,8 @@ object AvatarV2 extends JFXApp {
   // Ajout des listeners pour la saisie de messages et l'envoi de messages
   messageInput.onAction = () => sendMessage()
   sendButton.onAction = () => sendMessage()
-  resetButton.onAction = () => MachineImpl.reinit()
+  resetButton.onAction = () => {MachineImpl.reinit() 
+    reInit()}
   vocalButton.onAction = () => voc= !voc
 
   // Fonction pour envoyer un message

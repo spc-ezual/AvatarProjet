@@ -11,7 +11,6 @@ object MachineImpl extends MachineDialogue {
   def reinit(): Unit = {
     Avatar.reinit()
     CreationDeRep.reInit
-    AvatarV2.reInit()
   }
   def test(l: List[String]): List[String] = {
     var rep = List() : List[String]
