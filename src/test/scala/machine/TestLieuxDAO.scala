@@ -3,13 +3,15 @@ import org.junit.Test
 import org.junit.Assert._
 import DB.LieuxXMLDAO
 import DB.ListLieuxDAO
+import Outils.CreationDeRep
 
 class TestLieuxDAO{
 
     
     @Test
     def Test:Unit={
-        assertEquals(LieuxXMLDAO.getAdresseId("2024"),Some("2, Rue Emile Desprès"))
+        assertEquals(CreationDeRep.Reponse("santé" +
+          ""),List())
     }
     
 } 
