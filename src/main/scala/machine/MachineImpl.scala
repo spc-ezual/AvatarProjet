@@ -2,6 +2,7 @@ package machine
 
 import Outils.CreationDeRep
 import application.Avatar
+import application.AvatarV2
 
 object MachineImpl extends MachineDialogue {
   def ask(s: String): List[String] = CreationDeRep.Reponse(s)
@@ -10,6 +11,7 @@ object MachineImpl extends MachineDialogue {
   def reinit(): Unit = {
     Avatar.reinit()
     CreationDeRep.reInit
+    AvatarV2.reInit()
   }
   def test(l: List[String]): List[String] = {
     var rep = List() : List[String]

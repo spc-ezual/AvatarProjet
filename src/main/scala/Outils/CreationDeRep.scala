@@ -30,7 +30,7 @@ object CreationDeRep {
 	def Reponse(message: String): List[String] = {
 		//System.out.println("\n Entré: " +message)
 		val messageSep=AnalysePhrase.SepMots(message)
-		if(messageSep.isEmpty)return List(LangDAO.inconnu(langues))
+		if(messageSep.isEmpty&&action!=2)return List(LangDAO.inconnu(langues))
 		val langTrouve = AnalysePhrase.VerifLang(langues,messageSep)
 		if(langTrouve!=langues){
 			langues = langTrouve
