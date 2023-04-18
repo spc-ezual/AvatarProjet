@@ -2,7 +2,6 @@ package machine
 
 import Outils.CreationDeRep
 import application.Avatar
-import application.AvatarV2
 
 object MachineImpl extends MachineDialogue {
   def ask(s: String): List[String] = CreationDeRep.Reponse(s)
