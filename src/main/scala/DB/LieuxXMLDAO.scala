@@ -25,8 +25,13 @@ object LieuxXMLDAO {
         val query: String = s"SELECT street_number,street_name FROM addresses WHERE organization_id= '$id'"
         val resultSet=statement.executeQuery(query)
         val rep =
-            if(resultSet.next()) Some(resultSet.getString("street_number")+", "+resultSet.getString("street_name").split(" ").map(word => word.head.toUpper  + word.tail.toLowerCase).mkString(" "))else None
-        resultSet.close()
+            if(resultSet.next()) {
+              val street_number = resultSet.getString("street_number")
+              var street_name = resultSet.getString("street_name")
+              if(street_name.length()>0) street_name = street_name.split(" ").map(word => word.head.toUpper  + word.tail.toLowerCase).mkString(" ")
+            Some(street_number+
+            ", "+street_name)}
+            else None
         statement.close()
         connection.close()
         rep
