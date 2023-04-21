@@ -21,10 +21,7 @@ object AnalysePhrase {
       * @param lMotsRequet
       * @return
       */
-    def compartList(
-        lMotsBdd: List[String],
-        lMotsRequet: List[String]
-    ): Boolean = {
+    def compartList(lMotsBdd: List[String],lMotsRequet: List[String]): Boolean = {
         lMotsBdd match {
         case head :: next =>
             lMotsRequet.contains(head) && compartList(next, lMotsRequet)

@@ -61,7 +61,6 @@ object AnalysePageObjet {
     case Tag("div", attributes, children) => {
       if (attributes.contains(("class", "grid_col w25"))){
         children.collectFirst{ case Tag(_,attributes,_) => attributes.collect{case ("href", url)=> url}(0)}
-        // TODO (0) est IMMONDE trouver une alternative
       }
       else {
         children.foldLeft[Option[String]](None)((acc, child) =>
