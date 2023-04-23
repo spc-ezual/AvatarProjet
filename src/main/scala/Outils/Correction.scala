@@ -43,8 +43,8 @@ object Correction {
     }
 
     /** prend en entre un mot a corriger et un mot correct si la distance de hamming est egale a 0 ou a 1 renvoie le mot corriger, sinon ne renvoie rien
-        * @param mot un string a corrige
-        * @param mot Correct
+        * @param s1 un string a corrige
+        * @param s2 Correct
         * @return le mot corriger ou rien
         */
     def compartMot(s1: String, s2: String): Option[String] = {

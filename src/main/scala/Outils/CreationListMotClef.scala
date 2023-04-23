@@ -12,6 +12,7 @@ object CreationListMotClef {
   /**
     * 
     * @param mots Phrase couper a chaque mots
+    * @param l Indice de la langue
     * @return 1ere string: les politesses, List (nom,adresse)
     */
   def MatchMotClef(mots: List[String],l:Int): (Int, List[(String, String)]) = {
