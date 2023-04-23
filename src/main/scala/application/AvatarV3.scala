@@ -1,14 +1,15 @@
 package application
 
-import scala.swing.SimpleSwingApplication
-import scala.swing.MainFrame
+import scala.swing._
+import scala.swing.event._
 
-object  Avatar extends SimpleSwingApplication {
-    val ui = new UI
+object  AvatarV3 extends SimpleSwingApplication {
+    val ui = new UIV3
 
     def top: MainFrame = ui
 
     def reinit(): Unit = {
+        ui.dialog.visible = false
         ui.chatArea.contents.clear()
         ui.inputField.text = ""
         ui.chatArea.revalidate()
