@@ -9,7 +9,8 @@ object  AvatarV3 extends SimpleSwingApplication {
     def top: MainFrame = ui
 
     def reinit(): Unit = {
-        ui.dialog.visible = false
+        ui.outils.visible = false
+        ui.memoire = Nil
         ui.chatArea.contents.clear()
         ui.inputField.text = ""
         ui.chatArea.revalidate()

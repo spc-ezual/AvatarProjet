@@ -19,17 +19,5 @@ object  test {
         }
         */
 
-        val lettre = "azertyuiopqsdfghjklmwxcvbn"
-        var cm =(1 to 8).flatMap(i => lettre.combinations(i)).toList
-        for ( a <- cm){
-            try {
-                Discours.generateDiscours(a,0)
-                cm = cm.filterNot(b => a==b )
-            }
-            catch{
-                case  _  => println(a)
-            }
-        }
-        println(cm)
     }
 }

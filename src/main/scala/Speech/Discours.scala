@@ -10,6 +10,7 @@ object Discours {
   val mary = new LocalMaryInterface()
 
   def generateDiscours(text: String, langIndex: Int): Unit = {
+    try{
     if(langIndex!=2){
     mary.setLocale(langues(langIndex))
     //mary.setVoice("dfki-spike-hsmm")
@@ -18,5 +19,9 @@ object Discours {
     val clip = AudioSystem.getClip()
     clip.open(audio)
     clip.start()}
+  }catch{
+    case _ : Throwable=> println("Une erreur es survenue lors de la synthese vocal")
   }
+
+}
 }
