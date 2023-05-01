@@ -16,10 +16,12 @@ class UIV3 extends MainFrame {
     
     var memoire = List(): List[String]
 
-    preferredSize = new Dimension(1000, 1000)
-    
+    preferredSize = new Dimension(700, 500)
+    var customBackground = Color.WHITE
+    var customText = Color.BLACK
     var vocal = false
     val chatArea= new BoxPanel(Orientation.Vertical)
+    val scrollPane = new ScrollPane(chatArea)
     val inputField = new TextField{columns=40}
     val sendButton = new Button{text = "Send"}
     val optionButton = new Button{text = "Option"}
@@ -31,7 +33,12 @@ class UIV3 extends MainFrame {
     val avatarIcon= new ImageIcon("Image/Avatar.png")
     val userIcon = new ImageIcon("Image/User.png")
     val comboBox = new ComboBox (Seq("Francais","Anglais","Espagnol","Allemand","Italien"))
-    val outils = new Dialog(){contents =  new BoxPanel(Orientation.Vertical) {
+    val backgroundChooser = new ColorChooser
+    val textChooser = new ColorChooser
+
+    val outils = new Dialog(){
+        title = "Outils"
+        contents =  new BoxPanel(Orientation.Vertical) {
         contents += resetButton
         contents += vocalButton
         contents += comboBox
@@ -40,6 +47,7 @@ class UIV3 extends MainFrame {
         contents += closeOptionButton
         
     }}
+
     val chooser = new FileChooser
     listenTo(sendButton, inputField.keys,resetButton,vocalButton,optionButton,closeOptionButton,comboBox.selection,saveButton,loadButton)
     
@@ -70,15 +78,20 @@ class UIV3 extends MainFrame {
         
         case ButtonClicked(`sendButton`) => appelReponse
 
+        
 
         case KeyPressed(`inputField`, Key.Enter, _, _) => appelReponse
-            
         }
-        contents= new  BoxPanel(Orientation.Vertical){
-        contents += new ScrollPane(chatArea)
-        contents += new FlowPanel(inputField, sendButton, optionButton)
+        
 
-    }
+        contents = new BoxPanel(Orientation.Vertical) {
+            contents += scrollPane
+            val flowPanel = new FlowPanel(inputField, sendButton, optionButton)
+            flowPanel.maximumSize_=(new Dimension(Short.MaxValue, flowPanel.preferredSize.height))
+            contents += flowPanel
+}
+
+    
 
     def appelReponse{
                     
@@ -88,12 +101,17 @@ class UIV3 extends MainFrame {
                 // Create user message
                 addMsgYou(message)
                 // Create avatar message
-                addMsgAva(formatReponse(Reponse(message)))
-                
+                val reponse = Reponse(message)
+                addMsgAva(reponse,false)
+                if(vocal)Discours.generateDiscours(reponse.mkString(" "),getLangue())
                 // Actualisation
                 inputField.text = ""
-                chatArea.revalidate();
-                chatArea.repaint();
+                scrollPane.revalidate()
+                chatArea.revalidate()
+                Thread.sleep(100)
+                scrollPane.verticalScrollBar.value = scrollPane.verticalScrollBar.maximum
+                chatArea.repaint()
+                scrollPane.repaint()
             }
     }
 
@@ -106,13 +124,21 @@ class UIV3 extends MainFrame {
         memoire = memoire :+ msg 
     }
 
-    def addMsgAva(msg:String){
+    def addMsgAva(msg:List[String],deMem : Boolean){
+        val rep = 
+            if(msg.length>1)"<html> Avatar: "+msg.mkString(" <br> ")+"</html>"
+            else if(msg.length==1) {
+                if(deMem)msg(0)
+            else "Avatar: " + msg(0)}
+                
+            else "Erreur dans la reponse"
         val avatarMessage = new FlowPanel {
                     contents += new Label {icon = avatarIcon}
-                    contents += new Label {text = "Avatar: " + msg}
+                    contents += new Label {text =  rep}
                 }
         chatArea.contents += avatarMessage
-        memoire = memoire :+ msg 
+        if(!deMem)memoire = memoire :+ rep 
+        
     }
 
     def creaSave{
@@ -197,10 +223,11 @@ class UIV3 extends MainFrame {
                 addMsgYou(memoire(i))
             }
             else{
-                addMsgAva(memoire(i))
+                addMsgAva(List(memoire(i)),true)
             }
             
         }
+        
         chatArea.revalidate();
         chatArea.repaint();
     }
