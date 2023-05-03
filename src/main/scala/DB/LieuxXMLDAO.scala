@@ -122,5 +122,4 @@ object LieuxXMLDAO {
     connection.close()
     noms
   }
-
 }

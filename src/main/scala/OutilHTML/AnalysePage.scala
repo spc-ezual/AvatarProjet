@@ -5,8 +5,6 @@ import library._
 object AnalysePageObjet {
 
   /**
-    * 
-    *
     * @param mots liste des mot de la recherche
     * @return retourne le couple nom adresse du restaurant si inconnu None
     */
@@ -20,11 +18,9 @@ object AnalysePageObjet {
         resultatsPage("https://www.linternaute.com"+value)
       }
     }
-    
   }
+
   /**
-    * 
-    *
     * @param url url sur la quel rechercher
     * @return retourne le couple nom adresse du restaurant si inconnu None
     */
@@ -41,17 +37,14 @@ object AnalysePageObjet {
   }
 
   /**
-    * 
-    *
     * @param url url a recupere
     * @return la page html associer
     */
   def urlToHtml(url: String): Html = {
     OutilsWebObjet.obtenirHtml(url)
   }
+
 /**
-  * 
-  *
   * @param h page html dans la quel rechercher le lien
   * @return retourn le 1er lien qui correspond a la recherche sinon None
   */
@@ -73,9 +66,8 @@ object AnalysePageObjet {
       )
     }
   }
+
   /**
-    * 
-    *
     * @param h page html dans la quel rechercher l'adresse
     * @return retourne l'adresse sinon None
     */
@@ -104,9 +96,8 @@ object AnalysePageObjet {
         acc.orElse(obtenirAdr(child))
       )
   }
+
   /**
-    * 
-    *
     * @param h page html dans la quel rechercher le nom
     * @return retourne le nom sinon None
     */
