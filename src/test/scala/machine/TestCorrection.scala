@@ -77,23 +77,23 @@ class TestCorrection {
   }
 
   @Test
-  def testCorrcteMot1 {
+  def testCorrectMot1 {
     assertEquals(
       "mairie",
-      correctMot("MAIRIE", List("mairie", "leo ma petite soeur", "a"))
+      correctMot("MAIRIE", List("mairie", "gare", "arbre"))
     )
   }
 
   @Test
-  def testCorrcteMot2 {
+  def testCorrectMot2 {
     assertEquals(
       "",
-      correctMot("MAIRIE", List("mairieee", "leo ma petite soeur", "a"))
+      correctMot("MAIRIE", List("mairieee", "gare", "arbre"))
     )
   }
 
   @Test
-  def testCorrcteMot3 {
+  def testCorrectMot3 {
     assertEquals(
       "",
       correctMot("MAIRIE", List())
@@ -101,7 +101,15 @@ class TestCorrection {
   }
 
   @Test
-  def testCorrcte1{
+  def testCorrectMot4 {
+    assertEquals(
+      "gare",
+      correctMot("gaare", List("mairieee", "gare", "arbre"))
+    )
+  }
+
+  @Test
+  def testCorrect1{
     assertEquals(
       List("Mairie"),
       correct(List("bonjour","ou","est","la","mairie"), List("Mairie"),1)._1
@@ -109,10 +117,34 @@ class TestCorrection {
   }
 
   @Test
-  def testCorrcte2{
+  def testCorrect2{
     assertEquals(
       List("Maarie"),
       correct(List("bonjour","ou","est","la","mairie"), List("Maarie"),1)._1
+    )
+  }
+
+  @Test
+  def testCorrect3{
+    assertEquals(
+      List("Mairie", "Gare"),
+      correct(List("bonjour","ou","est","la","maarie", "la", "gaare"), List("Mairie", "Gare"),1)._1
+    )
+  }
+
+  @Test
+  def testCorrect4{
+    assertEquals(
+      List(),
+      correct(List("bonjour","ou","est","la","maarie", "la", "gaare"), List(),1)._1
+    )
+  }
+
+  @Test
+  def testCorrect5{
+    assertEquals(
+      List(),
+      correct(List(), List("Mairie", "Gare"),1)._1
     )
   }
 }
