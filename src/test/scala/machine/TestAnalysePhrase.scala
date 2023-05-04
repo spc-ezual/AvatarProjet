@@ -230,7 +230,7 @@ class TestAnalysePhrase {
       None,
       AnalysePhrase.rechercheResto(
         List("hello", "where"),
-        List("Tomate")
+        List("Tomate", "BK")
       )
     )
   }
@@ -240,7 +240,7 @@ class TestAnalysePhrase {
       Some(List()),
       AnalysePhrase.rechercheResto(
         List("hello", "where", "is", "Tomate"),
-        List("Tomate")
+        List("Tomate", "BK")
       )
     )
   }
