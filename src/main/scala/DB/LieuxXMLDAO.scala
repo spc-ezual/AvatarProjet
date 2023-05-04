@@ -54,14 +54,48 @@ object LieuxXMLDAO {
       req = req + " name LIKE '%" + mots(i) + "%' "
       if (i != mots.length - 1) req += " AND "
     }
-    req += " COLLATE utf8_general_ci; "
-    val resultSet = statement.executeQuery(req)
-
-    var resultList = List[String]()
-    while (resultSet.next()) {
-      resultList =
-        resultList ++ resultSet.getString("id").split(",").map(_.trim).toList
+    /**
+      * 
+      *
+      * @param id id d'une organisation valide
+      * @return retourne une adresse si elle existe sinon None
+      */
+    def getAdresseId(id: String): Option[String] = {
+        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+        val statement: Statement = connection.createStatement()
+        val query: String = s"SELECT street_number,street_name FROM addresses WHERE organization_id= '$id'"
+        val resultSet=statement.executeQuery(query)
+        val rep =
+            if(resultSet.next()) {
+              val street_number = resultSet.getString("street_number")
+              var street_name = resultSet.getString("street_name")
+              if(street_name.length()>0) street_name = street_name.split(" ").map(word => word.head.toUpper  + word.tail.toLowerCase).mkString(" ")
+            Some(street_number+
+            ", "+street_name)}
+            else None
+        resultSet.close()
+        statement.close()
+        connection.close()
+        rep
     }
+    /**
+      * 
+      *
+      * @param mots Liste non-vide de mot a rechercher dans les name d'organisation
+      * @return retourn l'ensemble des id d'organisation qui contiens noms dans name , None si ensemble vide
+      */
+    def getId(mots: List[String]): Option[List[String]] = {
+        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+        val statement: Statement = connection.createStatement()
+        var req: String = "SELECT id FROM organizations WHERE id IN (SELECT organization_id FROM addresses WHERE city = 'Rennes') AND "
+        for(i <- 0 until mots.length){
+            //req = req + " name REGEXP '([[:space:]]|[_-]|^)" + mots(i) + "([[:space:]]|[_-]|$)' "
+            req = req + " name LIKE '%" + mots(i) + "%' "
+            if (i != mots.length-1) req += " AND "
+        }
+        req += " COLLATE utf8_general_ci; "
+        val resultSet=statement.executeQuery(req)
+            //req = req + "(name LIKE '% "+mots(i)+" %' ESCAPE '|'OR name LIKE '% "+mots(i)+"' ESCAPE '|' OR name LIKE '"+mots(i)+" %' ESCAPE '|')"
 
     resultSet.close()
     statement.close()

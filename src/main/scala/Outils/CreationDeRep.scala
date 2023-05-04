@@ -19,7 +19,15 @@ object CreationDeRep {
 	  * @return retourn l'entier de la langue actuel
 	  */
 	def getLangue():Int=langues
-
+	
+	def getAll : (Int,Int,List[(String, String)]) = (langues,action,memoire)
+	
+	def setAll(l:Int,a:Int,m:List[(String, String)]){
+		langues = l
+		action = a 
+		memoire = m 
+	}
+	
 
 	/**
 	  * 
@@ -128,5 +136,12 @@ object CreationDeRep {
 		langues =0
 		action =1
 		memoire =List()
+	}
+
+	def newLangue(l:Int){
+		if(l!=langues){
+			langues=l
+			action =1 
+		}
 	}
 }

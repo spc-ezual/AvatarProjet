@@ -19,9 +19,9 @@ object Discours {
     val clip = AudioSystem.getClip()
     clip.open(audio)
     clip.start()}
-  }
-  catch{
+  }catch{
     case _ : Throwable=> println("Une erreur es survenue lors de la synthese vocal")
   }
+
 }
 }
