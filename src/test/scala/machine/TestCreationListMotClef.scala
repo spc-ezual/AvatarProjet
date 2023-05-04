@@ -55,15 +55,22 @@ class TestCreationListMotClef {
 
     @Test
     def testMatchMotClef_multiples_fr_2 {
-    assertEquals(MatchMotClef(List("Gare","Mairie"),0),
-    (0,List(("Mairie de Rennes","Place de la Mairie"),("Gare SNCF","19, Place de la Gare"))))
-    }
-
-
-    @Test
-    def testMatchMotClef_multiples_fr_3 {
     assertEquals(MatchMotClef(List("Mairie","Gare","TNB"),0),
     (0,List(("Mairie de Rennes","Place de la Mairie"),("Théâtre National de Bretagne","1, Rue Saint-Hélier"),("Gare SNCF","19, Place de la Gare"))))
     }
 
+    //Test des politesses
+
+        @Test
+    def testMatchMotClef_fr_poli_1 {
+    assertEquals(MatchMotClef(List("Bonjour","Bonjour"),0),
+    (2,List()))
+    }
+
+
+    @Test
+    def testMatchMotClef_fr_poli_2 {
+    assertEquals(MatchMotClef(List("Bonjour","Bonjour","Bonjour"),0),
+    (3,List()))
+    }
 }
