@@ -14,10 +14,7 @@ object ListLieuxDAO {
         )
     }
 
-    
-
     /** Ajouter une donnée à la table ListLieux
-        *
         * @param nom le nom à ajouter
         * @param adresse l'adresse correspondante au nom
         */
@@ -79,9 +76,8 @@ object ListLieuxDAO {
         connection.close()
         adresseOpt
     }
+    
     /**
-      * 
-      *
       * @param nom nom d'un lieux
       * @return retourne sont nom reel
       */

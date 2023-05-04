@@ -109,7 +109,6 @@ object OutilsWebObjet extends OutilsWeb {
    * converts any Token to an Html  tree (not cleant)
    *  @param tn the Token
    *  @return the HtmlElement
-   *
    */
 
   /**
@@ -145,7 +144,6 @@ object OutilsWebObjet extends OutilsWeb {
   /**
    * Combine une URL de la forme http://.... avec une URL locale de la forme: local.html et produit
    *  http://.../local.html
-   *
    * @param base l'URL base
    * @param local l'URL locale à combiner avec base
    * @return l'URL combinée ou la chaîne vide sinon.
@@ -164,4 +162,3 @@ object OutilsWebObjet extends OutilsWeb {
 }
 
 case class TagNodeConversionException(m: String) extends Exception
-

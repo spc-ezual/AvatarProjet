@@ -4,7 +4,7 @@ import scala.swing.SimpleSwingApplication
 import scala.swing.MainFrame
 import Outils.CreationDeRep
 
-object  Avatar extends SimpleSwingApplication {
+object Avatar extends SimpleSwingApplication {
     val ui = new UI
 
     def top: MainFrame = ui
