@@ -12,80 +12,58 @@ class TestCreationListMotClef {
 
     //Objet qui donne acces a la base de donné des politesses
     val dsbPolitesse = LangDAO
+
+    //Requetes d'un etablissement précis
+
     @Test
-    def testRecupPoli_1ele {
-    assertEquals(
-        "Bonjour ",RecupPoli(List("Bonjour"),LangDAO.politesse(0))
-        )
+    def testMatchMotClef_base_fr_1 {
+    assertEquals(MatchMotClef(List("Cinéma","Gaumont"),0),
+    (0,List(("Cinéma Gaumont Rennes",", Esplanade General De Gaulle"))))
     }
+
     @Test
-    def testRecupPoli_1ele2 {
-    assertEquals(
-        "",RecupPoli(List("haha"),LangDAO.politesse(0))
-        )
+    def testMatchMotClef_complexes_fr_2 {
+    assertEquals(MatchMotClef(List("Piscine","Gayeulles"),0),
+    (0,List(("Piscine Gayeulles","16, Avenue Des Gayeulles,avenue Des Gayeulles"))))
     }
+
+
+    //tests sur des requetes vagues en français
+    //plusieurs résultat possibles
+
     @Test
-    def testRecupPoli_1ele3 {
-    assertEquals(
-        "",RecupPoli(List("bonjours"),LangDAO.politesse(0))
-        )
+    def testMatchMotClef_solo_fr_1 {
+    assertEquals(MatchMotClef(List("Cinéma"),0),
+    (0,List(("Cinéma Arvor","29, Rue D'antrain,rue D'antrain"), ("Cinéma Gaumont Rennes",", Esplanade General De Gaulle"))))
     }
+
+
     @Test
-    def testRecupPoli_0ele {
-    assertEquals(
-        "",RecupPoli(List(""),LangDAO.politesse(0))
-        )
-    }
-    @Test
-    def testRecupPoli_nele1 {
-    assertEquals(
-        "Bonjour ",RecupPoli(List("Bonjour","salsa"),LangDAO.politesse(0))
-        )
-    }
-    
-/*
-    @Test
-    def testRecupLieux_1ele {
-    assertEquals(
-        List(("Mairie",dsbLieux.getAdresse("Mairie").get)),RecupLieux("Mairie")
-        )
-    }
-    @Test
-    def testRecupLieux_1ele2 {
-    assertEquals(
-        Nil,RecupLieux("haha")
-        )
-    }
-    @Test
-    def testRecupLieux_1ele3 {
-    assertEquals(
-        "",RecupLieux("bonjours")
-        )
-    }
-    @Test
-    def testRecupLieux_0ele {
-    assertEquals(
-        "",RecupLieux("")
-        )
-    }
-    @Test
-    def testRecupLieux_nele1 {
-    assertEquals(
-        Nil,RecupLieux(List("Bonjour","salsa"))
-        )
-    }
-    @Test
-    def testRecupLieux_nele2 {
-    assertEquals(
-        List(("Mairie",dsbLieux.getAdresse("Mairie").get),("TNB",dsbLieux.getAdresse("TNB").get)),RecupLieux(List("Mairie","TNB","nonnnn"))
-        )
-    }
-    @Test
-    def testRecupLieux_nele3 {
-    assertEquals(
-        List(("Mairie",dsbLieux.getAdresse("Mairie").get),("TNB",dsbLieux.getAdresse("TNB").get),("Mairie",dsbLieux.getAdresse("Mairie").get)),RecupLieux(List("Mairie","hah","TNB","Mairie","bonjour"))
-        )
+    def testMatchMotClef_solo_fr_2 {
+    assertEquals(MatchMotClef(List("Piscine"),0),
+    (0,List(("Piscine Villejean","1, Square D'alsace"), ("Piscine Gayeulles","16, Avenue Des Gayeulles,avenue Des Gayeulles"),
+    ("Piscine Saint-Georges","4, Rue Gambetta"), ("Piscine Bréquigny","10, Boulevard Albert 1er"))))
     }
     
-*/    
+    //Tests requetes de plusieurs établissements à la fois en français
+
+    @Test
+    def testMatchMotClef_multiples_fr_1 {
+    assertEquals(MatchMotClef(List("Mairie","Gare"),0),
+    (0,List(("Mairie de Rennes","Place de la Mairie"), ("Gare SNCF","19, Place de la Gare"))))
+    }
+
+    @Test
+    def testMatchMotClef_multiples_fr_2 {
+    assertEquals(MatchMotClef(List("Gare","Mairie"),0),
+    (0,List(("Mairie de Rennes","Place de la Mairie"),("Gare SNCF","19, Place de la Gare"))))
+    }
+
+
+    @Test
+    def testMatchMotClef_multiples_fr_3 {
+    assertEquals(MatchMotClef(List("Mairie","Gare","TNB"),0),
+    (0,List(("Mairie de Rennes","Place de la Mairie"),("Théâtre National de Bretagne","1, Rue Saint-Hélier"),("Gare SNCF","19, Place de la Gare"))))
+    }
+
 }
