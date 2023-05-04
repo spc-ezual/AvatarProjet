@@ -48,11 +48,13 @@ object LieuxXMLDAO {
         val statement: Statement = connection.createStatement()
         var req: String = "SELECT id FROM organizations WHERE id IN (SELECT organization_id FROM addresses WHERE city = 'Rennes') AND "
         for(i <- 0 until mots.length){
+            //req = req + " name REGEXP '([[:space:]]|[_-]|^)" + mots(i) + "([[:space:]]|[_-]|$)' "
             req = req + " name LIKE '%" + mots(i) + "%' "
             if (i != mots.length-1) req += " AND "
         }
         req += " COLLATE utf8_general_ci; "
         val resultSet=statement.executeQuery(req)
+            //req = req + "(name LIKE '% "+mots(i)+" %' ESCAPE '|'OR name LIKE '% "+mots(i)+"' ESCAPE '|' OR name LIKE '"+mots(i)+" %' ESCAPE '|')"
 
         var resultList = List[String]()
         while (resultSet.next()) {

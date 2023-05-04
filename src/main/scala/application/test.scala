@@ -36,7 +36,6 @@ class UIV32 extends MainFrame {
     val comboBox = new ComboBox (Seq("Francais","Anglais","Espagnol","Allemand","Italien"))
     val backgroundChooser = new ColorChooser
     val textChooser = new ColorChooser
-    //val allEle= List(chatArea,scrollPane,inputField) : List[Label]
     
     val outils = new Dialog(){
         title = "Outils"

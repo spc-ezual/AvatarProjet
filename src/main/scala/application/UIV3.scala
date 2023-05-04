@@ -23,33 +23,59 @@ class UIV3 extends MainFrame {
     val chatArea= new BoxPanel(Orientation.Vertical)
     val scrollPane = new ScrollPane(chatArea)
     val inputField = new TextField{columns=40}
-    val sendButton = new Button{text = "Send"}
+    val sendButton = new Button{text = "Envoyer"}
     val optionButton = new Button{text = "Option"}
     val closeOptionButton = new Button{text = "Fermer"}
-    val resetButton = new Button{text = "New Conversation"}
+    val resetButton = new Button{text = "nouvelle conversation"}
     val vocalButton = new Button{text = "Synthèse vocale"}
     val saveButton = new Button{text ="Sauvegarder"}
     val loadButton = new Button {text ="Charger"}
+    val applyButton = new Button{text ="Appliquer"}
     val avatarIcon= new ImageIcon("Image/Avatar.png")
     val userIcon = new ImageIcon("Image/User.png")
-    val comboBox = new ComboBox (Seq("Francais","Anglais","Espagnol","Allemand","Italien"))
+    val comboBoxLang = new ComboBox (Seq("Francais","Anglais","Espagnol","Allemand","Italien"))
+    val comboBoxColor = new ComboBox (Seq("Clair","Sombre","Personalisé"))
     val backgroundChooser = new ColorChooser
     val textChooser = new ColorChooser
-
+    val chooser = new FileChooser
+    val testColor = new Label("TEXTE EXEMPLE TEXTE EXEMPLE TEXTE EXEMPLE"){
+        opaque=true
+        preferredSize = new Dimension(200, 200)
+    }
     val outils = new Dialog(){
         title = "Outils"
         contents =  new BoxPanel(Orientation.Vertical) {
         contents += resetButton
         contents += vocalButton
-        contents += comboBox
+        contents += comboBoxLang
+        contents += comboBoxColor
         contents+= saveButton
         contents += loadButton
         contents += closeOptionButton
         
     }}
+    val colorChoose = new Dialog(){
+        title = "Page de selection des couleurs"
 
-    val chooser = new FileChooser
-    listenTo(sendButton, inputField.keys,resetButton,vocalButton,optionButton,closeOptionButton,comboBox.selection,saveButton,loadButton)
+        contents =  new BoxPanel(Orientation.Vertical){
+            contents+= new BoxPanel(Orientation.Horizontal){
+                contents+= new BoxPanel(Orientation.Vertical){
+                    contents+= new Label("Couleur du texte")
+                    contents+= textChooser
+                }
+                contents+= new BoxPanel(Orientation.Vertical){
+                    contents+= new Label("Couleur du font")
+                    contents+= backgroundChooser
+                }
+            }
+            contents+= testColor
+            contents += new Separator
+            contents+= applyButton
+        }
+    }
+
+    
+    listenTo(sendButton, inputField.keys,resetButton,vocalButton,optionButton,closeOptionButton,comboBoxLang.selection,saveButton,loadButton,comboBoxColor.selection,applyButton,backgroundChooser,textChooser)
     
 
     
@@ -57,11 +83,12 @@ class UIV3 extends MainFrame {
     
     outils.modal = true
     outils.visible = false
+    colorChoose.modal = true
 
 
     reactions += {
         case ButtonClicked(`optionButton`) => {
-            comboBox.selection.index_=(getLangue)
+            comboBoxLang.selection.index_=(getLangue)
             outils.visible = true
             }
         case ButtonClicked(`saveButton`) => creaSave
@@ -74,15 +101,42 @@ class UIV3 extends MainFrame {
         
         case ButtonClicked(`vocalButton`)=> vocal = !vocal 
         
-        case SelectionChanged(`comboBox`) => newLangue(comboBox.selection.index)
+        case SelectionChanged(`comboBoxLang`) => newLangue(comboBoxLang.selection.index)
+
+        case ButtonClicked(`applyButton`) => {
+            customBackground=backgroundChooser.color
+            customText=textChooser.color
+            colorChoose.visible=false
+            refresh
+        }
+        
+        case ColorChanged(`backgroundChooser`,color) => testColor.background=color
+
+        case ColorChanged(`textChooser`,color) => testColor.foreground=color
+
+        case SelectionChanged(`comboBoxColor`) =>
+            {
+            if(comboBoxColor.selection.index==0){
+                customBackground = Color.WHITE
+                customText = Color.BLACK
+                refresh
+            }
+            else if(comboBoxColor.selection.index==1){
+                customBackground = Color.BLACK
+                customText = Color.WHITE
+                refresh
+            }
+            else{
+                colorChoose.visible=true
+            }
+        }
+            
         
         case ButtonClicked(`sendButton`) => appelReponse
 
         
-
         case KeyPressed(`inputField`, Key.Enter, _, _) => appelReponse
-        }
-        
+    }
 
         contents = new BoxPanel(Orientation.Vertical) {
             contents += scrollPane
@@ -100,18 +154,14 @@ class UIV3 extends MainFrame {
             if(!message.isEmpty()){
                 // Create user message
                 addMsgYou(message)
+                memoire = memoire :+ message
                 // Create avatar message
                 val reponse = Reponse(message)
                 addMsgAva(reponse,false)
                 if(vocal)Discours.generateDiscours(reponse.mkString(" "),getLangue())
                 // Actualisation
                 inputField.text = ""
-                scrollPane.revalidate()
-                chatArea.revalidate()
-                Thread.sleep(100)
-                scrollPane.verticalScrollBar.value = scrollPane.verticalScrollBar.maximum
-                chatArea.repaint()
-                scrollPane.repaint()
+                refresh
             }
     }
 
@@ -121,7 +171,6 @@ class UIV3 extends MainFrame {
                     contents += new Label {text = s"You: $msg"}
                 }
         chatArea.contents += userMessage
-        memoire = memoire :+ msg 
     }
 
     def addMsgAva(msg:List[String],deMem : Boolean){
@@ -188,6 +237,7 @@ class UIV3 extends MainFrame {
                         reconstrutionMemoire
                     Dialog.showMessage(outils, "Conversation chargée")
                     outils.visible=false
+                    refresh
                     }}
         catch{
             
@@ -231,5 +281,33 @@ class UIV3 extends MainFrame {
         chatArea.revalidate();
         chatArea.repaint();
     }
+    def setComponentColors(component: Component, bg: Color, fg: Color): Unit = {
+    component.background = bg
+    component.foreground = fg
+    component match {
+        case container: Container =>
+        for (child <- container.contents) {
+            setComponentColors(child, bg, fg)
+        }
+        case _ =>
+    }
+}
+    def setComponentColors(dialog: Dialog, bg: Color, fg: Color): Unit = {
+        dialog.background = bg
+        dialog.foreground = fg
+        for (child <- dialog.contents) {
+            setComponentColors(child, bg, fg)
+        }
+    }
+    def refresh{
+        scrollPane.revalidate()
+        chatArea.revalidate()
+        scrollPane.verticalScrollBar.value = scrollPane.verticalScrollBar.maximum
+        chatArea.repaint()
+        scrollPane.repaint()
 
+        for (cont <- contents)setComponentColors(cont,customBackground,customText)
+        setComponentColors(outils,customBackground,customText)
+        setComponentColors(colorChoose,customBackground,customText)
+    }
 }
