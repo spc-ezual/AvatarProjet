@@ -99,7 +99,9 @@ class UIV3 extends MainFrame {
         
         case ButtonClicked(`resetButton`) => MachineImpl.reinit()
         
-        case ButtonClicked(`vocalButton`)=> vocal = !vocal 
+        case ButtonClicked(`vocalButton`)=> {vocal = !vocal
+        if(vocal)Discours.generateDiscours("la synthese vocale est activé",0)
+        else Discours.generateDiscours("la synthese vocale est désactivé",0)} 
         
         case SelectionChanged(`comboBoxLang`) => newLangue(comboBoxLang.selection.index)
 
