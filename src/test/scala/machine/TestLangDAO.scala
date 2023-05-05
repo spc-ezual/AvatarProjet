@@ -17,7 +17,6 @@ class TestLangDAO{
     def Test2:Unit={
         assertEquals(LangDAO.getMotsLang(4),List("italiano", "buongiorno", "ciao", "salve", "buon", "pomeriggio", "buonasera", "incantato",  "dove", "trova", "cerco", "cercando"))    
     }
-
     @Test
     def Test3:Unit= {
         assertEquals(LangDAO.getMotsLang(3),List("deutsch", "hallo", "guten", "morgen", "tag", "abend", "wo", "ist", "suche", "suchen"))
