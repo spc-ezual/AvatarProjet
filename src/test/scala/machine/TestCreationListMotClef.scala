@@ -73,4 +73,39 @@ class TestCreationListMotClef {
     assertEquals(MatchMotClef(List("Bonjour","Bonjour","Bonjour"),0),
     (3,List()))
     }
+
+    //Test de RecupPoli
+
+    val ListPolitesse : List[String] = List("Bonjour","Hello","Hola","Guten tag","Bonjourno")
+
+    @Test
+    def testRecupPoli_fr_1 {
+    assertEquals(1,RecupPoli(List("Bonjour"),ListPolitesse))
+    }
+
+    @Test
+    def testRecupPoli_fr_2 {
+    assertEquals(2,RecupPoli(List("Bonjour","Bonjour"),ListPolitesse))
+    }
+
+
+    @Test
+    def testRecupPoli_en {
+    assertEquals(2,RecupPoli(List("Hello","Hello"),ListPolitesse))
+    }
+
+    @Test
+    def testRecupoli_es {
+    assertEquals(4,RecupPoli(List("Hola","Hola","Hola","Hola"),ListPolitesse))
+    }
+
+    @Test
+    def testRecupoli_al {
+    assertEquals(3,RecupPoli(List("Guten tag","Guten tag","Guten tag"),ListPolitesse))
+    }
+
+    @Test
+    def testRecupoli_it {
+    assertEquals(2,RecupPoli(List("Bonjourno","Bonjourno"),ListPolitesse))
+    }
 }
