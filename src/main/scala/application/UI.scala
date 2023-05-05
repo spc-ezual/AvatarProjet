@@ -1,8 +1,5 @@
 package application
 
-
-
-
 import scala.swing._
 import java.awt.Color
 import scala.swing.event._

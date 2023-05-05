@@ -56,73 +56,69 @@ object LieuxXMLDAO {
         val resultSet=statement.executeQuery(req)
             //req = req + "(name LIKE '% "+mots(i)+" %' ESCAPE '|'OR name LIKE '% "+mots(i)+"' ESCAPE '|' OR name LIKE '"+mots(i)+" %' ESCAPE '|')"
 
-        var resultList = List[String]()
-        while (resultSet.next()) {
-            resultList = resultList ++ resultSet.getString("id").split(",").map(_.trim).toList
-        }
-
-        resultSet.close()
-        statement.close()
-        connection.close()
-
-        if (resultList.nonEmpty) Some(resultList) else None
-}
-    /**
-      * 
-      *
-      * @param id id d'organisation valide 
-      * @return name de l'organisation si elle existe sinon None
-      */
-    def getNameId(id: String): Option[String] = {
-        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
-        val statement: Statement = connection.createStatement()
-        val query: String = s"SELECT name FROM organizations WHERE id= '$id'"
-        val resultSet=statement.executeQuery(query)
-        val rep =
-            if(resultSet.next()) Some(resultSet.getString("name"))else None
-        resultSet.close()
-        statement.close()
-        connection.close()
-        rep
-    }
-    /**
-      * 
-      *
-      * @return l'ensemble des mots contenue dans les name de maniere unique
-      */
-    def listeMotsUniques(): List[String]={
-        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
-        val statement: Statement = connection.createStatement()
-        val query: String = s"SELECT name FROM organizations;"
-        val resultSet=statement.executeQuery(query)
-        var result: List[String] = List()
-        while (resultSet.next()) {
-        result = resultSet.getString("name").split("[ ,./:!?<>();_+-={}&#|']+").toList ::: result
-        }
-        resultSet.close()
-        statement.close()
-        connection.close()
-        result.distinct
-        
-
-    }
-    /**
-      * 
-      *
-      * @return liste de tous les name des organisation
-      */
-    def getNom(): List[String] = {
-        val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
-        val statement = connection.createStatement()
-        val resultSet = statement.executeQuery("SELECT nom FROM organizations")
-        var noms: List[String] = List()
-        while (resultSet.next()) {
-        noms = resultSet.getString("nom") :: noms
-        }
-        resultSet.close()
-        statement.close()
-        connection.close()
-        noms
+    var resultList = List[String]()
+    while (resultSet.next()) {
+      resultList =
+        resultList ++ resultSet.getString("id").split(",").map(_.trim).toList
     }
 
+    resultSet.close()
+    statement.close()
+    connection.close()
+
+    if (resultList.nonEmpty) Some(resultList) else None
+  }
+
+  /** @param id d'organisation valide
+    * @return name de l'organisation si elle existe sinon None
+    */
+  def getNameId(id: String): Option[String] = {
+    val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+    val statement: Statement = connection.createStatement()
+    val query: String = s"SELECT name FROM organizations WHERE id= '$id'"
+    val resultSet = statement.executeQuery(query)
+    val rep =
+      if (resultSet.next()) Some(resultSet.getString("name")) else None
+    resultSet.close()
+    statement.close()
+    connection.close()
+    rep
+  }
+
+  /** @return l'ensemble des mots contenue dans les name de maniere unique
+    */
+  def listeMotsUniques(): List[String] = {
+    val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+    val statement: Statement = connection.createStatement()
+    val query: String = s"SELECT name FROM organizations;"
+    val resultSet = statement.executeQuery(query)
+    var result: List[String] = List()
+    while (resultSet.next()) {
+      result = resultSet
+        .getString("name")
+        .split("[ ,./:!?<>();_+-={}&#|']+")
+        .toList ::: result
+    }
+    resultSet.close()
+    statement.close()
+    connection.close()
+    result.distinct
+
+  }
+
+  /** @return liste de tous les name des organisation
+    */
+  def getNom(): List[String] = {
+    val connection = DriverManager.getConnection("jdbc:sqlite:" + dbFilePath)
+    val statement = connection.createStatement()
+    val resultSet = statement.executeQuery("SELECT nom FROM organizations")
+    var noms: List[String] = List()
+    while (resultSet.next()) {
+      noms = resultSet.getString("nom") :: noms
+    }
+    resultSet.close()
+    statement.close()
+    connection.close()
+    noms
+  }
 }

@@ -25,15 +25,6 @@ object Correction {
         //mots.map(x => {if(x.length>2)correctMot(x, motsCorrect) else x})
         (corr,nonCorr)
     }
-    // L'on souhaite que correct concat en cas de nececiter
-    /*
-        exemple :
-            phrase =("bonjour","ou","est","la","mairie") => phrase =("bonjour","ou","est","la","Mairie")
-            phrase =("bonjour","ou","est","la","airie") => phrase =("bonjour","ou","est","la","Mairie")
-            phrase =("bonjour","ou","est","la","mairie","de","rennes") => phrase =("bonjour","ou","est","la","Mairie de Rennes")
-            phrase =("bonjour","ou","est","la","mairie","Rennes") => phrase =("bonjour","ou","est","la","Mairie de Rennes"")
-    */
-
     /** prend en entre un mot a corriger et une list de mots de référance et renvoie un mot corriger si cela est possible
         * @param mot un string non vide a corrige
         * @param motsCorrect une liste de mots de référance
@@ -52,8 +43,8 @@ object Correction {
     }
 
     /** prend en entre un mot a corriger et un mot correct si la distance de hamming est egale a 0 ou a 1 renvoie le mot corriger, sinon ne renvoie rien
-        * @param mot un string a corrige
-        * @param mot Correct
+        * @param s1 un string a corrige
+        * @param s2 Correct
         * @return le mot corriger ou rien
         */
     def compartMot(s1: String, s2: String): Option[String] = {

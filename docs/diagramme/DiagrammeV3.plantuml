@@ -13,6 +13,7 @@ package Application{
         inputField
         sendButton
         resetButton
+        vocalButton
         avatarIcon
         userIcon
     }
@@ -68,33 +69,37 @@ package Machine{
 
 package Outils{
     interface CreationListMotClef{
-        dsbLieux
-
+        dsbLieuxBase
+        dsbLieuxXML
         MatchMotClef(Mots : List[String],l:Int): (String,List[(String, String)])
         RecupPoli(mots: List[String],dsbPolitesse :List[String]): Int
         RecupLieux(mot: String): String
         RecupNomReel(mot: String): String
+        RecupNomXML(id:String):String
+        RecupAdrXML(id:String):String
     }
     interface AnalysePhrase{
-
-
         SepMots(s:String): List[String]
         compartList(lMotsBdd: List[String],lMotsRequet: List[String]): Boolean 
         areEqualIgnoreCaseAndAccents(char1: Char, char2: Char): Boolean
         removeWords(mots: List[String], motsSupp: List[String]): List[String]
         VerifLang(l:Int,mots :List[String]):Int
         VerifLangCorrect(l:Int,mots :List[String]):Int
+        premierNombreDansString(chaine: String): Option[Int]
+        combinaisons[T](liste: List[T], acc: List[List[T]]): List[List[T]]
+        rechercheResto(mots :List[String],Resto :List[String]):Option[List[String]]
+        replaceHtmlEntities(phrase: String): String
     }
     interface CreationDeRep{
         langues
         action
+        memoire
         Reponse(message: String): String
         formatReponse(reponse: List[String]): String
         reInit(): Unit
     }
     interface Correction{
-        dsbLieux
-        Correct(Mots : List[String], BDListLieux, BDPolitesse): List[String]
+        correct(mots: List[String], motsCorrect: List[String],min :Int): (List[String],List[String])
         correctMot(mot: String, motsCorrect: List[String]): String
         compartMot(s1: String, s2: String): Option[String]
         hammingDistance(s1: String, s2: String): Int
@@ -107,7 +112,7 @@ package "Base de donnes"{
         adresse
         nomReel
     }
-    package LIeuxXml{
+    package LieuxXml{
         class BDOrganisation<<(B,Orange)>>{
             id VARCHAR(50) PRIMARY KEY,
             acronym VARCHAR(50),
@@ -157,6 +162,26 @@ package "Base de donnes"{
     class vArXML<<(X , Pink)>>
 }
 
+package OutilHtml{
+    object AnalysePageObjet{
+        getNomAdres(mots :List[String]):Option[(String,String)]
+        resultatsPage(url: String): Option[(String,String)] 
+        urlToHtml(url: String): Html
+        obtenir1liens(h: Html): Option[String]
+        obtenirAdr(h: Html): Option[String]
+        obtenirAdr(h: Html): Option[String]
+    }
+    object OutilsWebObjet{
+        cleaner
+        props
+        nomHote(url: String): String
+        obtenirHtml(url: String): Html
+        javaList2ScalaList[T](l: java.util.List[T]): List[T]
+        tag2Html(tn: BaseToken): Html
+        combinerUrls(base: String, local: String): String
+    }
+}
+    
 ListLieuxDAO --> CreationListMotClef
 LangDAO --> CreationListMotClef
 AnalysePhrase --> CreationListMotClef
@@ -166,10 +191,14 @@ AnalysePhrase --> Correction
 LangDAO --> CreationDeRep
 AnalysePhrase --> CreationDeRep
 CreationListMotClef --> CreationDeRep
-BDLang -|> LangDAO
-BDListLieux-|> ListLieuxDAO
+BDLang --|> LangDAO
+BDListLieux--|> ListLieuxDAO
 Avatar --> MachineImpl
 CreationDeRep --> MachineImpl
 UI --> Avatar
+LieuxXml --|> LieuxXMLDAO
+OutilsWebObjet --> AnalysePageObjet
+AnalysePageObjet --> CreationListMotClef
+LieuxXMLDAO --> CreationListMotClef
 
 @enduml
